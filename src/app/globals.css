@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  transition-property: opacity, background, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+
+.color-blur {
+    background-image: radial-gradient(closest-side, rgba(99, 102, 241, 0.15), #0000);
+    pointer-events: none;
+  }
+
+  .color-blur-spotify {
+    background-image: radial-gradient(closest-side, rgba(30, 215, 96, 0.15), #0000);
+    pointer-events: none;
+}
+
+.color-blur-uh {
+  background-image: radial-gradient(closest-side, rgba(200, 16, 46, 0.15), #0000);
+  pointer-events: none;
+}
+
+.bg-colors {
+  background: linear-gradient(
+    to bottom,
+    rgba(99, 102, 241, 0) 0%,      /* Start with full transparency at the top */
+    rgba(99, 102, 241, 0.3) 20%,   /* Gradually introduce #6366F1 */
+    rgba(99, 102, 241, 0.6) 50%,   /* Darker shade of #6366F1 */
+    #6366F1 80%                    /* Full color at the bottom */
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-colors::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page-transition {
+  opacity: 0;
+  background-color: black;
+  transform: translateY(40px);
+  filter: blur(12px)
+}
