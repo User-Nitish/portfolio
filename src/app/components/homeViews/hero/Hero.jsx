@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <>
       <section className="max-w-6xl text-center py-52 mx-auto">
-        <h1 className="text-5xl text-white font-bold mb-4">Hello, I am Nitish Kumar</h1>
+        <h1 className="text-5xl text-white font-bold mb-4">Hello, I am Nitish Kumar Singh</h1>
           <div className="min-w-[12ch] text-center"> 
             <Typewriter />
           </div>
