@@ -37,7 +37,14 @@ const Navbar = () => {
             <TransitionLink href="/#contact" className='nav-link text-white font-light'>Contact</TransitionLink>
           </li>
           <li>
-            <a href="https://drive.google.com/file/d/1dOahp9PVkeAiWlRMp6IMqa8iEREzwWDo/view?usp=sharing" target="_blank" rel="noopener noreferrer" className='px-4 py-2 bg-[#3175b1] text-white rounded-lg hover:bg-[#265a96] transition-colors duration-200 font-light'>Resume</a>
+            <a
+              href="https://drive.google.com/file/d/1dOahp9PVkeAiWlRMp6IMqa8iEREzwWDo/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className='px-4 py-2 text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-colors duration-200 font-light'
+            >
+              Resume
+            </a>
           </li>
         </ul>
         

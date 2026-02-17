@@ -40,7 +40,14 @@ const MobileNav = ({ isMobileOpen, handleToggle }) => {
             <a href="https://github.com/" className='text-white'>Github</a>
           </li>
           <li>
-            <a href="https://drive.google.com/file/d/1dOahp9PVkeAiWlRMp6IMqa8iEREzwWDo/view?usp=sharing" target="_blank" rel="noopener noreferrer" className='text-white'>Resume</a>
+            <a
+              href="https://drive.google.com/file/d/1dOahp9PVkeAiWlRMp6IMqa8iEREzwWDo/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className='px-4 py-2 text-white rounded-md bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 transition-colors duration-200 font-light'
+            >
+              Resume
+            </a>
           </li>
         </ul>
       </div>
