@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import nitishImg from '../../../public/nitish.jpeg'
 import "../globals.css";
 
 const page = () => {
@@ -28,7 +29,7 @@ const page = () => {
 
                 <div className="flex justify-center md:justify-end">
                     <Image
-                        src="/nitish.jpeg"
+                        src={nitishImg}
                         alt="Picture of Nitish Kumar"
                         width={360}
                         height={360}
