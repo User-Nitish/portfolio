@@ -10,14 +10,20 @@ const page = () => {
                   
                 <div className="space-y-6 text-center md:text-left">
                     <h1 className="text-4xl md:text-6xl font-bold text-white">About</h1>
-                    <p className="text-white text-xl md:text-3xl">I'm Nitish Kumar Singh, a B.Tech CSE student at Lovely Professional University, Punjab.</p>
+                    <p className="text-white text-xl md:text-3xl">I'm Nitish Kumar Singh, a third-year B.Tech CSE student at Lovely Professional University, passionate about building innovative digital solutions.</p>
                     <p className="text-white text-base md:text-lg mx-auto md:mx-0">
-                        Since 2023, I've enjoyed designing and developing websites both as a passion and a career choice. I completed my primary education in West Bengal and subsequently pursued my secondary and higher secondary education. I'm passionate about computer science, particularly full-stack web development and cybersecurity.
+                        Located in Bihar, India, with a solid educational foundation and practical industry experience, I specialize in Full Stack Web Development and Artificial Intelligence. My technical expertise spans across the MERN stack (MongoDB, Express.js, React, Node.js) for building interactive and responsive web applications.
                     </p>
                     <p className="text-white text-base md:text-lg mx-auto md:mx-0">
-                        A big passion of mine is working out/fitness. I try my best not to take more than one rest day a week. One day, I want to own both a fitness product & a gym, building both to improve how everyone views exercise. That's a big reason why I created my website <span className='font-bold'><span className='text-[#3175b1]'></span></span>. I want to start by improving how people track and act on their progress!
+                        <span className="font-semibold">Technical Skills:</span> JavaScript, PHP, HTML/CSS, React JS, Node JS, Express JS, Data Structures & Algorithms (C++), Problem-Solving, and Responsive Web Design. I have hands-on experience with databases like MongoDB and MySQL.
                     </p>
-                    <p className='text-white text-base md:text-lg mx-auto md:mx-0'>Check out some of my blogs on <span className='font-bold'>Link<span className='text-[#3175b1]'>edin</span></span> <a href='https://www.linkedin.com/in/nitish-kr-singh1/' className='text-brand underline'>here</a> </p>
+                    <p className="text-white text-base md:text-lg mx-auto md:mx-0">
+                        <span className="font-semibold">Recent Training:</span> I completed comprehensive MERN with Generative AI training from W3Grads (Jun'25-Jul'25), where I built multiple full-stack projects and integrated AI-powered features using Google Gemini API and other technologies.
+                    </p>
+                    <p className="text-white text-base md:text-lg mx-auto md:mx-0">
+                        <span className="font-semibold">Education:</span> B.Tech CSE from Lovely Professional University (2023-Present) with a CGPA of 8.13. Previous schooling includes DAV Public School (12th, 64.2%) and U.P. Public School (10th, 94%).
+                    </p>
+                    <p className='text-white text-base md:text-lg mx-auto md:mx-0'>Connect with me on <span className='font-bold'>Link<span className='text-[#3175b1]'>edin</span></span> <a href='https://www.linkedin.com/in/nitish-kr-singh1/' className='text-brand underline'>here</a> or check out my repos on <span className='font-bold'>Git<span className='text-[#3175b1]'>Hub</span></span> <a href='https://www.github.com/User-Nitish' className='text-brand underline'>here</a></p>
                 </div>
 
                 <div className="flex justify-center md:block">

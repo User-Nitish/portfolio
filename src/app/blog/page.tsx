@@ -14,15 +14,15 @@ const page = () => {
         <div className="flex flex-wrap justify-center space-y-8 md:space-y-0 md:space-x-8 py-20 px-4">
             <BlogPreview 
                 link="/blog/ui-in-ai" 
-                title="Being a Student Club President" 
-                cat="Management - 5 min read" 
-                prev="In today's world, to grow your connections , make your personality unique and for the personal growth ,what one can do is join a student organization of your interest to get the maximum out of you " 
+                title="Understanding the MERN Stack: A Complete Guide" 
+                cat="Web Development - 8 min read" 
+                prev="Learn how to build full-stack web applications using MongoDB, Express.js, React, and Node.js. This comprehensive guide covers architecture, best practices, and real-world implementation patterns." 
             />
             <BlogPreview 
                 link="/blog/accessible" 
-                title="Essential Tips for Designing Websites for All" 
-                cat="Web Dev - 5 min read" 
-                prev="From screen readers to text-to-speech software, here are some tips to make your website accessible to all" 
+                title="Building AI-Powered Web Applications with Generative AI" 
+                cat="AI & Web Dev - 10 min read" 
+                prev="Explore how to integrate generative AI into your web applications. Learn about APIs, prompting strategies, and creating seamless user experiences with AI-powered features." 
             />
         </div>
     </div>

@@ -10,10 +10,22 @@ const Introduction = () => {
         <div>
           <h3 className="text-2xl md:text-3xl font-medium text-brand mb-4">Introduction</h3>
           <p className="text-white text-base md:text-lg">
-            I'm Nitish Kumar Singh, a B.Tech CSE student at Lovely Professional University, Punjab.!I completed my primary education in West Bengal and subsequently pursued my secondary and higher secondary education. I'm passionate about computer science, particularly full-stack web development and cybersecurity
+            I'm Nitish Kumar Singh, a third-year B.Tech CSE student with a deep passion for technology and innovation. I'm driven by the endless possibilities that digital systems and intelligent applications bring to everyday life.
           </p>
           <p className="text-white mt-3 mb-4 text-base md:text-lg">
-          I've gained proficiency in Python, CSS, HTML, JavaScript, C++, C#, SQL, and database management. My dream company is Google, and I aspire to pursue a career in software engineering. Beyond technical skills, I enjoy creative pursuits like sketching and unwind by watching various shows.
+            My technical skills center around Full Stack Web Development and Artificial Intelligence, with hands-on experience in the MERN stack (MongoDB, Express.js, React, Node.js). I create interactive and responsive web applications, working seamlessly across both frontend and backend to deliver smooth user experiences.
+          </p>
+          <p className="text-white mt-3 mb-4 text-base md:text-lg">
+            In addition to MERN, I have practical knowledge of PHP, which I use for backend development and server-side scripting. Coupled with my ability to work with relational databases like MySQL, it broadens my versatility as a developer.
+          </p>
+          <p className="text-white mt-3 mb-4 text-base md:text-lg">
+            I also have a strong foundation in Data Structures and Algorithms (DSA) using C++, which enhances my algorithmic thinking and problem-solving skills. Alongside this, I also hold basic knowledge of Java Programming language.
+          </p>
+          <p className="text-white mt-3 mb-4 text-base md:text-lg">
+            Over the course of my academic journey, I've built a variety of projects—from dynamic websites and RESTful APIs to data-driven applications. I prioritize clean coding practices, logical structuring, and optimizing performance.
+          </p>
+          <p className="text-white mt-3 mb-4 text-base md:text-lg">
+            A believer in continuous growth, I actively explore new technologies and engage with developer communities. I'm enthusiastic about contributing to impactful projects and learning through hands-on challenges.
           </p>
         </div>
 
@@ -59,18 +71,18 @@ const FrameworkContainer = () => {
     { name: "MongoDB", img: "/MONGO.svg" },
     { name: "Node.js", img: "/NODE.svg" },
     { name: "Tailwind", img: "/TAILWIND.svg" },
-    { name: "Bootstrap", img: "/BOOTSTRAP.svg" },
-    { name: "WordPress", img: "/WORDPRESS.svg" },
-    { name: "Contentful", img: "/CONTENTFUL.svg" },
+    { name: "PHP", img: "/PHP.svg" },
+    { name: "MySQL", img: "/MYSQL.svg" },
+    { name: "C++", img: "/CPP.svg" },
     { name: "Figma", img: "/FIGMA.svg" },
-    { name: "Miro", img: "/MIRO.svg" },
-    { name: "Framer", img: "/FRAMER.svg" }
+    { name: "Java", img: "/JAVA.svg" },
+    { name: "JavaScript", img: "/JS.svg" }
   ];
 
   return (
-    <div className="bg-opacity-77 p-4 rounded-lg max-w-xs md:max-w-md shadow-lg">
+    <div className="bg-opacity-77 p-4 rounded-lg max-w-5xl shadow-lg">
       <h3 className="text-lg md:text-xl font-medium text-white text-center mb-4">Frameworks & Tools</h3>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
         {tools.map((skill, index) => (
           <SkillBox key={index} skill={skill} />
         ))}

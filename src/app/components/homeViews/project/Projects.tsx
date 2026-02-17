@@ -8,83 +8,125 @@ const Projects = () => {
         <section className='max-w-6xl mx-auto py-24 px-4'>
             <h2 className="text-4xl text-white mb-8 text-center font-medium">Projects</h2>
             
-            <div className='grid md:grid-cols-2 gap-16'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-12'>
                 
-                {/* Card 1 */}
-                <div className='space-y-8'>
+                {/* Card 1 - FitLife */}
+                <div className='space-y-6'>
 
                     {/* Image */}
                     <Image
-                        src="/gymskii-img.png"
-                        alt='screenshot of gymskii'
-                        width={550}
-                        height={500}
+                        src="/fitlife.png"
+                        alt='screenshot of FitLife'
+                        width={400}
+                        height={400}
                         className='rounded-lg w-full h-auto'
                     />
 
                     {/* Information */}
                     <div className='space-y-4'>
-                        <h3 className='text-3xl text-white font-bold text-center'> gym<span className='text-[#3175b1]'>skii</span> </h3>
-                        <div className='flex flex-wrap gap-3 text-white justify-center'>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>React</p>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>MongoDB</p>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>NextJS</p>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>TailwindCSS</p>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>AuthJS</p>
+                        <h3 className='text-2xl text-white font-bold text-center'> FitLife</h3>
+                        <p className='text-white text-sm text-center font-medium'>Jun'25 - Jul'25</p>
+                        <div className='flex flex-wrap gap-2 text-white justify-center'>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>MongoDB</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Express.js</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>React.js</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Node.js</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Tailwind</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Gemini API</p>
                         </div>
-                        <p className='text-white text-sm md:text-base'>
-                            Developed the marketing page for gymskii, a fitness-tracking platform designed to help
-                            users achieve progressive overload by tracking and visualizing gym performance data. gymskii allows users to log
-                            their weekly gym data and track their progress through a central dashboard, which includes dynamic graphics and
-                            statistics to help users train more effectively and stay motivated. The current site allows you to log in/sign out
-                            using Auth.js.
-                        </p>
-                        <div className='text-white border rounded-md p-3 text-sm md:text-base'>
-                            <span className='text-brand font-semibold'>Currently working on: </span>Creating the dashboard for users to track and visualize their data (learning GraphQL and Apollo).
+                        <div className='space-y-2 text-white text-xs md:text-sm'>
+                            <p>
+                                <span className='font-semibold text-brand'>Full-stack fitness platform</span> using MERN with AI integration for personalized workout and meal plans.
+                            </p>
+                            <p>
+                                <span className='font-semibold text-brand'>AI-powered features</span> including Google Gemini API chat assistant, YouTube video integration, and food image tracking.
+                            </p>
                         </div>
                     </div>
 
                     {/* CTA Buttons */}
-                    <div className='flex flex-col items-center space-y-4'>
-                        <AnimatedBtn href='https://gymskii.com/' innerTxt="Go to the gymskii site" />
-                        <AnimatedBtn href='https://github.com/samkolache/gymskii' innerTxt="View the source code" />
+                    <div className='flex flex-col items-center'>
+                        <AnimatedBtn href='https://github.com/PiyushRw/Fitlife.git' innerTxt="View Code" />
                     </div>
 
                 </div>
 
-                {/* Card 2 */}
-                <div className='space-y-8'>
+                {/* Card 2 - FarmFist */}
+                <div className='space-y-6'>
 
                     {/* Image */}
                     <Image
-                        src="/scratch-img.png"
-                        alt='screenshot of scratchToReact'
-                        width={550}
-                        height={500}
+                        src="/farmfist.png"
+                        alt='screenshot of FarmFist'
+                        width={400}
+                        height={400}
                         className='rounded-lg w-full h-auto'
                     />
 
                     {/* Information */}
                     <div className='space-y-4'>
-                        <h3 className='text-3xl text-white font-bold text-center'> scratchToReact </h3>
-                        <div className='flex flex-wrap gap-3 text-white justify-center'>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>React</p>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>NextJS</p>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>TailwindCSS</p>
-                            <p className='py-2 px-3 rounded-md border border-white border-opacity-50 text-sm'>Sandpack</p>
+                        <h3 className='text-2xl text-white font-bold text-center'> FarmFist</h3>
+                        <p className='text-white text-sm text-center font-medium'>Coming Soon</p>
+                        <div className='flex flex-wrap gap-2 text-white justify-center'>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>MongoDB</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Express.js</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>React.js</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Node.js</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Tailwind</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Gemini API</p>
                         </div>
-                        <p className='text-white text-sm md:text-base'>
-                            Developed scratchToReact to help friends interested in web development, making it a valuable project for honing my skills in vanilla JavaScript and React components. The current site shows tutorials on basic web components in vanilla HTML, CSS, and JS. I try to add a lesson a day to continue learning and helping others. The site’s code previews are made using Sandpack, providing an interactive learning experience. I plan to expand from web components into all types of tutorials for web development.
-                        </p>
-                        <div className='text-white border rounded-md p-3 text-sm md:text-base'>
-                            <span className='text-brand font-semibold'>Currently working on: </span>Creating the React tutorials for current vanilla components.
+                        <div className='space-y-2 text-white text-xs md:text-sm'>
+                            <p>
+                                <span className='font-semibold text-brand'>Biosecurity management portal</span> empowering farmers with complete control over pig and poultry farm safety protocols.
+                            </p>
+                            <p>
+                                <span className='font-semibold text-brand'>Centralized interface</span> for monitoring, managing, and implementing comprehensive farm safety measures in real-time.
+                            </p>
                         </div>
                     </div>
 
                     {/* CTA Buttons */}
-                    <div className='flex flex-col items-center space-y-4'>
-                        <AnimatedBtn href='https://scratch-to-react.vercel.app/' innerTxt="Go to the scratchToReact site" />
-                        <AnimatedBtn href='https://github.com/samkolache/scratchToReact' innerTxt="View the source code" />
+                    <div className='flex flex-col items-center'>
+                        <AnimatedBtn href='https://github.com/User-Nitish/FarmFist.git' innerTxt="View Code" />
+                    </div>
+
+                </div>
+
+                {/* Card 3 - FleetTrack */}
+                <div className='space-y-6'>
+
+                    {/* Image */}
+                    <Image
+                        src="/fleettrack.png"
+                        alt='screenshot of FleetTrack'
+                        width={400}
+                        height={400}
+                        className='rounded-lg w-full h-auto'
+                    />
+
+                    {/* Information */}
+                    <div className='space-y-4'>
+                        <h3 className='text-2xl text-white font-bold text-center'> FleetTrack</h3>
+                        <p className='text-white text-sm text-center font-medium'>Feb'25 - Mar'25</p>
+                        <div className='flex flex-wrap gap-2 text-white justify-center'>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>HTML</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>Tailwind</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>JavaScript</p>
+                            <p className='py-1 px-2 rounded-md border border-white border-opacity-50 text-xs'>PHP</p>
+                        </div>
+                        <div className='space-y-2 text-white text-xs md:text-sm'>
+                            <p>
+                                <span className='font-semibold text-brand'>Real-time vehicle tracking</span> application for business fleets and personal vehicles with live map functionality.
+                            </p>
+                            <p>
+                                <span className='font-semibold text-brand'>30% efficiency boost</span> through streamlined logistics, optimized fleet operations, and advanced monitoring capabilities.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <div className='flex flex-col items-center'>
+                        <AnimatedBtn href='https://github.com/User-Nitish/Real-time-vehicle-tracking.git' innerTxt="View Code" />
                     </div>
 
                 </div>

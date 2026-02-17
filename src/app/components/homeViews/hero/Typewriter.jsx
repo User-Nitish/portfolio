@@ -11,8 +11,8 @@ const Typewriter = () => {
 
   const adjectives = [
     "Web Developer",
-    "Scholar",
-    "Gymrat"
+    "AI Enthusiast",
+    "Problem Solver"
   ];
 
   useEffect(() => {
