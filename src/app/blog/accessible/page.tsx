@@ -56,11 +56,7 @@ const page = () => {
 
           <h3 className='text-2xl text-white'>Step 3: Create Backend Endpoints</h3>
           <p className='text-[#d1d5db]'>Build Express.js endpoints that receive user requests, validate inputs, pass them to the AI API, process the response, and return formatted results to the frontend. This abstraction layer allows you to add custom logic, caching, response formatting, and error handling. Keep API responses consistent and handle errors gracefully with meaningful messages.</p>
-          <p className='text-[#d1d5db]'>Example architecture:
-```
-User Request → Validation → Backend Endpoint → AI API → Response Processing → Caching → Frontend Response
-```
-Implement timeout handling for long-running requests. Consider streaming responses for better UX when dealing with lengthy AI outputs. Queue long-running requests to prevent blocking your server.</p>
+          <p className='text-[#d1d5db]'>Example architecture flow: User Request flows to Validation, then to Backend Endpoint, then to AI API, then Response Processing, then Caching, and finally to Frontend Response. Implement timeout handling for long-running requests. Consider streaming responses for better UX when dealing with lengthy AI outputs. Queue long-running requests to prevent blocking your server.</p>
 
           <h3 className='text-2xl text-white'>Step 4: Build Intuitive Frontend UI</h3>
           <p className='text-[#d1d5db]'>Create React components that allow users to interact with AI features seamlessly. Show clear loading states while waiting for API responses (spinners, skeleton loaders). Display results prominently with proper formatting. Provide detailed error feedback when things go wrong. Consider implementing streaming responses for long content to improve perceived performance. Allow users to regenerate responses, enable copy-to-clipboard for results, and provide context for how AI generated the output.</p>

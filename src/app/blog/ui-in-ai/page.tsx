@@ -71,7 +71,7 @@ const page = () => {
           <h2 className="text-3xl text-white">Building RESTful APIs with Express</h2>
           <p className='text-[#d1d5db]'>RESTful API design uses HTTP methods (GET, POST, PUT, DELETE, PATCH) to perform operations on resources. GET retrieves data without side effects. POST creates new resources. PUT replaces entire resources while PATCH updates partial fields. DELETE removes resources. Following REST principles ensures predictable, intuitive APIs.</p>
           <p className='text-[#d1d5db]'>Use appropriate HTTP status codes: 200 for successful GET/PUT/PATCH, 201 for successful POST, 204 for successful DELETE without response body, 400 for client errors, 401 for authentication failures, 403 for authorization failures, 404 for not found, and 500 for server errors. Proper status codes enable clients to handle responses appropriately.</p>
-          <p className='text-[#d1d5db]'>Implement versioning in APIs (e.g., /api/v1/users) to maintain backward compatibility when making breaking changes. Use pagination for endpoints returning multiple items to prevent overwhelming clients with huge responses. Include filtering and sorting capabilities. Implement rate limiting to prevent API abuse. Document your API using tools like Swagger/OpenAPI for clarity and easier integration.</p>
+          <p className='text-[#d1d5db]'>Implement versioning in APIs to maintain backward compatibility when making breaking changes. Use pagination for endpoints returning multiple items to prevent overwhelming clients with huge responses. Include filtering and sorting capabilities. Implement rate limiting to prevent API abuse. Document your API using tools like Swagger and OpenAPI for clarity and easier integration.</p>
         </div>
 
         <div className='max-w-4xl space-y-6 mt-4'>
@@ -84,16 +84,9 @@ const page = () => {
 
         <div className='max-w-4xl space-y-6 mt-4'>
           <h2 className="text-3xl text-white">Getting Started with MERN Development</h2>
-          <p className='text-[#d1d5db]'><strong>Prerequisites:</strong> Install Node.js and npm on your machine. Verify installation with `node --version` and `npm --version`. Understanding JavaScript fundamentals including async/await, destructuring, arrow functions, and ES6+ features is essential.</p>
-          <p className='text-[#d1d5db]'><strong>Frontend Setup:</strong> Create a new React project using `npx create-react-app myapp` or the modern `npm create vite@latest myapp -- --template react`. Install necessary packages: React Router for navigation, Axios for HTTP requests, and styling libraries like Tailwind CSS or Material-UI. Create a folder structure with components, pages, services, and utilities folders.</p>
-          <p className='text-[#d1d5db]'><strong>Backend Setup:</strong> Initialize a Node.js project with `npm init -y`. Install Express with `npm install express`. Set up a basic server file:
-```
-const express = require('express');
-const app = express();
-app.use(express.json());
-app.listen(5000, () => console.log('Server running'));
-```
-Install Mongoose (`npm install mongoose`) for MongoDB connection. Create connection logic and schema models. Set up routes and controllers following MVC pattern.</p>
+          <p className='text-[#d1d5db]'><strong>Prerequisites:</strong> Install Node.js and npm on your machine. Verify installation with node --version and npm --version. Understanding JavaScript fundamentals including async/await, destructuring, arrow functions, and ES6+ features is essential.</p>
+          <p className='text-[#d1d5db]'><strong>Frontend Setup:</strong> Create a new React project using npx create-react-app myapp or the modern npm create vite@latest myapp -- --template react. Install necessary packages: React Router for navigation, Axios for HTTP requests, and styling libraries like Tailwind CSS or Material-UI. Create a folder structure with components, pages, services, and utilities folders.</p>
+          <p className='text-[#d1d5db]'><strong>Backend Setup:</strong> Initialize a Node.js project with npm init -y. Install Express with npm install express. Set up a basic server with Express initialization and app.listen on port 5000. Install Mongoose (npm install mongoose) for MongoDB connection. Create connection logic and schema models. Set up routes and controllers following MVC pattern.</p>
           <p className='text-[#d1d5db]'><strong>Database Setup:</strong> Sign up for MongoDB Atlas (free tier available). Create a cluster and get your connection string. Install Mongoose and create connection file. Define schemas with proper field types and validations. Test your connection before proceeding with application logic.</p>
         </div>
 
@@ -108,7 +101,7 @@ Install Mongoose (`npm install mongoose`) for MongoDB connection. Create connect
 
         <div className='max-w-4xl space-y-6 mt-4'>
           <h2 className="text-3xl text-white">Troubleshooting Common Issues</h2>
-          <p className='text-[#d1d5db]'><strong>CORS Errors:</strong> When frontend and backend run on different ports, CORS (Cross-Origin Resource Sharing) errors occur. Fix by installing cors middleware: `npm install cors`, then use `app.use(cors())` in Express. Alternatively, configure specific origins: `app.use(cors({ origin: 'http://localhost:3000' }))`</p>
+          <p className='text-[#d1d5db]'><strong>CORS Errors:</strong> When frontend and backend run on different ports, CORS (Cross-Origin Resource Sharing) errors occur. Fix by installing cors middleware with npm install cors, then use app.use(cors()) in Express. Alternatively, configure specific origins with detailed origin configuration in your Express middleware setup.</p>
           <p className='text-[#d1d5db]'><strong>MongoDB Connection Issues:</strong> Verify database URL is correct. Check if MongoDB service is running. Ensure whitelist includes your IP in MongoDB Atlas. Use connection pooling properly in Mongoose. Handle connection errors gracefully with retry logic.</p>
           <p className='text-[#d1d5db]'><strong>State Management Issues:</strong> Avoid mutating state directly in Redux. Always return new objects from reducers. Use Redux DevTools for debugging state changes. Track down prop drilling issues by refactoring with Context API or state management libraries.</p>
           <p className='text-[#d1d5db]'><strong>Performance Problems:</strong> Use React DevTools Profiler to identify slow components. Implement memoization with React.memo for expensive components. Optimize re-renders with useCallback and useMemo. Check backend with database query analysis. Implement proper indexing on frequently queried fields.</p>
