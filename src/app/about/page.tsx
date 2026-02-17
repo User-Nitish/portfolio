@@ -30,9 +30,9 @@ const page = () => {
                     <Image
                         src="/nitish.jpeg"
                         alt="Picture of Nitish Kumar"
-                        width={360}
-                        height={360}
-                        className="rounded-lg object-contain w-full max-w-[360px]"
+                        width={480}
+                        height={480}
+                        className="rounded-lg object-contain w-full max-w-[480px] md:max-w-[480px]"
                         priority
                         quality={85}
                     />
