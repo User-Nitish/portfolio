@@ -32,8 +32,9 @@ const page = () => {
                         alt="Picture of Nitish Kumar"
                         width={360}
                         height={360}
-                        className="rounded-lg hidden md:block object-contain"
+                        className="rounded-lg object-contain w-full max-w-[360px]"
                         priority
+                        quality={85}
                     />
                 </div>
             </div>
