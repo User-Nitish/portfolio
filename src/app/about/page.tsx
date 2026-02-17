@@ -26,13 +26,14 @@ const page = () => {
                     <p className='text-white text-base md:text-lg mx-auto md:mx-0'>Connect with me on <span className='font-bold'>Link<span className='text-[#3175b1]'>edin</span></span> <a href='https://www.linkedin.com/in/nitish-kr-singh1/' className='text-brand underline'>here</a> or check out my repos on <span className='font-bold'>Git<span className='text-[#3175b1]'>Hub</span></span> <a href='https://www.github.com/User-Nitish' className='text-brand underline'>here</a></p>
                 </div>
 
-                <div className="flex justify-center md:block">
+                <div className="flex justify-center md:justify-end">
                     <Image
                         src="/nitish.svg"
                         alt="Picture of Nitish Kumar"
-                        width={500}
-                        height={500}
-                        className="rounded-lg hidden"
+                        width={360}
+                        height={360}
+                        className="rounded-lg hidden md:block object-contain"
+                        priority
                     />
                 </div>
             </div>

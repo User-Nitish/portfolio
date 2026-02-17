@@ -38,7 +38,7 @@ const BlogPreview = ({ title, cat, prev, link }) => {
                     <p className='text-sm md:text-base text-white font-light'>{cat}</p>
                 </div>
                 <p className="text-base md:text-lg text-white font-light">{prev}</p>
-                <div className='absolute top-4 right-4 bg-white bg-opacity-20 p-2 rounded-lg group-hover:bg-opacity-40 transition-all'>
+                <div className='absolute bottom-4 right-4 bg-white bg-opacity-20 p-2 rounded-lg group-hover:bg-opacity-40 transition-all'>
                     <svg className='w-5 h-5 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 5l7 7m0 0l-7 7m7-7H6' />
                     </svg>

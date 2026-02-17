@@ -23,9 +23,6 @@ const Footer = () => {
         <li>
           <a href="https://github.com/" className="text-white hover:underline">Github</a>
         </li>
-        <li>
-          <a href="" className="text-white hover:underline">Resume</a>
-        </li>
       </ul>
     </footer>
   )
