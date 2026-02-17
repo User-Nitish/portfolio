@@ -28,7 +28,7 @@ const page = () => {
 
                 <div className="flex justify-center md:justify-end">
                     <Image
-                        src="/nitish.svg"
+                        src="/nitish.jpeg"
                         alt="Picture of Nitish Kumar"
                         width={360}
                         height={360}
