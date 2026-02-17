@@ -50,13 +50,13 @@ const Page = () => {
                             {job === "w3grads" && "MERN & Gen AI Training"}
                             {job === "fitlife" && "Full Stack Developer"}
                             {job === "lpu" && "B.Tech CSE Student"}
-                            {job === "club" && "Secretary & Active Member"}
+                            {job === "club" && "Chief Operating Officer & Club President"}
                         </h3>
                         <h4 className="text-base md:text-lg text-white">
                             {job === "w3grads" && "Jun 2025 - Jul 2025"}
                             {job === "fitlife" && "Jun 2025 - Jul 2025"}
                             {job === "lpu" && "Jul 2023 - Aug 2027"}
-                            {job === "club" && "2023 - Present"}
+                            {job === "club" && "Feb 2024 - Present"}
                         </h4>
                     </motion.div>
                 ))}
