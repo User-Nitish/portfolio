@@ -70,24 +70,6 @@ const Page = () => {
 
 const JobInformation = ({ selected }) => {
     const jobData = {
-        careerCertified: {
-            resp: [
-                "Completed intensive MERN (MongoDB, Express.js, React, Node.js) with Generative AI training focusing on full-stack web development fundamentals.",
-                "Built multiple React applications including dynamic to-do lists and data-driven applications as part of structured assignments and hands-on projects.",
-                "Worked extensively with REST APIs, integrating them across different pages to enable seamless data transfer, API communication patterns, and dynamic content rendering.",
-                "Engaged in daily Scrum meetings to provide project updates, resolve coding issues, clarify technical doubts with mentors, and collaborate with fellow developers.",
-                "Integrated AI-generated data and Google Gemini API to enhance features and user experience in web applications, demonstrating practical AI implementation skills.",
-                "Earned Full Stack MERN with Gen AI certification (ID: FLAMES25MERN1898) and MongoDB & ICT Academy Skill-a-thon certificate."
-            ],
-            tools: [
-                { name: "React", img: "/REACT.svg" },
-                { name: "Node.js", img: "/NODE.svg" },
-                { name: "Express", img: "/EXPRESS.svg" },
-                { name: "MongoDB", img: "/MONGO.svg" },
-                { name: "Tailwind", img: "/TAILWIND.svg" },
-                { name: "JavaScript", img: "/JS.svg" },
-            ]
-        },
         w3grads: {
             resp: [
                 "Completed intensive MERN (MongoDB, Express.js, React, Node.js) with Generative AI training focusing on full-stack web development fundamentals.",
