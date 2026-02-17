@@ -40,7 +40,7 @@ const MobileNav = ({ isMobileOpen, handleToggle }) => {
             <a href="https://github.com/" className='text-white'>Github</a>
           </li>
           <li>
-            <a href="" className='text-white'>Resume</a>
+            <a href="https://drive.google.com/file/d/1dOahp9PVkeAiWlRMp6IMqa8iEREzwWDo/view?usp=sharing" target="_blank" rel="noopener noreferrer" className='text-white'>Resume</a>
           </li>
         </ul>
       </div>

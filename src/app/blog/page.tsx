@@ -15,13 +15,13 @@ const page = () => {
             <BlogPreview 
                 link="/blog/ui-in-ai" 
                 title="Understanding the MERN Stack: A Complete Guide" 
-                cat="Web Development - 8 min read" 
+                cat="Web Development - 18 min read" 
                 prev="Learn how to build full-stack web applications using MongoDB, Express.js, React, and Node.js. This comprehensive guide covers architecture, best practices, and real-world implementation patterns." 
             />
             <BlogPreview 
                 link="/blog/accessible" 
                 title="Building AI-Powered Web Applications with Generative AI" 
-                cat="AI & Web Dev - 10 min read" 
+                cat="AI & Web Dev - 20 min read" 
                 prev="Explore how to integrate generative AI into your web applications. Learn about APIs, prompting strategies, and creating seamless user experiences with AI-powered features." 
             />
         </div>
@@ -32,12 +32,17 @@ const page = () => {
 const BlogPreview = ({ title, cat, prev, link }) => {
     return (
         <Link href={link} className='cursor-pointer'>
-            <div className='m-4 max-w-[400px] md:max-w-[600px] space-y-3 bg-opacity-10 bg-gray-800 p-4 rounded-lg hover:shadow-lg transition-shadow duration-200'>
+            <div className='m-4 max-w-[400px] md:max-w-[600px] space-y-3 bg-opacity-10 bg-gray-800 p-4 rounded-lg hover:shadow-lg transition-shadow duration-200 relative group'>
                 <div className='flex flex-col space-y-1'>
                     <h2 className='text-xl md:text-2xl text-white font-semibold'>{title}</h2>
                     <p className='text-sm md:text-base text-white font-light'>{cat}</p>
                 </div>
                 <p className="text-base md:text-lg text-white font-light">{prev}</p>
+                <div className='absolute top-4 right-4 bg-white bg-opacity-20 p-2 rounded-lg group-hover:bg-opacity-40 transition-all'>
+                    <svg className='w-5 h-5 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 5l7 7m0 0l-7 7m7-7H6' />
+                    </svg>
+                </div>
             </div>
         </Link>
     )

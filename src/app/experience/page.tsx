@@ -161,9 +161,9 @@ const JobInformation = ({ selected }) => {
             </ul>
             <div className="p-4">
                 <h2 className="text-white text-2xl font-bold">Skills & Tools</h2>
-                <div className="grid grid-cols-2 sm:flex sm:justify-center gap-6 mt-4">
+                <div className="flex flex-wrap justify-center gap-4 mt-4">
                     {jobInfo.tools.map((tool, index) => (
-                        <div key={index} className="flex gap-2 py-2 px-8 items-center justify-center border border-white border-opacity-30 rounded-md">
+                        <div key={index} className="flex gap-2 py-2 px-4 items-center justify-center border border-white border-opacity-30 rounded-md whitespace-nowrap">
                             <Image src={tool.img} alt={tool.name} width={30} height={30} />
                             <p className="text-white text-sm">{tool.name}</p>
                         </div>
