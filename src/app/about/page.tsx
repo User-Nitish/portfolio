@@ -21,7 +21,7 @@ const page = () => {
                         <span className="font-semibold">Recent Training:</span> I completed comprehensive MERN with Generative AI training from W3Grads (Jun'25-Jul'25), where I built multiple full-stack projects and integrated AI-powered features using Google Gemini API and other technologies.
                     </p>
                     <p className="text-white text-base md:text-lg mx-auto md:mx-0">
-                        <span className="font-semibold">Education:</span> B.Tech CSE from Lovely Professional University (2023-Present) with a CGPA of 8.13. Previous schooling includes DAV Public School (12th) and U.P. Public School (10th).
+                        <span className="font-semibold">Education:</span> B.Tech CSE from Lovely Professional University (2023-Present) with a CGPA of 8.17. Previous schooling includes DAV Public School (12th) and U.P. Public School (10th).
                     </p>
                     <p className='text-white text-base md:text-lg mx-auto md:mx-0'>Connect with me on <span className='font-bold'>Link<span className='text-[#3175b1]'>edin</span></span> <a href='https://www.linkedin.com/in/nitish-kr-singh1/' className='text-brand underline'>here</a> or check out my repos on <span className='font-bold'>Git<span className='text-[#3175b1]'>Hub</span></span> <a href='https://www.github.com/User-Nitish' className='text-brand underline'>here</a></p>
                 </div>
