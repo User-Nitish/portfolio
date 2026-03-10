@@ -48,6 +48,7 @@ const SkillContainer = () => {
     { name: "JavaScript", img: "/JS.svg" },
     { name: "TypeScript", img: "/TYPESCRIPT.svg" },
     { name: "Python", img: "/PYTHON.svg" },
+    { name: "Java", img: "/JAVA.svg" },
     { name: "SQL", img: "/SQL.svg" }
   ];
 
@@ -74,9 +75,7 @@ const FrameworkContainer = () => {
     { name: "PHP", img: "/PHP.svg" },
     { name: "MySQL", img: "/MYSQL.svg" },
     { name: "C++", img: "/CPP.svg" },
-    { name: "Figma", img: "/FIGMA.svg" },
-    { name: "Java", img: "/JAVA.svg" },
-    { name: "JavaScript", img: "/JS.svg" }
+    { name: "Figma", img: "/FIGMA.svg" }
   ];
 
   return (
