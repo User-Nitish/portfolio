@@ -10,7 +10,7 @@ const Page = () => {
     const [selected, updateSelected] = useState('w3grads');
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center relative py-20 px-4 md:px-16">
+        <div className="w-full relative py-20 px-4">
             <div
                 className={clsx(
                     "absolute top-[-350px] left-[10%] h-[1000px] w-[1000px]",
@@ -19,50 +19,91 @@ const Page = () => {
                     { "color-blur-uh": selected === 'lpu' }
                 )}
             ></div>
-            <div className="space-y-10">
-                <h1 className="text-4xl md:text-6xl font-bold text-white">Experience</h1>
-                {["w3grads", "fitlife", "lpu", "club"].map((job) => (
-                    <motion.div
-                        key={job}
-                        onClick={() => updateSelected(job)}
-                        initial={{ scale: 1 }}
-                        animate={{
-                            scale: selected === job ? [1, 1.05, 1] : 1,
-                        }}
-                        transition={{
-                            duration: 1.5,
-                            ease: "easeInOut",
-                            repeat: selected === job ? Infinity : 0,
-                            repeatType: "reverse",
-                        }}
-                        className="cursor-pointer"
-                    >
-                        <h2 className={clsx(
-                            "text-2xl md:text-2xl font-bold",
-                            job === "w3grads" && "text-[#FF6B6B]",
-                            job === "fitlife" && "text-[#1ED760]",
-                            job === "lpu" && "text-[#C8102E]",
-                            job === "club" && "text-[#3175b1]"
-                        )}>
-                            {job === "w3grads" ? "W3Grads" : job === "fitlife" ? "FitLife Project" : job === "lpu" ? "Lovely Professional University" : "Student Club & Organizations"}
-                        </h2>
-                        <h3 className="text-lg md:text-xl text-white font-medium">
-                            {job === "w3grads" && "MERN & Gen AI Training"}
-                            {job === "fitlife" && "Full Stack Developer"}
-                            {job === "lpu" && "B.Tech CSE Student"}
-                            {job === "club" && "Chief Operating Officer & Club President"}
-                        </h3>
-                        <h4 className="text-base md:text-lg text-white">
-                            {job === "w3grads" && "Jun 2025 - Jul 2025"}
-                            {job === "fitlife" && "Jun 2025 - Jul 2025"}
-                            {job === "lpu" && "Jul 2023 - Aug 2027"}
-                            {job === "club" && "Feb 2024 - Present"}
-                        </h4>
-                    </motion.div>
-                ))}
+            
+            {/* Experience Section */}
+            <div className="max-w-7xl mx-auto mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+                    <div className="space-y-10">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white">Experience </h1>
+                        {["w3grads", "fitlife", "lpu", "club"].map((job) => (
+                            <motion.div
+                                key={job}
+                                onClick={() => updateSelected(job)}
+                                initial={{ scale: 1 }}
+                                animate={{
+                                    scale: selected === job ? [1, 1.05, 1] : 1,
+                                }}
+                                transition={{
+                                    duration: 1.5,
+                                    ease: "easeInOut",
+                                    repeat: selected === job ? Infinity : 0,
+                                    repeatType: "reverse",
+                                }}
+                                className="cursor-pointer flex items-center space-x-3 group"
+                            >
+                                <h2 className={clsx(
+                                    "text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-cyan-300 hover:to-teal-300 transition-all duration-300",
+                                    job === "w3grads" && "hover:from-indigo-300 hover:via-blue-300 hover:to-cyan-300",
+                                    job === "fitlife" && "hover:from-teal-300 hover:via-green-300 hover:to-emerald-300",
+                                    job === "lpu" && "hover:from-purple-300 hover:via-pink-300 hover:to-rose-300",
+                                    job === "club" && "hover:from-yellow-300 hover:via-orange-300 hover:to-red-300"
+                                )}>
+                                    {job === "w3grads" ? "W3Grads" : job === "fitlife" ? "FitLife Project" : job === "lpu" ? "Lovely Professional University" : "Student Club & Organizations"}
+                                </h2>
+                                <svg className="w-5 h-5 text-white/50 group-hover:text-white transition-colors duration-200 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </motion.div>
+                        ))}
+                    </div>
+                    <div className="py-12 pr-4 md:pr-16">
+                        <JobInformation key={selected} selected={selected} />
+                    </div>
+                </div>
             </div>
-            <div className="py-12 pr-4 md:pr-16">
-                <JobInformation key={selected} selected={selected} />
+
+            {/* Education Section */}
+            <div className="max-w-7xl mx-auto">
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-16">Education</h1>
+                <div className="relative">
+                    <div className="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-4">
+                        {/* LPU */}
+                        <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
+                            <div className="w-4 h-4 bg-red-500 rounded-full mb-4 relative z-10"></div>
+                            <div className="text-white/70 text-sm mb-2">2023 – Present</div>
+                            {/* Timeline segment starts right below year */}
+                            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-white/30 shadow-lg shadow-white/30"></div>
+                            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 mt-4">LOVELY PROFESSIONAL UNIVERSITY</h3>
+                            <div className="text-sm md:text-lg text-white/90 mb-2">Bachelor of Technology - Computer Science and Engineering</div>
+                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+                                <span className="text-yellow-400 font-semibold">CGPA: 8.13</span>
+                                <span className="text-white/70">Phagwara, Punjab</span>
+                            </div>
+                        </div>
+
+                        {/* DAV Public School */}
+                        <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
+                            <div className="w-4 h-4 bg-red-500 rounded-full mb-4 relative z-10"></div>
+                            <div className="text-white/70 text-sm mb-2">2021 – 2023</div>
+                            {/* Timeline segment starts right below year */}
+                            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-white/60 via-white/40 to-transparent shadow-lg shadow-white/30"></div>
+                            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 mt-4">DAV PUBLIC SCHOOL</h3>
+                            <div className="text-sm md:text-lg text-white/90 mb-2">12th</div>
+                            <div className="text-white/70">Patna, Bihar</div>
+                        </div>
+
+                        {/* U.P. Public School */}
+                        <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
+                            <div className="w-4 h-4 bg-red-500 rounded-full mb-4 relative z-10"></div>
+                            <div className="text-white/70 text-sm mb-2">2020 – 2021</div>
+                            {/* Timeline segment starts right below year */}
+                            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-48 h-0.5 bg-gradient-to-l from-white/60 via-white/40 to-transparent shadow-lg shadow-white/30"></div>
+                            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 mt-4">U.P. PUBLIC SCHOOL</h3>
+                            <div className="text-sm md:text-lg text-white/90 mb-2">10th</div>
+                            <div className="text-white/70">Suri, West Bengal</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -151,7 +192,13 @@ const JobInformation = ({ selected }) => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="bg-[#0E101B] bg-opacity-77 space-y-5 rounded-lg max-w-8xl p-6"
+            className={clsx(
+                "space-y-5 rounded-lg max-w-8xl p-6",
+                selected === "w3grads" && "bg-gradient-to-br from-red-900/30 to-red-800/20 border border-red-500/30",
+                selected === "fitlife" && "bg-gradient-to-br from-green-900/30 to-green-800/20 border border-green-500/30",
+                selected === "lpu" && "bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-500/30",
+                selected === "club" && "bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-500/30"
+            )}
         >
             <h2 className="text-white text-2xl font-bold">Job Responsibilities:</h2>
             <ul className="list-disc text-white pl-5">
@@ -159,11 +206,25 @@ const JobInformation = ({ selected }) => {
                     <li key={index} className="mt-2">{resp}</li>
                 ))}
             </ul>
+            
+            {/* Organization Image for w3grads - positioned after responsibilities */}
+            {selected === "w3grads" && (
+                <div className="flex justify-center my-8">
+                    <Image 
+                        src="/w3grad.png" 
+                        alt="W3Grads Certificate" 
+                        width={280} 
+                        height={180} 
+                        className="rounded-lg border-2 border-red-500/30 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                </div>
+            )}
+            
             <div className="p-4">
                 <h2 className="text-white text-2xl font-bold">Skills & Tools</h2>
                 <div className="flex flex-wrap justify-center gap-4 mt-4">
                     {jobInfo.tools.map((tool, index) => (
-                        <div key={index} className="flex gap-2 py-2 px-4 items-center justify-center border border-white border-opacity-30 rounded-md whitespace-nowrap">
+                        <div key={index} className="flex gap-2 py-2 px-4 items-center justify-center border border-white border-opacity-30 rounded-md whitespace-nowrap bg-white/5 backdrop-blur-sm">
                             <Image src={tool.img} alt={tool.name} width={30} height={30} />
                             <p className="text-white text-sm">{tool.name}</p>
                         </div>

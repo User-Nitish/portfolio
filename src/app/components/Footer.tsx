@@ -16,14 +16,7 @@ const Footer = () => {
         />
       </TransitionLink>
       
-      <ul className="flex flex-col md:flex-row gap-4 md:gap-5 text-sm items-center">
-        <li>
-          <a href="https://www.linkedin.com/in/nitish-kr-singh1/" className="text-white hover:underline">LinkedIn</a>
-        </li>
-        <li>
-          <a href="https://github.com/" className="text-white hover:underline">Github</a>
-        </li>
-      </ul>
+      
     </footer>
   )
 }

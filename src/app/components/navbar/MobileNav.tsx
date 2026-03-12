@@ -21,7 +21,10 @@ const MobileNav = ({ isMobileOpen, handleToggle }) => {
             <Link href="/about" className='nav-link text-white font-light' onClick={handleToggle}>About</Link>
           </li>
           <li>
-            <Link href="/experience" className='nav-link text-white font-light' onClick={handleToggle}>Experience</Link>
+            <Link href="/experience" className='nav-link text-white font-light' onClick={handleToggle}>Experience & Education </Link>
+          </li>
+          <li>
+            <Link href="/achievements" className='nav-link text-white font-light' onClick={handleToggle}>Achievements</Link>
           </li>
           <li>
             <Link href="/blog" className='nav-link text-white font-light' onClick={handleToggle}>Blog</Link>
@@ -41,7 +44,7 @@ const MobileNav = ({ isMobileOpen, handleToggle }) => {
           </li>
           <li>
             <a
-              href="https://drive.google.com/file/d/1dOahp9PVkeAiWlRMp6IMqa8iEREzwWDo/view?usp=sharing"
+              href="https://drive.google.com/file/d/1qFJdOxP63v8w81va7JuAXvh7dh8rKfZe/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className='px-4 py-2 text-white rounded-md bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 transition-colors duration-200 font-light'

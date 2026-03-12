@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='flex justify-between items-center py-5 px-8 md:px-16 sticky top-0 bg-[#0E101A] z-50'>
+      <nav className='flex justify-between items-center py-6 px-8 md:px-16 sticky top-0 bg-[#0E101A]/90 backdrop-blur-lg border-b border-white/10 z-50 shadow-lg'>
         <TransitionLink href="/">
           <Image
             src='/logo.svg'
@@ -28,7 +28,10 @@ const Navbar = () => {
             <TransitionLink href="/about" className='nav-link text-white font-light'>About</TransitionLink>
           </li>
           <li>
-            <TransitionLink href="/experience" className='nav-link text-white font-light'>Experience</TransitionLink>
+            <TransitionLink href="/experience" className='nav-link text-white font-light'>Experience & Education</TransitionLink>
+          </li>
+          <li>
+            <TransitionLink href="/achievements" className='nav-link text-white font-light'>Achievements</TransitionLink>
           </li>
           <li>
             <TransitionLink href="/blog" className='nav-link text-white font-light'>Blog</TransitionLink>
@@ -38,10 +41,10 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="https://drive.google.com/file/d/1dOahp9PVkeAiWlRMp6IMqa8iEREzwWDo/view?usp=sharing"
+              href="https://drive.google.com/file/d/1qFJdOxP63v8w81va7JuAXvh7dh8rKfZe/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className='px-4 py-2 text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-colors duration-200 font-light'
+              className='px-6 py-3 text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all duration-300 font-light shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105'
             >
               Resume
             </a>
