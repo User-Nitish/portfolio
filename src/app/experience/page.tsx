@@ -200,7 +200,7 @@ const JobInformation = ({ selected }) => {
         },
         lpu: {
             resp: [
-                "Pursuing Bachelor of Technology in Computer Science and Engineering with a current CGPA of 8.13 (as of 2023-Present).",
+                "Pursuing Bachelor of Technology in Computer Science and Engineering with a current CGPA of 8.17 (as of 2023-Present).",
                 "Developing expertise in full-stack web development, artificial intelligence, data structures, algorithms, and problem-solving through coursework and projects.",
                 "Actively participating in technical training programs, earning certifications in Cloud Computing (NPTEL), Responsive Web Design (freeCodeCamp), and specialized tech stack training.",
                 "Building a strong foundation in programming languages including JavaScript, Python, PHP, C++, and Java through academic and hands-on project work.",
