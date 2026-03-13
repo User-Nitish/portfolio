@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { EnvelopeIcon, DocumentDuplicateIcon, CheckIcon, CodeBracketIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid'
 import "../../globals.css"
 
@@ -51,26 +52,61 @@ const Contact = () => {
             
             <div className="relative z-10 max-w-7xl mx-auto px-4">
                 {/* Enhanced Header */}
-                <div className="text-center mb-20">
-                    <div className="inline-flex items-center space-x-2 mb-6">
-                        <SparklesIcon className="text-cyan-400 w-6 h-6 animate-pulse" />
+                <motion.div 
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-center mb-20"
+                >
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        className="inline-flex items-center space-x-2 mb-6"
+                    >
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        >
+                            <SparklesIcon className="text-cyan-400 w-6 h-6" />
+                        </motion.div>
                         <div className="h-px w-20 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
                         <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Get In Touch</span>
                         <div className="h-px w-20 bg-gradient-to-r from-cyan-400 via-transparent to-transparent"></div>
-                        <SparklesIcon className="text-cyan-400 w-6 h-6 animate-pulse" />
-                    </div>
-                    <h2 className="text-5xl md:text-7xl text-white font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
+                        <motion.div
+                            animate={{ rotate: -360 }}
+                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        >
+                            <SparklesIcon className="text-cyan-400 w-6 h-6" />
+                        </motion.div>
+                    </motion.div>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                        className="text-5xl md:text-7xl text-white font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient"
+                    >
                         Let's Build Something Great Together
-                    </h2>
-                    <p className="text-white/80 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed">
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        className="text-white/80 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed"
+                    >
                         Whether you're seeking innovative solutions or a fresh perspective, I'm here to bring expertise and passion to your team. Let's create something amazing.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
                 {/* Enhanced Cards Grid */}
                 <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                     {/* Email Card */}
-                    <div 
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -10 }}
                         className="group relative"
                         onMouseEnter={() => setHoveredCard('email')}
                         onMouseLeave={() => setHoveredCard(null)}
@@ -85,13 +121,6 @@ const Contact = () => {
                                     <div className="relative w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                                         <EnvelopeIcon className="text-white w-8 h-8" />
                                     </div>
-                                    {/* Orbiting stars */}
-                                    {hoveredCard === 'email' && (
-                                        <>
-                                            <StarIcon className="absolute -top-2 -right-2 text-yellow-400 w-4 h-4 animate-spin" />
-                                            <StarIcon className="absolute -bottom-2 -left-2 text-yellow-400 w-3 h-3 animate-spin delay-500" />
-                                        </>
-                                    )}
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2">Email</h3>
@@ -115,10 +144,15 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* LinkedIn Card */}
-                    <div 
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -10 }}
                         className="group relative"
                         onMouseEnter={() => setHoveredCard('linkedin')}
                         onMouseLeave={() => setHoveredCard(null)}
@@ -132,12 +166,6 @@ const Contact = () => {
                                     <div className="relative w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                                         <LinkedinIcon className="text-white w-8 h-8" />
                                     </div>
-                                    {hoveredCard === 'linkedin' && (
-                                        <>
-                                            <StarIcon className="absolute -top-2 -right-2 text-yellow-400 w-4 h-4 animate-spin" />
-                                            <StarIcon className="absolute -bottom-2 -left-2 text-yellow-400 w-3 h-3 animate-spin delay-500" />
-                                        </>
-                                    )}
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2">LinkedIn</h3>
@@ -156,10 +184,15 @@ const Contact = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* GitHub Card */}
-                    <div 
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -10 }}
                         className="group relative"
                         onMouseEnter={() => setHoveredCard('github')}
                         onMouseLeave={() => setHoveredCard(null)}
@@ -173,12 +206,6 @@ const Contact = () => {
                                     <div className="relative w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                                         <GithubIcon className="text-white w-8 h-8" />
                                     </div>
-                                    {hoveredCard === 'github' && (
-                                        <>
-                                            <StarIcon className="absolute -top-2 -right-2 text-yellow-400 w-4 h-4 animate-spin" />
-                                            <StarIcon className="absolute -bottom-2 -left-2 text-yellow-400 w-3 h-3 animate-spin delay-500" />
-                                        </>
-                                    )}
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2">GitHub</h3>
@@ -197,21 +224,38 @@ const Contact = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Enhanced Call to Action */}
-                <div className="mt-20 text-center">
-                    <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 p-1 rounded-full hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 group">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="mt-20 text-center"
+                >
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center space-x-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 p-1 rounded-full hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 group"
+                    >
                         <div className="bg-black px-8 py-4 rounded-full">
                             <p className="text-white text-lg font-medium">Ready to collaborate?</p>
                         </div>
                         <div className="px-8 py-4">
                             <p className="text-white text-lg font-bold group-hover:animate-pulse">Let's talk!</p>
                         </div>
-                    </div>
-                    <p className="text-white/60 text-sm mt-6">I'll get back to you within 24 hours</p>
-                </div>
+                    </motion.div>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+                        className="text-white/60 text-sm mt-6"
+                    >
+                        I'll get back to you within 24 hours
+                    </motion.p>
+                </motion.div>
             </div>
         </section>
     )

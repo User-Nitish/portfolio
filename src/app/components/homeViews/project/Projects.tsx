@@ -1,4 +1,6 @@
+'use client'
 import React from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import AnimatedBtn from './AnimatedBtn'
@@ -6,14 +8,33 @@ import AnimatedBtn from './AnimatedBtn'
 const Projects = () => {
     return (
         <section className='w-full py-24 px-4 relative'>
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 rounded-3xl"></div>
+            <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 rounded-3xl"
+            ></motion.div>
             <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl text-white mb-16 text-center font-medium bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Projects</h2>
+                <motion.h2 
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    className="text-4xl md:text-5xl text-white mb-16 text-center font-medium bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+                >
+                    Projects
+                </motion.h2>
                 
                 <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto'>
                     
                     {/* Card 1 - FitLife */}
-                    <div className='space-y-6 group'>
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -10 }}
+                        className='space-y-6 group'
+                    >
 
                         {/* Image */}
                         <div className="relative overflow-hidden rounded-xl">
@@ -54,10 +75,17 @@ const Projects = () => {
                             <AnimatedBtn href='https://github.com/PiyushRw/Fitlife.git' innerTxt="View Code" />
                         </div>
 
-                    </div>
+                    </motion.div>
 
                     {/* Card 2 - FarmFist */}
-                    <div className='space-y-6 group'>
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -10 }}
+                        className='space-y-6 group'
+                    >
 
                         {/* Image */}
                         <div className="relative overflow-hidden rounded-xl">
@@ -98,10 +126,17 @@ const Projects = () => {
                             <AnimatedBtn href='https://github.com/User-Nitish/FarmFist.git' innerTxt="View Code" />
                         </div>
 
-                    </div>
+                    </motion.div>
 
                     {/* Card 3 - FleetTrack */}
-                    <div className='space-y-6 group'>
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -10 }}
+                        className='space-y-6 group'
+                    >
 
                         {/* Image */}
                         <div className="relative overflow-hidden rounded-xl">
@@ -140,14 +175,25 @@ const Projects = () => {
                             <AnimatedBtn href='https://github.com/User-Nitish/Real-time-vehicle-tracking.git' innerTxt="View Code" />
                         </div>
 
-                    </div>
+                    </motion.div>
                 </div>
 
-                <div className='flex justify-center mt-16'>
-                    <Link href="/experience" className='text-white px-8 py-4 bg-gradient-to-r from-brand to-purple-600 rounded-xl font-semibold shadow-lg hover:shadow-brand/25 transition-all duration-300 transform hover:scale-105'>
-                        Learn more about my experience
-                    </Link>
-                </div>
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className='flex justify-center mt-16'
+                >
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <Link href="/experience" className='text-white px-8 py-4 bg-gradient-to-r from-brand to-purple-600 rounded-xl font-semibold shadow-lg hover:shadow-brand/25 transition-all duration-300 transform hover:scale-105 inline-block'>
+                            Learn more about my experience
+                        </Link>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     )

@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { TrophyIcon, CpuChipIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 
 
@@ -47,31 +48,72 @@ const Achievements = () => {
       
       <div>
         {/* Header */}
-        <div className="text-center py-16">
-          <div className="inline-flex items-center space-x-3 mb-8">
-            <TrophyIcon className="text-brand w-10 h-10" />
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center py-16"
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="inline-flex items-center space-x-3 mb-8"
+          >
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <TrophyIcon className="text-brand w-10 h-10" />
+            </motion.div>
             <div className="h-px w-32 bg-gradient-to-r from-transparent via-brand to-transparent"></div>
             <span className="text-brand text-sm font-semibold tracking-wider uppercase">Achievements</span>
             <div className="h-px w-32 bg-gradient-to-r from-brand via-transparent to-transparent"></div>
-            <TrophyIcon className="text-brand w-10 h-10" />
-          </div>
-          <h1 className="text-4xl md:text-5xl text-white mb-6 font-bold">
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <TrophyIcon className="text-brand w-10 h-10" />
+            </motion.div>
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="text-4xl md:text-5xl text-white mb-6 font-bold bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent"
+          >
             Achievements & Milestones
-          </h1>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed"
+          >
             A journey of professional growth, technical excellence, and continuous learning
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Achievement Cards */}
         <div className="max-w-5xl mx-auto px-4 pb-20">
           <div className="space-y-8">
             {achievements.map((achievement, index) => (
-              <div key={index} className="group relative">
+              <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 + index * 0.2, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
                 {/* Subtle background glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-brand/5 to-cyan-500/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                <div className="relative bg-boxes border border-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-brand/30">
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="relative bg-boxes border border-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-brand/30"
+                >
                   <div className="flex items-start gap-6">
                     {/* Organization Image/Collage */}
                     <div className="flex-shrink-0">
@@ -147,30 +189,58 @@ const Achievements = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
           
           {/* Bottom stats */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center space-x-8 bg-boxes border border-gray-700 px-8 py-4 rounded-full">
-              <div className="text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -3 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="inline-flex items-center space-x-8 bg-boxes border border-gray-700 px-8 py-4 rounded-full shadow-lg hover:shadow-2xl"
+            >
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
                 <div className="text-2xl font-bold text-brand">3+</div>
                 <div className="text-xs text-gray-400">Achievements</div>
-              </div>
+              </motion.div>
               <div className="w-px h-8 bg-gray-600"></div>
-              <div className="text-center">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
                 <div className="text-2xl font-bold text-cyan-400">150+</div>
                 <div className="text-xs text-gray-400">Problems Solved</div>
-              </div>
+              </motion.div>
               <div className="w-px h-8 bg-gray-600"></div>
-              <div className="text-center">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
                 <div className="text-2xl font-bold text-purple-400">2</div>
                 <div className="text-xs text-gray-400">Leadership Roles</div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

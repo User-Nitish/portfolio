@@ -38,51 +38,144 @@ const Introduction = () => {
 
         <div className='space-y-16'>
           {/* Enhanced Introduction Card */}
-          <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-            <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl p-10 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-2 max-w-6xl mx-auto">
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <CodeBracketIcon className="text-white w-6 h-6" />
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 shadow-2xl shadow-black/50 transform hover:scale-[1.01] transition-transform duration-300">
+              {/* Enhanced terminal header with tabs */}
+              <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800">
+                <div className="flex items-center px-2 pt-1">
+                  <div className="flex space-x-1">
+                    <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-all duration-200 cursor-pointer hover:scale-110"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-all duration-200 cursor-pointer hover:scale-110"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-all duration-200 cursor-pointer hover:scale-110"></div>
+                  </div>
+                  <div className="flex-1 flex justify-center">
+                    <div className="bg-gray-950 rounded-t-lg px-3 py-0.5">
+                      <span className="text-gray-400 text-xs font-mono">introduction.js</span>
+                    </div>
+                  </div>
+                  <div className="text-gray-500 text-xs font-mono px-2">UTF-8 | JavaScript</div>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">Introduction</h3>
+                
+                {/* File tabs */}
+                <div className="flex bg-gray-950 border-b border-gray-800">
+                  <div className="bg-gray-800 px-3 py-1 text-xs font-mono text-white border-r border-gray-700 flex items-center space-x-2">
+                    <span>📄</span>
+                    <span>introduction.js</span>
+                    <span className="text-gray-500 hover:text-gray-300 cursor-pointer">×</span>
+                  </div>
+                  <div className="px-3 py-1 text-xs font-mono text-gray-500 hover:text-gray-300 cursor-pointer flex items-center space-x-2">
+                    <span>📄</span>
+                    <span>mindset.md</span>
+                  </div>
+                  <div className="px-3 py-1 text-xs font-mono text-gray-500 hover:text-gray-300 cursor-pointer flex items-center space-x-2">
+                    <span>📄</span>
+                    <span>status.json</span>
+                  </div>
+                </div>
               </div>
               
-              <div className="space-y-6 text-white/90 text-lg md:text-xl leading-relaxed">
-                <div className="relative pl-8 border-l-2 border-cyan-500/30 hover:border-cyan-500/60 transition-colors duration-300">
-                  <p className="mb-2">
-                    <span className="text-cyan-400 font-semibold">I'm Nitish Kumar Singh</span>, a third-year B.Tech CSE student with a deep passion for technology and innovation. I'm driven by the endless possibilities that digital systems and intelligent applications bring to everyday life.
-                  </p>
+              {/* Terminal content with enhanced features */}
+              <div className="flex">
+                {/* Enhanced line numbers */}
+                <div className="bg-gray-950 px-2 py-3 text-gray-600 text-xs font-mono select-none border-r border-gray-800">
+                  <div className="hover:bg-gray-800 px-1 rounded">1</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">2</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">3</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">4</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">5</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">6</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">7</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">8</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">9</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">10</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">11</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">12</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">13</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">14</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">15</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">16</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">17</div>
+                  <div className="hover:bg-gray-800 px-1 rounded">18</div>
                 </div>
                 
-                <div className="relative pl-8 border-l-2 border-purple-500/30 hover:border-purple-500/60 transition-colors duration-300">
-                  <p className="mb-2">
-                    My technical skills center around <span className="text-purple-400 font-semibold">Full Stack Web Development and Artificial Intelligence</span>, with hands-on experience in the MERN stack (MongoDB, Express.js, React, Node.js). I create interactive and responsive web applications, working seamlessly across both frontend and backend to deliver smooth user experiences.
-                  </p>
+                <div className="flex-1 p-3 font-mono text-sm">
+                  <div className="mb-3">
+                    <span className="text-cyan-400">$</span>
+                    <span className="text-gray-300 ml-2">npm run dev:whoami</span>
+                  </div>
+                  
+                  <div className="mb-2 text-gray-500">
+                    <span className="text-green-400">✓</span> <span className="text-gray-400">Loading developer profile...</span>
+                  </div>
+                  
+                  <div className="mb-4 text-gray-300">
+                    <p><span className="text-purple-400 font-semibold">export</span> <span className="text-blue-400 font-semibold">default</span> <span className="text-cyan-400 font-semibold">class</span> <span className="text-green-400 font-semibold">Developer</span> <span className="text-purple-400 font-semibold">{`{`}</span></p>
+                    <p className="ml-4"><span className="text-blue-400 font-semibold">constructor</span>() {`{`}</p>
+                    <p className="ml-8"><span className="text-gray-500">/**</span></p>
+                    <p className="ml-8"><span className="text-gray-500"> * Initialize developer with core values</span></p>
+                    <p className="ml-8"><span className="text-gray-500"> * @param {'{'}Object{'}'} config - Developer configuration</span></p>
+                    <p className="ml-8"><span className="text-gray-500"> */</span></p>
+                    <p className="ml-8"><span className="text-purple-400">super</span>();</p>
+                    <p className="ml-8"><span className="text-purple-400">this.name</span> = <span className="text-green-400">'Nitish Kumar Singh'</span>;</p>
+                    <p className="ml-8"><span className="text-purple-400">this.philosophy</span> = <span className="text-yellow-400">`I'm not just a learner. I learn, implement, and if I fail, I learn and implement again until I succeed.`</span>;</p>
+                    <p className="ml-8"><span className="text-purple-400">this.playground</span> = [<span className="text-orange-400">'MERN stack'</span>, <span className="text-orange-400">'AI integration'</span>];</p>
+                    <p className="ml-8"><span className="text-purple-400">this.approach</span> = <span className="text-pink-400">'I don\\'t just write code—I craft experiences that solve real problems.'</span>;</p>
+                    <p className="ml-4">{`}`}</p>
+                    <p className="ml-4"></p>
+                    <p className="ml-4"><span className="text-blue-400 font-semibold">async</span> <span className="text-purple-400 font-semibold">getMindset</span>() {`{`}</p>
+                    <p className="ml-8"><span className="text-gray-500">// Embrace the journey of continuous improvement</span></p>
+                    <p className="ml-8"><span className="text-purple-400">return</span> <span className="text-purple-400">await</span> <span className="text-blue-400 font-semibold">this.failForward</span>();</p>
+                    <p className="ml-4">{`}`}</p>
+                    <p className="ml-4"></p>
+                    <p className="ml-4"><span className="text-blue-400 font-semibold">failForward</span>() {`{`}</p>
+                    <p className="ml-8"><span className="text-gray-500">/** Each bug is a lesson, each error is an opportunity **/</span></p>
+                    <p className="ml-8"><span className="text-purple-400">this.commitToCleanCode</span>();</p>
+                    <p className="ml-8"><span className="text-purple-400">this.buildScalableSolutions</span>();</p>
+                    <p className="ml-8"><span className="text-purple-400">this.keepLearning</span>();</p>
+                    <p className="ml-4">{`}`}</p>
+                    <p><span className="text-purple-400 font-semibold">{`}`}</span></p>
+                  </div>
+                  
+                  <div className="mb-3">
+                    <span className="text-cyan-400">$</span>
+                    <span className="text-gray-300 ml-2">cat status.json | jq '.current'</span>
+                  </div>
+                  
+                  <div className="mb-3">
+                    <p className="text-gray-500">{`{`}</p>
+                    <p className="ml-4 text-green-400">"status": <span className="text-yellow-400">"engineering_the_future"</span>,</p>
+                    <p className="ml-4 text-green-400">"progress": <span className="text-yellow-400">"one_line_at_a_time"</span>,</p>
+                    <p className="ml-4 text-green-400">"mindset": <span className="text-yellow-400">"always_building_always_growing"</span>,</p>
+                    <p className="ml-4 text-green-400">"next_challenge": <span className="text-yellow-400">"ready"</span></p>
+                    <p className="text-gray-500">{`}`}</p>
+                  </div>
+                  
+                  <div className="flex items-center">
+                    <span className="text-cyan-400 animate-pulse">$</span>
+                    <span className="text-gray-300 ml-2 animate-pulse">_</span>
+                  </div>
                 </div>
-                
-                <div className="relative pl-8 border-l-2 border-blue-500/30 hover:border-blue-500/60 transition-colors duration-300">
-                  <p className="mb-2">
-                    In addition to MERN, I have practical knowledge of <span className="text-blue-400 font-semibold">PHP</span>, which I use for backend development and server-side scripting. Coupled with my ability to work with relational databases like MySQL, it broadens my versatility as a developer.
-                  </p>
-                </div>
-                
-                <div className="relative pl-8 border-l-2 border-green-500/30 hover:border-green-500/60 transition-colors duration-300">
-                  <p className="mb-2">
-                    I also have a strong foundation in <span className="text-green-400 font-semibold">Data Structures and Algorithms (DSA)</span> using C++, which enhances my algorithmic thinking and problem-solving skills. Alongside this, I also hold basic knowledge of Java Programming language.
-                  </p>
-                </div>
-                
-                <div className="relative pl-8 border-l-2 border-orange-500/30 hover:border-orange-500/60 transition-colors duration-300">
-                  <p className="mb-2">
-                    Over the course of my academic journey, I've built a variety of projects—from dynamic websites and RESTful APIs to data-driven applications. I prioritize <span className="text-orange-400 font-semibold">clean coding practices</span>, logical structuring, and optimizing performance.
-                  </p>
-                </div>
-                
-                <div className="relative pl-8 border-l-2 border-pink-500/30 hover:border-pink-500/60 transition-colors duration-300">
-                  <p>
-                    A believer in <span className="text-pink-400 font-semibold">continuous growth</span>, I actively explore new technologies and engage with developer communities. I'm enthusiastic about contributing to impactful projects and learning through hands-on challenges.
-                  </p>
+              </div>
+              
+              {/* Enhanced terminal footer */}
+              <div className="bg-gray-800 px-3 py-1 border-t border-gray-700">
+                <div className="flex items-center justify-between text-xs text-gray-500">
+                  <div className="flex items-center space-x-3">
+                    <span className="flex items-center space-x-1">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                      <span>Connected</span>
+                    </span>
+                    <span>Lines: 18</span>
+                    <span>UTF-8</span>
+                    <span>JavaScript</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-gray-400">Git: main</span>
+                    <span className="flex items-center space-x-1">
+                      <span>⚡</span>
+                      <span>Dev Mode</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
