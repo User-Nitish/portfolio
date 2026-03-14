@@ -1,11 +1,52 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import { UserIcon, CodeBracketIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
 
 
 const Introduction = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const terminalRef = useRef(null);
+  const skillsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const skillsObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSkillsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (terminalRef.current) {
+      observer.observe(terminalRef.current);
+    }
+
+    if (skillsRef.current) {
+      skillsObserver.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (terminalRef.current) {
+        observer.unobserve(terminalRef.current);
+      }
+      if (skillsRef.current) {
+        skillsObserver.unobserve(skillsRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className='w-full py-24 md:py-32 relative overflow-hidden' id='introduction'>
@@ -39,7 +80,11 @@ const Introduction = () => {
         <div className='space-y-16'>
           {/* Enhanced Introduction Card */}
           <div className="max-w-3xl mx-auto">
-            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 shadow-2xl shadow-black/50 transform hover:scale-[1.01] transition-transform duration-300">
+            <div ref={terminalRef} className={`bg-gray-900 rounded-lg overflow-hidden border border-gray-800 shadow-2xl shadow-black/50 transform transition-all duration-1000 ease-out w-full ${
+              isVisible 
+                ? 'translate-y-0 opacity-100 scale-100' 
+                : 'translate-y-20 opacity-0 scale-95'
+            }`}>
               {/* Enhanced terminal header with tabs */}
               <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800">
                 <div className="flex items-center px-2 pt-1">
@@ -98,17 +143,17 @@ const Introduction = () => {
                   <div className="hover:bg-gray-800 px-1 rounded">18</div>
                 </div>
                 
-                <div className="flex-1 p-3 font-mono text-sm">
-                  <div className="mb-3">
+                <div className="flex-1 p-1 font-mono text-xs">
+                  <div>
                     <span className="text-cyan-400">$</span>
                     <span className="text-gray-300 ml-2">npm run dev:whoami</span>
                   </div>
                   
-                  <div className="mb-2 text-gray-500">
+                  <div className="text-gray-500">
                     <span className="text-green-400">✓</span> <span className="text-gray-400">Loading developer profile...</span>
                   </div>
                   
-                  <div className="mb-4 text-gray-300">
+                  <div className="text-gray-300">
                     <p><span className="text-purple-400 font-semibold">export</span> <span className="text-blue-400 font-semibold">default</span> <span className="text-cyan-400 font-semibold">class</span> <span className="text-green-400 font-semibold">Developer</span> <span className="text-purple-400 font-semibold">{`{`}</span></p>
                     <p className="ml-4"><span className="text-blue-400 font-semibold">constructor</span>() {`{`}</p>
                     <p className="ml-8"><span className="text-gray-500">/**</span></p>
@@ -136,12 +181,12 @@ const Introduction = () => {
                     <p><span className="text-purple-400 font-semibold">{`}`}</span></p>
                   </div>
                   
-                  <div className="mb-3">
+                  <div>
                     <span className="text-cyan-400">$</span>
                     <span className="text-gray-300 ml-2">cat status.json | jq '.current'</span>
                   </div>
                   
-                  <div className="mb-3">
+                  <div>
                     <p className="text-gray-500">{`{`}</p>
                     <p className="ml-4 text-green-400">"status": <span className="text-yellow-400">"engineering_the_future"</span>,</p>
                     <p className="ml-4 text-green-400">"progress": <span className="text-yellow-400">"one_line_at_a_time"</span>,</p>
@@ -158,7 +203,7 @@ const Introduction = () => {
               </div>
               
               {/* Enhanced terminal footer */}
-              <div className="bg-gray-800 px-3 py-1 border-t border-gray-700">
+              <div className="bg-gray-800 px-2 py-0.5 border-t border-gray-700">
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <div className="flex items-center space-x-3">
                     <span className="flex items-center space-x-1">
@@ -182,7 +227,11 @@ const Introduction = () => {
           </div>
 
           {/* Enhanced Skills Section */}
-          <div className="space-y-8">
+          <div ref={skillsRef} className={`space-y-8 transition-all duration-1000 ease-out ${
+            skillsVisible 
+              ? 'translate-y-0 opacity-100' 
+              : 'translate-y-20 opacity-0'
+          }`}>
             <div className="text-center">
               <div className="inline-flex items-center space-x-3">
                 <SparklesIcon className="text-cyan-400 w-6 h-6 animate-pulse" />
@@ -192,8 +241,8 @@ const Introduction = () => {
             </div>
             
             <div className="flex flex-col lg:flex-row gap-8 justify-center items-start">
-              <SkillContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} />
-              <FrameworkContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} />
+              <SkillContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} skillsVisible={skillsVisible} />
+              <FrameworkContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} skillsVisible={skillsVisible} />
             </div>
           </div>
         </div>
@@ -203,7 +252,7 @@ const Introduction = () => {
   );
 };
 
-const SkillContainer = ({ hoveredSkill, setHoveredSkill }) => {
+const SkillContainer = ({ hoveredSkill, setHoveredSkill, skillsVisible, delay = 0 }) => {
   const tech = [
     { name: "HTML", img: "/HTML.svg", color: "from-orange-500 to-red-500" },
     { name: "CSS", img: "/CSS.svg", color: "from-blue-500 to-cyan-500" },
@@ -215,7 +264,12 @@ const SkillContainer = ({ hoveredSkill, setHoveredSkill }) => {
   ];
 
   return (
-    <div className="group relative">
+    <div className={`group relative transition-all duration-1000 ease-out ${
+      skillsVisible 
+        ? 'translate-y-0 opacity-100' 
+        : 'translate-y-20 opacity-0'
+    }`}
+    style={{ transitionDelay: `${delay}ms` }}>
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
       <div className="relative bg-white/5 backdrop-blur-xl p-8 rounded-2xl max-w-md shadow-xl border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-1">
         <div className="flex items-center justify-center space-x-3 mb-8">
@@ -233,7 +287,7 @@ const SkillContainer = ({ hoveredSkill, setHoveredSkill }) => {
   );
 };
 
-const FrameworkContainer = ({ hoveredSkill, setHoveredSkill }) => {
+const FrameworkContainer = ({ hoveredSkill, setHoveredSkill, skillsVisible }) => {
   const tools = [
     { name: "React", img: "/REACT.svg", color: "from-cyan-500 to-blue-500" },
     { name: "NextJS", img: "/NEXT.svg", color: "from-gray-800 to-gray-600" },
@@ -248,7 +302,12 @@ const FrameworkContainer = ({ hoveredSkill, setHoveredSkill }) => {
   ];
 
   return (
-    <div className="group relative">
+    <div className={`group relative transition-all duration-1000 ease-out ${
+      skillsVisible 
+        ? 'translate-y-0 opacity-100' 
+        : 'translate-y-20 opacity-0'
+    }`}
+    style={{ transitionDelay: '200ms' }}>
       <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
       <div className="relative bg-white/5 backdrop-blur-xl p-8 rounded-2xl max-w-5xl shadow-xl border border-white/10 hover:border-purple-500/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-1">
         <div className="flex items-center justify-center space-x-3 mb-8">

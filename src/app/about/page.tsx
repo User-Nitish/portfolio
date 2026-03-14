@@ -100,36 +100,8 @@ const page = () => {
                         transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
                         className="space-y-6"
                     >
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="bg-gradient-to-br from-cyan-500/10 to-brand/10 backdrop-blur-md p-4 rounded-lg border border-cyan-500/20 hover:border-cyan-500/30 transition-all duration-300">
-                                <h3 className="font-semibold text-cyan-300 mb-2 flex items-center">
-                                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"/>
-                                    </svg>
-                                    Training
-                                </h3>
-                                <div className="text-gray-300 text-sm space-y-1">
-                                    <p>• MERN with Generative AI</p>
-                                    <p>• Google Gemini API</p>
-                                    <p>• AI-powered Applications</p>
-                                </div>
-                            </div>
-                            
-                            <div className="bg-gradient-to-br from-brand/10 to-purple-500/10 backdrop-blur-md p-4 rounded-lg border border-brand/20 hover:border-brand/30 transition-all duration-300">
-                                <h3 className="font-semibold text-brand mb-2 flex items-center">
-                                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                                    </svg>
-                                    Education
-                                </h3>
-                                <div className="text-gray-300 text-sm space-y-1">
-                                    <p>• B.Tech CSE (2023-Present)</p>
-                                    <p>• Lovely Professional University</p>
-                                    <p>• CGPA: 8.17/10</p>
-                                </div>
-                            </div>
-                            
-                            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-md p-4 rounded-lg border border-purple-500/20 hover:border-purple-500/30 transition-all duration-300">
+                        <div className="flex justify-center">
+                            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-md p-4 rounded-lg border border-purple-500/20 hover:border-purple-500/30 transition-all duration-300 w-full max-w-md">
                                 <h3 className="font-semibold text-purple-300 mb-2 flex items-center">
                                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
@@ -144,12 +116,12 @@ const page = () => {
                             </div>
                         </div>
                         
-                        <div className="bg-gradient-to-br from-brand/10 to-cyan-500/10 backdrop-blur-md p-4 rounded-lg border border-brand/20 hover:border-brand/30 transition-all duration-300">
+                        <div className="bg-gradient-to-br from-brand/10 to-cyan-500/10 backdrop-blur-md p-4 rounded-lg border border-brand/20 hover:border-brand/30 transition-all duration-300 mb-8">
                             <h3 className="font-semibold text-brand mb-2 flex items-center">
                                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.293a1 1 0 00-1.414 0L10 10.586 8.707 9.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 11.414l1.293 1.293a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clipRule="evenodd"/>
                                 </svg>
-                                Projects & Achievements
+                                Work & Accomplishments
                             </h3>
                             <div className="text-gray-300 text-sm space-y-1">
                                 <p>• Built 10+ full-stack web applications</p>
@@ -171,8 +143,8 @@ const page = () => {
                                className='px-6 py-2.5 bg-brand hover:bg-brand/80 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 flex items-center'
                                target="_blank"
                                rel="noopener noreferrer">
-                                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                                 </svg>
                                 LinkedIn
                             </a>
@@ -188,7 +160,7 @@ const page = () => {
                         </div>
                         
                         <p className="text-gray-400 text-sm">
-                            📧 <span className="text-cyan-400">nitishkumarsingh@example.com</span>
+                            📧 <span className="text-cyan-400">ns24492449@gmail.com</span>
                         </p>
                         <p className="text-gray-500 text-xs mt-2">
                             Let's build something amazing together!
