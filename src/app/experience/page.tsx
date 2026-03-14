@@ -53,7 +53,7 @@ const Page = () => {
                             <h3 className="text-xl md:text-2xl font-bold text-white mb-2 mt-4">LOVELY PROFESSIONAL UNIVERSITY</h3>
                             <div className="text-sm md:text-lg text-blue-100 mb-3">Bachelor of Technology - Computer Science and Engineering</div>
                             <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
-                                <span className="text-yellow-400 font-semibold bg-yellow-400/20 px-3 py-1 rounded-full text-sm">CGPA: 8.13</span>
+                                <span className="text-yellow-400 font-semibold bg-yellow-400/20 px-3 py-1 rounded-full text-sm">CGPA: 8.17</span>
                                 <span className="text-blue-200/80">📍 Phagwara, Punjab</span>
                             </div>
                         </motion.div>

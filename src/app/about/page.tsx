@@ -83,7 +83,7 @@ const page = () => {
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="w-2 h-2 bg-brand rounded-full"></span>
-                                        <span className="text-gray-300 text-sm">AI Integration: Gemini API, ML models, NLP</span>
+                                        <span className="text-gray-300 text-sm">AI Integration: Genrative AI, Chatbots, APIs</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
@@ -110,7 +110,7 @@ const page = () => {
                                 </h3>
                                 <div className="text-gray-300 text-sm space-y-1">
                                     <p>• Location: Bihar, India</p>
-                                    <p>• Languages: English, Hindi</p>
+                                    <p>• Languages: English, Hindi and Bengali</p>
                                     <p>• Available for freelance</p>
                                 </div>
                             </div>
@@ -124,10 +124,10 @@ const page = () => {
                                 Work & Accomplishments
                             </h3>
                             <div className="text-gray-300 text-sm space-y-1">
-                                <p>• Built 10+ full-stack web applications</p>
+                                <p>• Built 3+ full-stack web applications</p>
                                 <p>• Integrated AI features in multiple projects</p>
                                 <p>• Active open-source contributor</p>
-                                <p>• Problem-solving enthusiast (LeetCode, HackerRank)</p>
+                                <p>• Problem-solving enthusiast (LeetCode, GFG, etc.)</p>
                             </div>
                         </div>
                     </motion.div>
