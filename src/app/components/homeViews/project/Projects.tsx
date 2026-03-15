@@ -102,7 +102,7 @@ const Projects = () => {
                         {/* Information */}
                         <div className='space-y-4 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10'>
                             <h3 className='text-2xl text-white font-bold text-center'> FarmFist</h3>
-                            <p className='text-white text-sm text-center font-medium'>Coming Soon</p>
+                            <p className='text-white text-sm text-center font-medium'>Nov'25 - Dec'25</p>
                             <div className='flex flex-wrap gap-2 text-white justify-center'>
                                 <span className='py-1 px-3 rounded-full border border-white/30 text-xs bg-white/10 backdrop-blur-sm'>MongoDB</span>
                                 <span className='py-1 px-3 rounded-full border border-white/30 text-xs bg-white/10 backdrop-blur-sm'>Express.js</span>

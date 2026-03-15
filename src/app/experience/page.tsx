@@ -226,12 +226,11 @@ const JobInformation = ({ selected }) => {
                 "Coordinated with senior faculty, professionals, and alumni to arrange guest lectures, networking events, and collaborative projects that enriched the learning experience of all club members."
             ],
             tools: [
-                { name: "Leadership", img: "/HTML.svg" },
-                { name: "Teaching", img: "/JS.svg" },
-                { name: "Mentoring", img: "/REACT.svg" },
-                { name: "Teamwork", img: "/NODE.svg" },
-                { name: "Events", img: "/NEXT.svg" },
-                { name: "Community", img: "/EXPRESS.svg" },
+                { name: "Leadership", img: "/leadership.jpg" },
+                { name: "Mentoring", img: "/mentoring.jpg" },
+                { name: "Teamwork", img: "/teamwork.jpg" },
+                { name: "Events", img: "/events.jpg" },
+                { name: "Community", img: "/community.jpg" },
             ]
         }
     };
@@ -277,7 +276,13 @@ const JobInformation = ({ selected }) => {
                 <div className="flex flex-wrap justify-center gap-3 mt-3">
                     {jobInfo.tools.map((tool, index) => (
                         <div key={index} className="flex gap-2 py-1 px-3 items-center justify-center border border-white border-opacity-30 rounded-md whitespace-nowrap bg-white/5 backdrop-blur-sm">
-                            <Image src={tool.img} alt={tool.name} width={30} height={30} />
+                            <Image 
+    src={tool.img || "/placeholder.svg"} 
+    alt={tool.name} 
+    width={30} 
+    height={30} 
+    className="rounded-full object-contain"
+/>
                             <p className="text-white text-xs">{tool.name}</p>
                         </div>
                     ))}
