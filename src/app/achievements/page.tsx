@@ -15,7 +15,7 @@ const Achievements = () => {
       color: "text-brand",
       bgColor: "bg-boxes",
       borderColor: "border-brand/30",
-      description: "Leading operational strategies and managing organizational activities",
+      description: "Commanding the ship as COO, steering student organizations to greatness while orchestrating epic campus adventures and building unforgettable student experiences!",
       period: "2024 - Present",
       image: "/aarambh.png"
     },
@@ -26,7 +26,7 @@ const Achievements = () => {
       color: "text-brand",
       bgColor: "bg-boxes",
       borderColor: "border-brand/30",
-      description: "Leading technical initiatives and organizing professional development activities",
+      description: "Reigned as tech club president, transforming coding education into an exciting journey through epic battles, mind-blowing webinars, and knowledge-sharing sessions that inspire future tech leaders!",
       period: "2023 - 2024",
       image: "/zillion.png"
     },
@@ -37,7 +37,7 @@ const Achievements = () => {
       color: "text-brand",
       bgColor: "bg-boxes",
       borderColor: "border-brand/30",
-      description: "Solved 150+ coding problems on LeetCode and many more on other platforms",
+      description: "Conquered 150+ coding challenges across multiple platforms, transforming from code warrior to algorithm master while crushing problems like a coding ninja!",
       period: "Ongoing",
       platforms: ["LeetCode", "GeeksforGeeks", "InterviewBit", "HackerRank"]
     }

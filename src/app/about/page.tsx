@@ -59,10 +59,10 @@ const page = () => {
                             >
                                 <h2 className="text-xl md:text-2xl font-semibold text-white mb-3">Hello, I'm Nitish</h2>
                                 <p className="text-gray-300 leading-relaxed mb-3">
-                                    A third-year B.Tech CSE student at Lovely Professional University, passionate about building innovative digital solutions that make a difference. Located in Bihar, India, I'm dedicated to continuous learning and creating impactful technology.
+                                    A digital architect and code craftsman, transforming caffeine and curiosity into innovative web solutions. Currently navigating the exciting world of B.Tech CSE at LPU, where I turn complex problems into elegant code.
                                 </p>
                                 <p className="text-gray-400 text-sm leading-relaxed">
-                                    With a strong foundation in computer science and practical industry experience, I strive to bridge the gap between academic knowledge and real-world applications through hands-on project development.
+                                    I believe great code is like a good story - it should be clear, engaging, and leave a lasting impression. When I'm not debugging, you'll find me exploring the latest AI trends or planning the next big project.
                                 </p>
                             </motion.div>
 
@@ -72,22 +72,22 @@ const page = () => {
                                 transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                                 className="bg-boxes backdrop-blur-md p-6 rounded-xl border border-brand/20 hover:border-brand/30 transition-all duration-300"
                             >
-                                <h2 className="text-xl md:text-2xl font-semibold text-white mb-3">My Expertise</h2>
+                                <h2 className="text-xl md:text-2xl font-semibold text-white mb-3">My Digital Superpowers</h2>
                                 <p className="text-gray-300 leading-relaxed mb-3">
-                                    Specializing in <span className="text-brand font-medium">Full Stack Development</span> and <span className="text-purple-400 font-medium">AI Integration</span>. I build robust applications using the MERN stack and modern AI technologies.
+                                    I speak fluent <span className="text-brand font-medium">JavaScript</span>, dance with <span className="text-purple-400 font-medium">AI algorithms</span>, and build digital experiences that users actually love to interact with.
                                 </p>
                                 <div className="space-y-2 mt-4">
                                     <div className="flex items-center gap-2">
                                         <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
-                                        <span className="text-gray-300 text-sm">Web Development: React, Node.js, Express, MongoDB</span>
+                                        <span className="text-gray-300 text-sm">Web Wizardry: React, Node.js, Express, MongoDB</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="w-2 h-2 bg-brand rounded-full"></span>
-                                        <span className="text-gray-300 text-sm">AI Integration: Genrative AI, Chatbots, APIs</span>
+                                        <span className="text-gray-300 text-sm">AI Magic: Generative AI, Smart Chatbots, APIs</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                        <span className="text-gray-300 text-sm">Programming: C++, JavaScript, Python, PHP</span>
+                                        <span className="text-gray-300 text-sm">Code Languages: C++, JavaScript, Python, PHP</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -106,26 +106,26 @@ const page = () => {
                                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                                     </svg>
-                                    Details
+                                    Where I Hang Out
                                 </h3>
                                 <div className="text-gray-300 text-sm space-y-1">
-                                    <p>• Location: Bihar, India</p>
-                                    <p>• Languages: Comfortable in English, Hindi and Bengali</p>
-                                    <p>• Available for freelance as well as full-time opportunities in India</p>
+                                    <p>• 📍 Based in beautiful Bihar, India</p>
+                                    <p>• 🗣️ Fluent in English, Hindi, and Bengali tech-talk</p>
+                                    <p>• 💼 Open for freelance adventures and full-time missions</p>
                                 </div>
                             </div>
                             
                             <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-md p-4 rounded-lg border border-green-500/20 hover:border-green-500/30 transition-all duration-300 w-full lg:max-w-md">
                                 <h3 className="font-semibold text-green-300 mb-2 flex items-center">
                                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.0025 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
                                     </svg>
-                                    Training
+                                    Learning Adventures
                                 </h3>
                                 <div className="text-gray-300 text-sm space-y-1">
-                                    <p>• Summer Training from W3 Grads</p>
-                                    <p>• Mentored by industry corporate professionals</p>
-                                    <p>• Collaborated remotely with other student developers on projects</p>
+                                    <p>• 🚀 Leveled up with W3 Grads summer training</p>
+                                    <p>• 👥 Guided by industry wizards and coding mentors</p>
+                                    <p>• 🤝 Collaborated on cool projects with fellow code warriors</p>
                                 </div>
                             </div>
                         </div>
@@ -135,13 +135,13 @@ const page = () => {
                                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.293a1 1 0 00-1.414 0L10 10.586 8.707 9.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 11.414l1.293 1.293a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" clipRule="evenodd"/>
                                 </svg>
-                                Work & Accomplishments
+                                Epic Quests Completed
                             </h3>
                             <div className="text-gray-300 text-sm space-y-1">
-                                <p>• Built 3+ full-stack web applications</p>
-                                <p>• Integrated AI features in multiple projects</p>
-                                <p>• Active open-source contributor</p>
-                                <p>• Problem-solving enthusiast (LeetCode, GFG, etc.)</p>
+                                <p>• 🏗️ Crafted 3+ full-stack web masterpieces</p>
+                                <p>• 🤖 Wove AI magic into multiple digital creations</p>
+                                <p>• 🌟 Contributed to the open-source universe</p>
+                                <p>• 🧩 Puzzle-solving champion (LeetCode warrior)</p>
                             </div>
                         </div>
                     </motion.div>

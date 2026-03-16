@@ -62,10 +62,10 @@ const Projects = () => {
                             </div>
                             <div className='space-y-2 text-white text-xs md:text-sm'>
                                 <p>
-                                    <span className='font-semibold text-brand'>Full-stack fitness platform</span> using MERN with AI integration for personalized workout and meal plans.
+                                    <span className='font-semibold text-brand'>Your personal fitness genie</span> - MERN stack magic that crafts workout and meal plans just for you.
                                 </p>
                                 <p>
-                                    <span className='font-semibold text-brand'>AI-powered features</span> including Google Gemini API chat assistant, YouTube video integration, and food image tracking.
+                                    <span className='font-semibold text-brand'>AI-powered workout buddy</span> featuring Gemini chat, YouTube fitness videos, and smart food tracking.
                                 </p>
                             </div>
                         </div>
@@ -113,10 +113,10 @@ const Projects = () => {
                             </div>
                             <div className='space-y-2 text-white text-xs md:text-sm'>
                                 <p>
-                                    <span className='font-semibold text-brand'>Biosecurity management portal</span> empowering farmers with complete control over pig and poultry farm safety protocols.
+                                    <span className='font-semibold text-brand'>Farm safety superhero platform</span> giving farmers superpowers to protect their pig and poultry farms.
                                 </p>
                                 <p>
-                                    <span className='font-semibold text-brand'>Centralized interface</span> for monitoring, managing, and implementing comprehensive farm safety measures in real-time.
+                                    <span className='font-semibold text-brand'>One-stop command center</span> for real-time farm monitoring, safety protocols, and happy, healthy animals.
                                 </p>
                             </div>
                         </div>
@@ -162,10 +162,10 @@ const Projects = () => {
                             </div>
                             <div className='space-y-2 text-white text-xs md:text-sm'>
                                 <p>
-                                    <span className='font-semibold text-brand'>Real-time vehicle tracking</span> application for business fleets and personal vehicles with live map functionality.
+                                    <span className='font-semibold text-brand'>GPS wizard for vehicles</span> - Real-time tracking magic that turns fleet management into child's play.
                                 </p>
                                 <p>
-                                    <span className='font-semibold text-brand'>30% efficiency boost</span> through streamlined logistics, optimized fleet operations, and advanced monitoring capabilities.
+                                    <span className='font-semibold text-brand'>Supercharged logistics</span> delivering 30% efficiency boost and making delivery drivers' lives easier.
                                 </p>
                             </div>
                         </div>

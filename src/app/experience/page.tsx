@@ -38,21 +38,96 @@ const Page = () => {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="relative"
                 >
-                    <div className="flex flex-col md:flex-row justify-between items-start space-y-12 md:space-y-0 md:space-x-6">
+                    {/* Timeline Above Cards */}
+                    <div className="relative mb-20">
+                        {/* Main Timeline Line */}
+                        <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-green-500/30 transform -translate-y-1/2">
+                            <div className="absolute inset-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 blur-sm"></div>
+                        </div>
+                        
+                        {/* Timeline Progress Animation */}
+                        <motion.div 
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
+                            className="absolute top-1/2 left-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 transform -translate-y-1/2 origin-left"
+                        ></motion.div>
+                        
+                        {/* Timeline Dots */}
+                        <div className="relative flex justify-between items-center px-8">
+                            {/* LPU Timeline Dot */}
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                                whileHover={{ scale: 1.2 }}
+                                className="relative w-1/3 flex justify-center"
+                            >
+                                <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full shadow-lg shadow-blue-400/50 relative z-10">
+                                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30"></div>
+                                    <div className="absolute inset-1 bg-white rounded-full opacity-90"></div>
+                                    <div className="absolute inset-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
+                                </div>
+                            </motion.div>
+
+                            {/* DAV Timeline Dot */}
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                                whileHover={{ scale: 1.2 }}
+                                className="relative w-1/3 flex justify-center"
+                            >
+                                <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full shadow-lg shadow-purple-400/50 relative z-10">
+                                    <div className="absolute inset-0 w-6 h-6 bg-purple-400 rounded-full animate-ping opacity-30"></div>
+                                    <div className="absolute inset-1 bg-white rounded-full opacity-90"></div>
+                                    <div className="absolute inset-2 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full"></div>
+                                </div>
+                            </motion.div>
+
+                            {/* U.P. Timeline Dot */}
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                                whileHover={{ scale: 1.2 }}
+                                className="relative w-1/3 flex justify-center"
+                            >
+                                <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full shadow-lg shadow-green-400/50 relative z-10">
+                                    <div className="absolute inset-0 w-6 h-6 bg-green-400 rounded-full animate-ping opacity-30"></div>
+                                    <div className="absolute inset-1 bg-white rounded-full opacity-90"></div>
+                                    <div className="absolute inset-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full"></div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                    
+                    <div className="flex flex-col md:flex-row gap-8 px-8">
                         {/* LPU */}
                         <motion.div 
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                             whileHover={{ scale: 1.05, y: -5 }}
-                            className="relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-blue-900/20 to-cyan-900/10 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+                            className="flex-[1.2] relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-blue-900/20 to-cyan-900/10 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 h-80"
                         >
                             <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mb-4 relative z-10 shadow-lg shadow-blue-400/50"></div>
                             <div className="text-blue-300 text-sm font-semibold mb-2">2023 – Present</div>
                             <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent shadow-lg shadow-blue-400/30"></div>
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 mt-4">LOVELY PROFESSIONAL UNIVERSITY</h3>
-                            <div className="text-sm md:text-lg text-blue-100 mb-3">Bachelor of Technology - Computer Science and Engineering</div>
-                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+                            <div className="flex items-center mb-4">
+                                <Image
+                                    src="/lpu.png"
+                                    alt="LPU Logo"
+                                    width={100}
+                                    height={100}
+                                    className="rounded-lg object-cover mr-4"
+                                />
+                                <div>
+                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">LOVELY PROFESSIONAL UNIVERSITY</h3>
+                                    <div className="text-sm md:text-lg text-blue-100 mb-3">BTech - Computer Science and Engineering</div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-auto">
                                 <span className="text-yellow-400 font-semibold bg-yellow-400/20 px-3 py-1 rounded-full text-sm">CGPA: 8.17</span>
                                 <span className="text-blue-200/80">📍 Phagwara, Punjab</span>
                             </div>
@@ -64,14 +139,26 @@ const Page = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                             whileHover={{ scale: 1.05, y: -5 }}
-                            className="relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-purple-900/20 to-indigo-900/10 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300"
+                            className="flex-1 relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-purple-900/20 to-indigo-900/10 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 h-80"
                         >
                             <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full mb-4 relative z-10 shadow-lg shadow-purple-400/50"></div>
                             <div className="text-purple-300 text-sm font-semibold mb-2">2021 – 2023</div>
                             <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400/60 to-transparent shadow-lg shadow-purple-400/30"></div>
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 mt-4">DAV PUBLIC SCHOOL</h3>
-                            <div className="text-sm md:text-lg text-purple-100 mb-3">12th Grade</div>
-                            <div className="text-purple-200/80">📍 Patna, Bihar</div>
+                            <div className="flex items-center mb-4">
+                                <Image
+                                    src="/dav.png"
+                                    alt="DAV Logo"
+                                    width={90}
+                                    height={90}
+                                    className="rounded-lg object-cover mr-4"
+                                />
+                                <div>
+                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">D.A.V. PUBLIC SCHOOL</h3>
+                                    <div className="text-sm md:text-lg text-purple-100 mb-3">Senior Secondary - 12th Grade</div>
+                                </div>
+                            </div>
+                            <div className="flex-1"></div>
+                            <div className="text-purple-200/80 mt-auto">📍 Patna, Bihar</div>
                         </motion.div>
 
                         {/* U.P. Public School */}
@@ -80,14 +167,28 @@ const Page = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                             whileHover={{ scale: 1.05, y: -5 }}
-                            className="relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-green-900/20 to-emerald-900/10 backdrop-blur-sm border border-green-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300"
+                            className="flex-1 relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-green-900/20 to-emerald-900/10 backdrop-blur-sm border border-green-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 h-80"
                         >
                             <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mb-4 relative z-10 shadow-lg shadow-green-400/50"></div>
                             <div className="text-green-300 text-sm font-semibold mb-2">2020 – 2021</div>
                             <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-green-400/60 to-transparent shadow-lg shadow-green-400/30"></div>
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 mt-4">U.P. PUBLIC SCHOOL</h3>
-                            <div className="text-sm md:text-lg text-green-100 mb-3">10th Grade</div>
-                            <div className="text-green-200/80">📍 Suri, West Bengal</div>
+                            <div className="flex items-center mb-4">
+                                <Image
+                                    src="/up.png"
+                                    alt="U.P. Board Logo"
+                                    width={100}
+                                    height={100}
+                                    className="rounded-lg object-cover mr-4"
+                                />
+                                <div>
+                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">U.P. PUBLIC SCHOOL</h3>
+                                    <div className="text-sm md:text-lg text-green-100 mb-3">Primary & Secondary Education</div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-auto">
+                                <span className="text-green-300 font-semibold bg-green-400/20 px-3 py-1 rounded-full text-sm">10th Grade</span>
+                                <span className="text-green-200/80">📍 Suri, West Bengal</span>
+                            </div>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -164,12 +265,12 @@ const JobInformation = ({ selected }) => {
     const jobData = {
         w3grads: {
             resp: [
-                "Completed intensive MERN (MongoDB, Express.js, React, Node.js) with Generative AI training focusing on full-stack web development fundamentals.",
-                "Built multiple React applications including dynamic to-do lists and data-driven applications as part of structured assignments and hands-on projects.",
-                "Worked extensively with REST APIs, integrating them across different pages to enable seamless data transfer, API communication patterns, and dynamic content rendering.",
-                "Engaged in daily Scrum meetings to provide project updates, resolve coding issues, clarify technical doubts with mentors, and collaborate with fellow developers.",
-                "Integrated AI-generated data and Google Gemini API to enhance features and user experience in web applications, demonstrating practical AI implementation skills.",
-                "Earned Full Stack MERN with Gen AI certification (ID: FLAMES25MERN1898) and MongoDB & ICT Academy Skill-a-thon certificate."
+                "Dived deep into the MERN universe with Generative AI superpowers, mastering the art of full-stack web wizardry.",
+                "Crafted interactive React masterpieces including dynamic to-do apps and data-driven wonders that actually work!",
+                "Became an API whisperer, making REST APIs dance and sing across pages for seamless data magic.",
+                "Rocked daily Scrum ceremonies like a coding ninja, squashing bugs and sharing wisdom with fellow developers.",
+                "Wove AI magic with Google Gemini API, turning ordinary apps into intelligent digital companions.",
+                "Scored shiny certifications: Full Stack MERN with Gen AI badge and MongoDB Skill-a-thon champion trophy!"
             ],
             tools: [
                 { name: "React", img: "/REACT.svg" },
@@ -182,12 +283,12 @@ const JobInformation = ({ selected }) => {
         },
         fitlife: {
             resp: [
-                "Engineered a full-stack fitness and nutrition companion platform using MERN stack (MongoDB, Express.js, React, Node.js) integrating generative AI capabilities.",
-                "Implemented customized daily workout and meal plan generation based on user input of body metrics and preferences, improving user engagement by 35%.",
-                "Integrated YouTube Data API for instructional workout videos, food image upload functionality with dietary tracking, and dynamic plan/profile updates based on real-time user progress.",
-                "Embedded an AI-powered chat assistant leveraging Google Gemini API to provide personalized workout advice, nutritional guidance, and motivational support.",
-                "Developed responsive UI using React and Tailwind CSS ensuring seamless experience across all devices and screen sizes.",
-                "Deployed and maintained production-ready application with optimized performance and scalability considerations."
+                "Engineered a fitness revolution with FitLife - a MERN stack powerhouse that makes workouts smart and nutrition fun!",
+                "Created AI-powered workout and meal plans that adapt to users' bodies, boosting engagement by a whopping 35%!",
+                "Integrated YouTube fitness gurus and food tracking magic, making healthy living actually enjoyable.",
+                "Built an AI chat buddy using Google Gemini that's like having a personal trainer in your pocket.",
+                "Designed a stunningly responsive interface that looks gorgeous on phones, tablets, and giant screens.",
+                "Launched a production-ready app that runs smoother than a freshly oiled machine!"
             ],
             tools: [
                 { name: "React", img: "/REACT.svg" },
@@ -200,12 +301,12 @@ const JobInformation = ({ selected }) => {
         },
         lpu: {
             resp: [
-                "Pursuing Bachelor of Technology in Computer Science and Engineering with a current CGPA of 8.17 (as of 2023-Present).",
-                "Developing expertise in full-stack web development, artificial intelligence, data structures, algorithms, and problem-solving through coursework and projects.",
-                "Actively participating in technical training programs, earning certifications in Cloud Computing (NPTEL), Responsive Web Design (freeCodeCamp), and specialized tech stack training.",
-                "Building a strong foundation in programming languages including JavaScript, Python, PHP, C++, and Java through academic and hands-on project work.",
-                "Gaining practical experience in REST APIs, responsive web design, database management (MySQL, MongoDB), and modern frontend frameworks.",
-                "Committed to continuous learning and staying updated with latest technologies and industry best practices in web development and AI."
+                "On an epic quest for B.Tech glory in Computer Science, currently rocking a solid 8.17 CGPA!",
+                "Mastering the digital arts of full-stack development, AI wizardry, and algorithmic problem-solving.",
+                "Collecting shiny certifications like a boss: Cloud Computing (NPTEL), Responsive Web Design (freeCodeCamp), and more!",
+                "Becoming fluent in multiple programming languages - JavaScript, Python, PHP, C++, and Java - like a coding polyglot!",
+                "Building real-world skills in REST APIs, responsive design, and database management while staying caffeinated.",
+                "On a never-ending adventure to stay ahead of the tech curve and learn all the cool new things!"
             ],
             tools: [
                 { name: "JavaScript", img: "/JS.svg" },
@@ -218,12 +319,12 @@ const JobInformation = ({ selected }) => {
         },
         club: {
             resp: [
-                "Chief Operating Officer (COO) at Arambh Organization, Division of Student Organizations, LPU (Mar'25 - Present)",
-                "Led a dynamic group of 27 members to organize and manage non-technical events including movie screenings, quizzes, and cultural programs across campus.",
-                "Club President at Zillion: Team L&T under Center of Professional Enhancement, LPU (Feb'24 - May'25)",
-                "Organized and conducted coding competitions, technical webinars, and seminars, leading a team of 30 people to foster and enhance developer skills.",
-                "Mentored junior students in web development, DSA, and AI concepts while providing guidance on career development and technical skill advancement.",
-                "Coordinated with senior faculty, professionals, and alumni to arrange guest lectures, networking events, and collaborative projects that enriched the learning experience of all club members."
+                "Commanding the ship as COO at Arambh Organization, steering student organizations to greatness (Mar'25 - Present)",
+                "Led an awesome squad of 27 members, turning campus life into an adventure with movie nights, brain-teasing quizzes, and cultural celebrations!",
+                "Reigned as Club President at Zillion: Team L&T, transforming tech education into an exciting journey (Feb'24 - May'25)",
+                "Orchestrated epic coding battles, tech webinars, and knowledge-sharing sessions, leading a dream team of 30 future tech leaders!",
+                "Became a coding sensei, guiding junior devs through the mystical realms of web development, DSA, and AI wisdom.",
+                "Connected students with industry wizards and tech gurus, creating a bridge between classroom learning and real-world magic!"
             ],
             tools: [
                 { name: "Leadership", img: "/leadership.jpg" },

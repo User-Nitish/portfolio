@@ -86,7 +86,7 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                         className="text-5xl md:text-7xl text-white font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient"
                     >
-                        Let's Build Something Great Together
+                        Ready to Code Magic Together?
                     </motion.h2>
                     <motion.p 
                         initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                         className="text-white/80 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed"
                     >
-                        Whether you're seeking innovative solutions or a fresh perspective, I'm here to bring expertise and passion to your team. Let's create something amazing.
+                        Got a brilliant idea that needs some digital wizardry? I'm your go-to code alchemist! Let's transform those wild concepts into jaw-dropping reality.
                     </motion.p>
                 </motion.div>
 
@@ -123,7 +123,7 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Email</h3>
+                                    <h3 className="text-xl font-bold text-white mb-2">Digital Mailbox</h3>
                                     <p className="text-white/70 text-sm">ns24492449@gmail.com</p>
                                 </div>
                                 <div
@@ -168,8 +168,8 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">LinkedIn</h3>
-                                    <p className="text-white/70 text-sm">Connect with me</p>
+                                    <h3 className="text-xl font-bold text-white mb-2">Professional Playground</h3>
+                                    <p className="text-white/70 text-sm">Let's network and grow!</p>
                                 </div>
                                 <a 
                                     href="https://www.linkedin.com/in/nitish-kr-singh1/" 
@@ -208,8 +208,8 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">GitHub</h3>
-                                    <p className="text-white/70 text-sm">Check my work</p>
+                                    <h3 className="text-xl font-bold text-white mb-2">Code Kingdom</h3>
+                                    <p className="text-white/70 text-sm">Explore my digital creations</p>
                                 </div>
                                 <a 
                                     href="https://github.com/" 
@@ -241,10 +241,10 @@ const Contact = () => {
                         className="inline-flex items-center space-x-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 p-1 rounded-full hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 group"
                     >
                         <div className="bg-black px-8 py-4 rounded-full">
-                            <p className="text-white text-lg font-medium">Ready to collaborate?</p>
+                            <p className="text-white text-lg font-medium">Ready to create digital magic?</p>
                         </div>
                         <div className="px-8 py-4">
-                            <p className="text-white text-lg font-bold group-hover:animate-pulse">Let's talk!</p>
+                            <p className="text-white text-lg font-bold group-hover:animate-pulse">Let's build something awesome!</p>
                         </div>
                     </motion.div>
                     <motion.p 
