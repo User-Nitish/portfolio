@@ -226,7 +226,7 @@ const Introduction = () => {
             </div>
           </div>
 
-          {/* Enhanced Skills Section */}
+          {/* Enhanced Technical Skills Section */}
           <div ref={skillsRef} className={`space-y-8 transition-all duration-1000 ease-out ${
             skillsVisible 
               ? 'translate-y-0 opacity-100' 
@@ -234,15 +234,36 @@ const Introduction = () => {
           }`}>
             <div className="text-center">
               <div className="inline-flex items-center space-x-3">
-                <SparklesIcon className="text-cyan-400 w-6 h-6 animate-pulse" />
-                <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">Skills</h3>
-                <SparklesIcon className="text-cyan-400 w-6 h-6 animate-pulse" />
+                <CodeBracketIcon className="text-cyan-400 w-6 h-6 animate-pulse" />
+                <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">Technical Skills</h3>
+                <CodeBracketIcon className="text-cyan-400 w-6 h-6 animate-pulse" />
               </div>
             </div>
             
             <div className="flex flex-col lg:flex-row gap-8 justify-center items-start">
               <SkillContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} skillsVisible={skillsVisible} />
               <FrameworkContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} skillsVisible={skillsVisible} />
+            </div>
+          </div>
+
+          {/* Soft Skills Section */}
+          <div className={`space-y-8 transition-all duration-1000 ease-out ${
+            skillsVisible 
+              ? 'translate-y-0 opacity-100' 
+              : 'translate-y-20 opacity-0'
+          }`}
+          style={{ transitionDelay: '400ms' }}>
+            <div className="text-center">
+              <div className="inline-flex items-center space-x-3">
+                <UserIcon className="text-pink-400 w-6 h-6 animate-pulse" />
+                <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-pink-400 transition-colors duration-300">Soft Skills</h3>
+                <UserIcon className="text-pink-400 w-6 h-6 animate-pulse" />
+              </div>
+            </div>
+            
+            <div className="flex flex-col lg:flex-row gap-8 justify-center items-start">
+              <SoftSkillsContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} skillsVisible={skillsVisible} />
+              <LeadershipContainer hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} skillsVisible={skillsVisible} />
             </div>
           </div>
         </div>
@@ -340,6 +361,102 @@ const SkillBox = ({ skill, hoveredSkill, setHoveredSkill }) => (
         )}
       </div>
       <p className="text-white text-sm md:text-base truncate font-semibold">{skill.name}</p>
+    </div>
+  </div>
+);
+
+const SoftSkillsContainer = ({ hoveredSkill, setHoveredSkill, skillsVisible }) => {
+  const softSkills = [
+    { name: "Team Leadership", emoji: "👥", color: "from-purple-500 to-pink-500" },
+    { name: "Communication", emoji: "💬", color: "from-blue-500 to-cyan-500" },
+    { name: "Problem Solving", emoji: "🧩", color: "from-green-500 to-emerald-500" },
+    { name: "Time Management", emoji: "⏰", color: "from-yellow-500 to-orange-500" },
+    { name: "Adaptability", emoji: "🔄", color: "from-indigo-500 to-purple-500" },
+    { name: "Creativity", emoji: "🎨", color: "from-pink-500 to-rose-500" }
+  ];
+
+  return (
+    <div className={`group relative transition-all duration-1000 ease-out ${
+      skillsVisible 
+        ? 'translate-y-0 opacity-100' 
+        : 'translate-y-20 opacity-0'
+    }`}
+    style={{ transitionDelay: '600ms' }}>
+      <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+      <div className="relative bg-white/5 backdrop-blur-xl p-8 rounded-2xl max-w-md shadow-xl border border-white/10 hover:border-pink-500/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-1">
+        <div className="flex items-center justify-center space-x-3 mb-8">
+          <UserIcon className="text-pink-400 w-6 h-6" />
+          <h3 className="text-2xl font-bold text-white text-center">Interpersonal Skills</h3>
+          <UserIcon className="text-pink-400 w-6 h-6" />
+        </div>
+        <div className="grid grid-cols-3 gap-6">
+          {softSkills.map((skill, index) => (
+            <SoftSkillBox key={index} skill={skill} hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const LeadershipContainer = ({ hoveredSkill, setHoveredSkill, skillsVisible }) => {
+  const leadershipSkills = [
+    { name: "Project Management", emoji: "📋", color: "from-orange-500 to-red-500" },
+    { name: "Mentoring", emoji: "🎓", color: "from-teal-500 to-cyan-500" },
+    { name: "Decision Making", emoji: "⚖️", color: "from-amber-500 to-yellow-500" },
+    { name: "Strategic Planning", emoji: "🎯", color: "from-emerald-500 to-green-500" },
+    { name: "Conflict Resolution", emoji: "🤝", color: "from-rose-500 to-pink-500" },
+    { name: "Public Speaking", emoji: "🎤", color: "from-violet-500 to-purple-500" },
+    { name: "Client Relations", emoji: "🤖", color: "from-cyan-500 to-blue-500" },
+    { name: "Team Building", emoji: "🏗️", color: "from-lime-500 to-green-500" },
+    { name: "Critical Thinking", emoji: "🧠", color: "from-fuchsia-500 to-pink-500" }
+  ];
+
+  return (
+    <div className={`group relative transition-all duration-1000 ease-out ${
+      skillsVisible 
+        ? 'translate-y-0 opacity-100' 
+        : 'translate-y-20 opacity-0'
+    }`}
+    style={{ transitionDelay: '800ms' }}>
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+      <div className="relative bg-white/5 backdrop-blur-xl p-8 rounded-2xl max-w-5xl shadow-xl border border-white/10 hover:border-purple-500/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-1">
+        <div className="flex items-center justify-center space-x-3 mb-8">
+          <StarIcon className="text-purple-400 w-6 h-6" />
+          <h3 className="text-2xl font-bold text-white text-center">Leadership & Management</h3>
+          <StarIcon className="text-purple-400 w-6 h-6" />
+        </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+          {leadershipSkills.map((skill, index) => (
+            <SoftSkillBox key={index} skill={skill} hoveredSkill={hoveredSkill} setHoveredSkill={setHoveredSkill} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SoftSkillBox = ({ skill, hoveredSkill, setHoveredSkill }) => (
+  <div 
+    className="group relative"
+    onMouseEnter={() => setHoveredSkill(skill.name)}
+    onMouseLeave={() => setHoveredSkill(null)}
+  >
+    <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+    <div className="relative flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl p-3 w-[100px] md:w-[110px] h-[120px] md:h-[130px] text-center shadow-lg hover:shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20 hover:border-white/40">
+      <div className="relative mb-2">
+        <div className="text-3xl md:text-4xl transition-transform duration-300 group-hover:scale-125">
+          {skill.emoji}
+        </div>
+        {hoveredSkill === skill.name && (
+          <StarIcon className="absolute -top-2 -right-2 text-yellow-400 w-4 h-4 animate-spin" />
+        )}
+      </div>
+      <p className="text-white text-xs md:text-xs leading-tight font-medium px-1 break-words">
+        {skill.name.split(' ').map((word, i) => (
+          <span key={i} className="block">{word}</span>
+        ))}
+      </p>
     </div>
   </div>
 );

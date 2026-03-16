@@ -168,7 +168,7 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Professional Playground</h3>
+                                    <h3 className="text-xl font-bold text-white mb-2">LinkedIn</h3>
                                     <p className="text-white/70 text-sm">Let's network and grow!</p>
                                 </div>
                                 <a 

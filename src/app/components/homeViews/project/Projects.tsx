@@ -71,8 +71,9 @@ const Projects = () => {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className='flex flex-col items-center'>
-                            <AnimatedBtn href='https://github.com/PiyushRw/Fitlife.git' innerTxt="View Code" />
+                        <div className='flex flex-col items-center space-y-3'>
+                            <AnimatedBtn href='https://fitlife-frontend.vercel.app/' innerTxt="View Live" variant="primary" />
+                            <AnimatedBtn href='https://github.com/PiyushRw/Fitlife.git' innerTxt="View Code" variant="secondary" />
                         </div>
 
                     </motion.div>
@@ -122,8 +123,9 @@ const Projects = () => {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className='flex flex-col items-center'>
-                            <AnimatedBtn href='https://github.com/User-Nitish/FarmFist.git' innerTxt="View Code" />
+                        <div className='flex flex-col items-center space-y-3'>
+                            <AnimatedBtn href='https://farm-fist.vercel.app/' innerTxt="View Live" variant="primary" />
+                            <AnimatedBtn href='https://github.com/User-Nitish/FarmFist.git' innerTxt="View Code" variant="secondary" />
                         </div>
 
                     </motion.div>

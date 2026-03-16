@@ -158,7 +158,10 @@ const Page = () => {
                                 </div>
                             </div>
                             <div className="flex-1"></div>
-                            <div className="text-purple-200/80 mt-auto">📍 Patna, Bihar</div>
+                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-auto">
+                                <span className="text-purple-300 font-semibold bg-purple-400/20 px-3 py-1 rounded-full text-sm">12th Grade: 64.2%</span>
+                                <span className="text-purple-200/80">📍 Patna, Bihar</span>
+                            </div>
                         </motion.div>
 
                         {/* U.P. Public School */}
@@ -186,7 +189,7 @@ const Page = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-auto">
-                                <span className="text-green-300 font-semibold bg-green-400/20 px-3 py-1 rounded-full text-sm">10th Grade</span>
+                                <span className="text-green-300 font-semibold bg-green-400/20 px-3 py-1 rounded-full text-sm">10th Grade: 94%</span>
                                 <span className="text-green-200/80">📍 Suri, West Bengal</span>
                             </div>
                         </motion.div>
