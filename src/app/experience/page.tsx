@@ -245,7 +245,7 @@ const Page = () => {
                                     job === "lpu" && "from-purple-400 via-pink-400 to-rose-400 hover:from-purple-300 hover:via-pink-300 hover:to-rose-300",
                                     job === "club" && "from-yellow-400 via-orange-400 to-red-400 hover:from-yellow-300 hover:via-orange-300 hover:to-red-300"
                                 )}>
-                                    {job === "w3grads" ? "W3Grads" : job === "fitlife" ? "FitLife Project" : job === "lpu" ? "Lovely Professional University" : "Student Club & Organizations"}
+                                    {job === "w3grads" ? "Summer Training with W3Grads" : job === "fitlife" ? "FitLife Project" : job === "lpu" ? "Lovely Professional University" : "Student Club & Organizations"}
                                 </h2>
                                 <svg className="w-5 h-5 text-white/50 group-hover:text-white transition-colors duration-200 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
