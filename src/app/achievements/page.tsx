@@ -50,13 +50,16 @@ const Achievements = () => {
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Pattern and Effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute inset-0 bg-[url('/newbie.png')] bg-cover bg-center opacity-20 mix-blend-overlay"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.2 }}
+          transition={{ duration: 2 }}
+          className="absolute inset-0 bg-[url('/newbie.png')] bg-cover bg-center mix-blend-overlay"
           style={{
             maskImage: 'radial-gradient(circle at center, black 40%, transparent 90%)',
             WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 90%)'
           }}
-        ></div>
+        ></motion.div>
         <div className="absolute inset-0 bg-gradient-to-br from-brown-theme/5 via-transparent to-orange-theme/5"></div>
       </div>
 
@@ -64,26 +67,42 @@ const Achievements = () => {
         {/* Header */}
         <div className="text-center py-20 px-4">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex items-center space-x-6 mb-12"
           >
-            <motion.div
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <TrophyIcon className="text-orange-theme w-12 h-12" />
-            </motion.div>
-            <div className="h-px w-24 bg-gradient-to-r from-transparent via-orange-theme/50 to-transparent"></div>
+            <MagneticWrapper>
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                whileHover={{ scale: 1.2, rotate: [0, 15, -15, 0] }}
+              >
+                <TrophyIcon className="text-orange-theme w-12 h-12" />
+              </motion.div>
+            </MagneticWrapper>
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: 96 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="h-px bg-gradient-to-r from-transparent via-orange-theme/50 to-transparent"
+            ></motion.div>
             <span className="text-orange-theme text-sm font-bold tracking-[0.2em] uppercase font-sans">Milestones</span>
-            <div className="h-px w-24 bg-gradient-to-r from-transparent via-orange-theme/50 to-transparent"></div>
-            <motion.div
-              animate={{ rotate: [0, -10, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <TrophyIcon className="text-orange-theme w-12 h-12" />
-            </motion.div>
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: 96 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="h-px bg-gradient-to-r from-transparent via-orange-theme/50 to-transparent"
+            ></motion.div>
+            <MagneticWrapper>
+              <motion.div
+                animate={{ rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                whileHover={{ scale: 1.2, rotate: [0, -15, 15, 0] }}
+              >
+                <TrophyIcon className="text-orange-theme w-12 h-12" />
+              </motion.div>
+            </MagneticWrapper>
           </motion.div>
 
           <SplitText
@@ -94,7 +113,7 @@ const Achievements = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-white/50 text-xl max-w-3xl mx-auto leading-relaxed font-sans"
           >
             A journey of professional growth, technical excellence, and continuous learning.
@@ -107,41 +126,77 @@ const Achievements = () => {
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 + index * 0.2, ease: "easeOut" }}
-                viewport={{ once: true }}
+                initial={{ 
+                  opacity: 0, 
+                  x: index % 2 === 0 ? -80 : 80,
+                  scale: 0.95,
+                  filter: "blur(4px)"
+                }}
+                whileInView={{ 
+                  opacity: 1, 
+                  x: 0,
+                  scale: 1,
+                  filter: "blur(0px)"
+                }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.1, 
+                  ease: [0.16, 1, 0.3, 1] 
+                }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="group relative"
               >
                 {/* Subtle background glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-theme/5 to-brown-theme/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-theme/5 to-brown-theme/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                 <motion.div
-                  whileHover={{ y: -8 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative bg-boxes border border-white/10 rounded-2xl p-8 shadow-2xl hover:border-orange-theme/40 transition-all duration-500 backdrop-blur-xl"
+                  whileHover={{ 
+                    y: -12,
+                    scale: 1.01,
+                    boxShadow: "0 25px 50px -12px rgba(255, 107, 53, 0.15)"
+                  }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative bg-boxes border border-white/10 rounded-2xl p-8 shadow-2xl hover:border-orange-theme/40 transition-colors duration-500 backdrop-blur-xl overflow-hidden"
                 >
-                  <div className="flex items-start gap-6">
+                  {/* Decorative corner accent */}
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-theme/10 to-transparent pointer-events-none"
+                  ></motion.div>
+
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
                     {/* Organization Image/Collage */}
-                    <div className="flex-shrink-0">
+                    <motion.div 
+                      whileHover={{ scale: 1.05, rotate: 2 }}
+                      className="flex-shrink-0"
+                    >
                       {achievement.image ? (
-                        <div className="relative">
+                        <div className="relative group/img">
                           <Image
                             src={achievement.image}
                             alt={achievement.organization}
                             width={160}
                             height={160}
-                            className="rounded-xl border-2 border-gray-600 shadow-lg"
+                            className="rounded-xl border-2 border-gray-600 shadow-lg transition-transform duration-500 group-hover/img:scale-105"
                           />
-                          <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-orange-theme rounded-full flex items-center justify-center">
+                          <motion.div 
+                            initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            transition={{ type: "spring", delay: 0.5 + index * 0.1 }}
+                            className="absolute -bottom-2 -right-2 w-6 h-6 bg-orange-theme rounded-full flex items-center justify-center border-2 border-boxes"
+                          >
                             <CheckCircleIcon className="w-4 h-4 text-white" />
-                          </div>
+                          </motion.div>
                         </div>
                       ) : achievement.platforms ? (
                         <div className="w-36 h-36 grid grid-cols-2 gap-1 rounded-xl border-2 border-gray-600 p-2 bg-boxes">
                           {achievement.platforms.map((platform, idx) => (
-                            <div
+                            <motion.div
                               key={idx}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.3 + idx * 0.1 }}
                               className={`
                                 flex items-center justify-center text-xs font-bold rounded-lg border
                                 ${platform === 'LeetCode' ? 'bg-orange-500/20 text-orange-400 border-orange-500/30' : ''}
@@ -153,17 +208,21 @@ const Achievements = () => {
                               <span className="text-center leading-tight px-1">
                                 {platform.length > 8 ? platform.substring(0, 6) + '...' : platform}
                               </span>
-                            </div>
+                            </motion.div>
                           ))}
                         </div>
                       ) : (
                         <div className={`w-36 h-36 ${achievement.bgColor} ${achievement.borderColor} border-2 rounded-xl flex items-center justify-center shadow-lg`}>
-                          <div className="text-brand">
+                          <motion.div 
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                            className="text-brand"
+                          >
                             {achievement.icon}
-                          </div>
+                          </motion.div>
                         </div>
                       )}
-                    </div>
+                    </motion.div>
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
@@ -175,9 +234,13 @@ const Achievements = () => {
                           {achievement.organization}
                         </p>
                         <div className="flex items-center gap-3">
-                          <span className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-bold bg-white/5 border border-white/10 text-white/60 tracking-wider`}>
+                          <motion.span 
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-bold bg-white/5 border border-white/10 text-white/60 tracking-wider`}
+                          >
                             {achievement.period}
-                          </span>
+                          </motion.span>
                         </div>
                       </div>
 
@@ -187,12 +250,18 @@ const Achievements = () => {
 
                       {/* Achievement indicators */}
                       <div className="flex flex-wrap gap-2">
-                        <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-orange-theme/10 text-orange-theme border border-orange-theme/20">
+                        <motion.span 
+                          whileHover={{ scale: 1.1 }}
+                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-orange-theme/10 text-orange-theme border border-orange-theme/20"
+                        >
                           ✓ Verified
-                        </span>
-                        <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-brown-theme/10 text-brown-theme border border-brown-theme/20">
+                        </motion.span>
+                        <motion.span 
+                          whileHover={{ scale: 1.1 }}
+                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-brown-theme/10 text-brown-theme border border-brown-theme/20"
+                        >
                           ⭐ Impact
-                        </span>
+                        </motion.span>
                       </div>
                     </div>
                   </div>
@@ -205,7 +274,7 @@ const Achievements = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
             className="mt-20 text-center"
           >
@@ -214,34 +283,47 @@ const Achievements = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.6, delay: 0.5, ease: "backOut" }}
                   viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
                   className="text-center cursor-default"
                 >
                   <div className="text-3xl font-bold text-orange-theme mb-1">3+</div>
                   <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Achievements</div>
                 </motion.div>
               </MagneticWrapper>
-              <div className="w-px h-12 bg-white/10"></div>
+              <motion.div 
+                initial={{ height: 0 }}
+                whileInView={{ height: 48 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="w-px bg-white/10"
+              ></motion.div>
               <MagneticWrapper>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.6, delay: 0.6, ease: "backOut" }}
                   viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
                   className="text-center cursor-default"
                 >
                   <div className="text-3xl font-bold text-orange-theme mb-1">150+</div>
                   <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Solved</div>
                 </motion.div>
               </MagneticWrapper>
-              <div className="w-px h-12 bg-white/10"></div>
+              <motion.div 
+                initial={{ height: 0 }}
+                whileInView={{ height: 48 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="w-px bg-white/10"
+              ></motion.div>
               <MagneticWrapper>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.6, delay: 0.7, ease: "backOut" }}
                   viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
                   className="text-center cursor-default"
                 >
                   <div className="text-3xl font-bold text-brown-theme mb-1">2</div>

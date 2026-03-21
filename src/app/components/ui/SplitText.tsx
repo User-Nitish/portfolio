@@ -50,7 +50,7 @@ export const SplitText = ({ text, className = "", delay = 0, wordSpacing = 5 }: 
       className={className}
     >
       {text.split("\n").map((line, lineIndex) => (
-        <div key={lineIndex} className="flex flex-wrap w-full">
+        <div key={lineIndex} className={`flex flex-wrap w-full ${className.includes('justify-center') ? 'justify-center' : ''}`}>
           {line.split(" ").map((word, wordIndex) => (
             <motion.span
               variants={child}

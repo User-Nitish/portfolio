@@ -160,14 +160,19 @@ const Page = () => {
                     <div className="text-left">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                             className="inline-flex items-center gap-4 mb-8"
                         >
                             <div className="h-px w-12 bg-brown-theme/30"></div>
-                            <span className="text-orange-theme text-[10px] font-bold tracking-[0.4em] uppercase">Professional</span>
+                            <SplitText 
+                                text="Professional"
+                                className="text-orange-theme text-[10px] font-bold tracking-[0.4em] uppercase"
+                            />
                         </motion.div>
                         <SplitText
                             text="Work Experience"
+                            delay={0.2}
                             className="text-5xl md:text-7xl font-serif font-bold text-white mb-8"
                         />
                     </div>
@@ -178,10 +183,22 @@ const Page = () => {
 
                 <article className="max-w-5xl mx-auto py-12">
                     <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
-                        <div className="space-y-4 sticky top-32">
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={{
+                                visible: { transition: { staggerChildren: 0.1 } }
+                            }}
+                            className="space-y-4 sticky top-32"
+                        >
                             {["w3grads", "fitlife", "lpu", "club"].map((job) => (
                                 <MagneticWrapper key={job}>
-                                    <button
+                                    <motion.button
+                                        variants={{
+                                            hidden: { opacity: 0, x: -20 },
+                                            visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
+                                        }}
                                         onClick={() => updateSelected(job)}
                                         className={clsx(
                                             "w-full text-left p-6 rounded-2xl transition-all duration-500 border",
@@ -199,10 +216,10 @@ const Page = () => {
                                         <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">
                                             {job === "w3grads" ? "W3Grads" : job === "fitlife" ? "Development" : job === "lpu" ? "LPU" : "Student Organizations"}
                                         </p>
-                                    </button>
+                                    </motion.button>
                                 </MagneticWrapper>
                             ))}
-                        </div>
+                        </motion.div>
 
                         <div className="min-h-[600px]">
                             <JobInformation key={selected} selected={selected} />
@@ -270,24 +287,44 @@ const JobInformation = ({ selected }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            key={selected}
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+            }}
             className="space-y-12"
         >
-            <div className="space-y-4">
+            <motion.div 
+                variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                }}
+                className="space-y-4"
+            >
                 <h2 className="text-4xl text-white font-serif font-bold">{jobInfo.title}</h2>
                 <p className="text-orange-theme font-bold uppercase tracking-[0.3em] text-xs pb-4 border-b border-white/5">{jobInfo.company}</p>
-            </div>
+            </motion.div>
 
             <div className="space-y-8">
-                <h3 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">Achievements</h3>
+                <motion.h3 
+                    variants={{
+                        hidden: { opacity: 0, x: -10 },
+                        visible: { opacity: 1, x: 0 }
+                    }}
+                    className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]"
+                >
+                    Achievements
+                </motion.h3>
                 <ul className="space-y-6">
                     {jobInfo.resp.map((resp, i) => (
                         <motion.li
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: i * 0.1 }}
                             key={i}
+                            variants={{
+                                hidden: { opacity: 0, x: -20 },
+                                visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
+                            }}
                             className="flex gap-4 text-white/60 leading-relaxed text-lg font-sans border-l border-orange-theme/20 pl-6"
                         >
                             {resp}
@@ -297,14 +334,35 @@ const JobInformation = ({ selected }) => {
             </div>
 
             <div className="space-y-6">
-                <h3 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">Technologies Wrapped</h3>
-                <div className="flex flex-wrap gap-3">
+                <motion.h3 
+                    variants={{
+                        hidden: { opacity: 0, x: -10 },
+                        visible: { opacity: 1, x: 0 }
+                    }}
+                    className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]"
+                >
+                    Technologies Wrapped
+                </motion.h3>
+                <motion.div 
+                    variants={{
+                        hidden: {},
+                        visible: { transition: { staggerChildren: 0.05 } }
+                    }}
+                    className="flex flex-wrap gap-3"
+                >
                     {jobInfo.tools.map((tool, i) => (
-                        <span key={i} className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-bold tracking-widest hover:border-orange-theme/50 transition-colors">
+                        <motion.span 
+                            key={i}
+                            variants={{
+                                hidden: { opacity: 0, scale: 0.8 },
+                                visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200, damping: 12 } }
+                            }}
+                            className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-bold tracking-widest hover:border-orange-theme/50 transition-colors"
+                        >
                             {tool}
-                        </span>
+                        </motion.span>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </motion.div>
     );
