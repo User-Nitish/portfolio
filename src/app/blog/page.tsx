@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import React, { useState, useEffect, useRef } from 'react'
 import "../globals.css"
 import Link from 'next/link'
+import { SplitText } from '../components/ui/SplitText'
 
 const page = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,27 +32,23 @@ const page = () => {
 
   return (
     <div className='min-h-screen py-32 relative overflow-hidden'>
-        {/* Enhanced Background */}
-        <div className='absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-purple-500/5'></div>
-        <div className='absolute top-[-200px] left-[-200px] h-[400px] w-[400px] bg-brand/10 rounded-full blur-3xl'></div>
-        <div className='absolute bottom-[-200px] right-[-200px] h-[400px] w-[400px] bg-purple-500/10 rounded-full blur-3xl'></div>
+        {/* Background Pattern and Effects */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-theme/10 via-transparent to-brown-theme/10"></div>
+            <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-bgColor to-transparent"></div>
+            <div className="absolute -top-[10%] -left-[10%] w-[500px] h-[500px] bg-orange-theme/10 rounded-full blur-[120px] animate-pulse"></div>
+            <div className="absolute top-[20%] -right-[10%] w-[400px] h-[400px] bg-brown-theme/10 rounded-full blur-[100px] animate-pulse delay-700"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-            <motion.div 
-                ref={blogRef}
-                initial={{ opacity: 0, y: -30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-center mb-16"
-            >
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                    My <span className="text-brand">Blog</span>
-                </h1>
-                <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-brand to-transparent mx-auto"></div>
-                <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6">
-                    Thoughts, tutorials, and insights on web development, AI, and technology
+            <div className="text-center mb-16 px-4">
+                <SplitText 
+                    text="My Blog"
+                    className="text-hierarchy-primary mb-8 justify-center bg-gradient-to-r from-orange-theme to-brown-theme bg-clip-text text-transparent font-serif"
+                />
+                <div className="w-32 h-1 bg-gradient-to-r from-transparent via-orange-theme/50 to-transparent mx-auto"></div>
+                <p className="text-white/50 text-xl max-w-2xl mx-auto mt-8 font-sans leading-relaxed">
+                    Thoughts, tutorials, and insights on web development, AI, and technology.
                 </p>
-            </motion.div>
+            </div>
 
             {/* Blog Container */}
             <div className="flex flex-wrap justify-center gap-8 px-4">
@@ -82,35 +79,35 @@ const BlogPreview = ({ title, cat, prev, link, isVisible, delay }) => {
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: delay / 1000, ease: "easeOut" }}
+            transition={{ duration: 1, delay: delay / 1000, ease: [0.22, 1, 0.36, 1] }}
             className="w-full max-w-md md:max-w-lg"
         >
             <Link href={link} className='block cursor-pointer group'>
-                <div className='bg-boxes backdrop-blur-md p-6 rounded-xl border border-brand/20 hover:border-brand/30 transition-all duration-500 relative overflow-hidden group hover:shadow-2xl hover:shadow-brand/20 hover:-translate-y-2'>
+                <div className='bg-boxes backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-orange-theme/40 transition-all duration-500 relative overflow-hidden group hover:shadow-2xl hover:shadow-orange-theme/20 hover:-translate-y-2 shadow-xl'>
                     {/* Hover effect overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-theme/5 to-olive-theme/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     {/* Content */}
-                    <div className='relative z-10 space-y-4'>
-                        <div className='flex flex-col space-y-2'>
-                            <h2 className='text-xl md:text-2xl text-white font-semibold group-hover:text-brand transition-colors duration-300 leading-tight'>
+                    <div className='relative z-10 space-y-6'>
+                        <div className='flex flex-col space-y-4'>
+                            <h2 className='text-3xl text-white font-bold group-hover:text-orange-theme transition-colors duration-500 leading-tight font-serif'>
                                 {title}
                             </h2>
-                            <p className='text-sm md:text-base text-brand font-medium flex items-center'>
-                                <span className="w-2 h-2 bg-brand rounded-full mr-2"></span>
+                            <p className='text-sm md:text-base text-orange-theme font-bold tracking-widest uppercase flex items-center font-sans'>
+                                <span className="w-2 h-2 bg-orange-theme rounded-full mr-3 shadow-lg shadow-orange-theme/50"></span>
                                 {cat}
                             </p>
                         </div>
-                        <p className="text-gray-300 text-sm md:text-base leading-relaxed line-clamp-3">
+                        <p className="text-white/60 text-lg leading-relaxed line-clamp-3 font-sans">
                             {prev}
                         </p>
                         
                         {/* Read more indicator */}
                         <div className='flex items-center justify-between pt-2'>
-                            <span className='text-brand text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                            <span className='text-orange-theme text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                 Read more →
                             </span>
-                            <div className='flex items-center space-x-2 text-gray-400 group-hover:text-brand transition-colors duration-300'>
+                            <div className='flex items-center space-x-2 text-gray-400 group-hover:text-orange-theme transition-colors duration-300'>
                                 <span className="text-xs">Continue reading</span>
                                 <svg className='w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 5l7 7m0 0l-7 7m7-7H6' />
@@ -120,7 +117,7 @@ const BlogPreview = ({ title, cat, prev, link, isVisible, delay }) => {
                     </div>
                     
                     {/* Decorative corner */}
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-brand/20 to-transparent transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-500"></div>
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-theme/20 to-transparent transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-500"></div>
                 </div>
             </Link>
         </motion.div>

@@ -25,15 +25,11 @@ const Typewriter = () => {
 
   return (
     <div>
-      <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand">
+      <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-white/80 font-sans tracking-tight">
         {adjectives[exampleIndex].split("").map((l, i) => (
           <motion.span
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{
               delay: i * LETTER_DELAY,
               duration: 0.3,
@@ -43,19 +39,15 @@ const Typewriter = () => {
           >
             {l}
             <motion.span
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
               transition={{
                 delay: i * LETTER_DELAY,
                 times: [0, 0.1, 1],
                 duration: BOX_FADE_DURATION,
                 ease: "easeInOut",
               }}
-              className="absolute bottom-[2px] left-[1px] right-0 top-[2px] bg-white"
+              className="absolute bottom-[2px] left-[1px] right-0 top-[2px] bg-orange-accent/50"
             />
           </motion.span>
         ))}

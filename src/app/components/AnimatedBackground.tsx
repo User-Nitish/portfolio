@@ -104,7 +104,7 @@ const AnimatedBackground = () => {
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
             ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = `rgba(99, 102, 241, ${0.05 * (1 - pdist / 120)})`
+            ctx.strokeStyle = `rgba(255, 107, 53, ${0.1 * (1 - pdist / 120)})` // orange-theme
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
@@ -113,7 +113,7 @@ const AnimatedBackground = () => {
         // Draw particle
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(99, 102, 241, ${particle.opacity})`
+        ctx.fillStyle = `rgba(255, 107, 53, ${particle.opacity})` // orange-theme
         ctx.fill()
       })
       
@@ -141,13 +141,13 @@ const AnimatedBackground = () => {
       />
       
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-purple-500/5 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-theme/5 via-transparent to-brown-theme/5 pointer-events-none"></div>
       
       {/* Minimal geometric patterns */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-brand/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 border border-purple-500/10 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-16 h-16 border border-cyan-500/10 rotate-45 animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-theme/5 rounded-full blur-[120px] animate-pulse"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brown-theme/5 rounded-full blur-[120px] animate-pulse delay-700"></div>
+        <div className="absolute top-1/2 left-1/3 w-16 h-16 border border-brown-theme/5 rotate-45 animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
     </div>
   )

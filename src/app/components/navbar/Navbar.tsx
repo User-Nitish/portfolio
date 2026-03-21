@@ -5,6 +5,7 @@ import './navbar.css'
 import { Bars3Icon } from '@heroicons/react/16/solid'
 import MobileNav from './MobileNav'
 import TransitionLink from "../TransitionLink"
+import MagneticWrapper from '../ui/MagneticWrapper'
 
 const Navbar = () => {
   const [isMobileOpen, setMobileOpen] = useState(false)
@@ -22,92 +23,79 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`flex justify-between items-center py-2 px-8 md:px-16 sticky top-0 transition-all duration-300 z-50 mx-4 mt-4 rounded-3xl ${
-        scrolled 
-          ? 'bg-gradient-to-r from-bgColor/70 to-brand/30 backdrop-blur-xl border border-brand/20 shadow-lg shadow-brand/20' 
-          : 'bg-gradient-to-r from-bgColor/60 to-brand/20 backdrop-blur-lg border border-brand/10'
-      }`}>
+      <nav className={`flex justify-between items-center py-2 px-6 md:px-10 fixed top-4 left-0 right-0 transition-all duration-500 z-50 max-w-5xl mx-auto w-[92%] md:w-full rounded-full backdrop-blur-xl border border-white/20 ${scrolled
+          ? 'bg-bgColor/90 shadow-[0_20px_50px_rgba(0,0,0,0.3)] shadow-orange-theme/20 border-t border-white/10'
+          : 'bg-white/5 border-white/5'
+        }`}>
         <TransitionLink href="/" className="group">
           <div className="relative">
             <Image
               src='/logo.svg'
               alt='Logo for Sam Kotecha portfolio site'
-              width={74}
-              height={29}
-              className="transition-transform duration-300 group-hover:scale-105"
+              width={60}
+              height={24}
+              className="transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </TransitionLink>
-        
-        <ul className='gap-8 hidden md:flex items-center'>
+
+        <ul className='gap-6 hidden md:flex items-center font-sans'>
           <li>
-            <TransitionLink href="/about" className='nav-link text-white/90 font-light hover:text-white relative group'>
-              About
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </TransitionLink>
+            <MagneticWrapper>
+              <TransitionLink href="/about" className='nav-link text-white/70 text-xs font-medium hover:text-orange-theme transition-colors duration-300 relative group'>
+                About
+              </TransitionLink>
+            </MagneticWrapper>
           </li>
           <li>
-            <TransitionLink href="/experience" className='nav-link text-white/90 font-light hover:text-white relative group'>
-              Education & Experience
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </TransitionLink>
+            <MagneticWrapper>
+              <TransitionLink href="/experience" className='nav-link text-white/70 text-xs font-medium hover:text-orange-theme transition-colors duration-300 relative group'>
+                Education & Experience
+              </TransitionLink>
+            </MagneticWrapper>
           </li>
           <li>
-            <TransitionLink href="/achievements" className='nav-link text-white/90 font-light hover:text-white relative group'>
-              Achievements
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </TransitionLink>
+            <MagneticWrapper>
+              <TransitionLink href="/achievements" className='nav-link text-white/70 text-xs font-medium hover:text-orange-theme transition-colors duration-300 relative group'>
+                Achievements
+              </TransitionLink>
+            </MagneticWrapper>
           </li>
           <li>
-            <TransitionLink href="/blog" className='nav-link text-white/90 font-light hover:text-white relative group'>
-              Blog
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </TransitionLink>
-          </li>
-          <li>
-            <TransitionLink href="/#contact" className='nav-link text-white/90 font-light hover:text-white relative group'>
-              Contact
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </TransitionLink>
+            <MagneticWrapper>
+              <TransitionLink href="/#contact" className='nav-link text-white/70 text-xs font-medium hover:text-orange-theme transition-colors duration-300 relative group'>
+                Contact
+              </TransitionLink>
+            </MagneticWrapper>
           </li>
           <li className="ml-4">
-            <a
-              href="https://drive.google.com/file/d/1qFJdOxP63v8w81va7JuAXvh7dh8rKfZe/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className='group relative inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-brand/20 to-purple-500/20 backdrop-blur-md border border-brand/40 rounded-lg hover:from-brand/30 hover:to-purple-500/30 hover:border-brand/60 transition-all duration-300 hover:shadow-lg hover:shadow-brand/30 hover:-translate-y-0.5'
-            >
-              {/* Animated glow effect */}
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-brand/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-              
-              <span className="relative z-10 flex items-center gap-2">
-                <div className="relative">
-                  <svg className="w-4 h-4 transition-all duration-300 group-hover:scale-110 group-hover:text-brand" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
-                  </svg>
-                  <div className="absolute -inset-1 bg-brand/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
-                </div>
-                <span className="relative">
+            <MagneticWrapper>
+              <a
+                href="https://drive.google.com/file/d/1qFJdOxP63v8w81va7JuAXvh7dh8rKfZe/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className='group relative inline-flex items-center gap-2 px-6 py-2.5 text-[10px] font-bold text-white bg-orange-theme rounded-full border border-orange-theme/50 hover:bg-orange-accent hover:border-orange-accent transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,107,53,0.3)] hover:-translate-y-0.5 overflow-hidden'
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer transition-transform duration-1000"></div>
+                <span className="relative z-10 flex items-center gap-2 tracking-[0.2em] uppercase">
                   Resume
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-brand to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
                 </span>
-              </span>
-              
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-br from-brand to-purple-400 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </a>
+              </a>
+            </MagneticWrapper>
           </li>
         </ul>
-        
-        <button 
-          className='md:hidden w-6 h-6 text-white cursor-pointer p-1 rounded-lg hover:bg-white/10 transition-colors duration-200' 
+
+        <button
+          className='md:hidden w-6 h-6 text-white cursor-pointer p-1 rounded-lg hover:bg-white/10 transition-colors duration-200'
           onClick={handleToggle}
         >
           <Bars3Icon />
         </button>
       </nav>
-      
+
       <MobileNav isMobileOpen={isMobileOpen} handleToggle={handleToggle} />
     </>
   )

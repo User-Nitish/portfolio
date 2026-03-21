@@ -1,36 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  transition-property: opacity, background, transform, filter;
-  transition-timing-function: ease-in-out;
-  transition-duration: 500ms;
+:root {
+  /* Minimal Design Checklist - Core Principles */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-base: 16px;
+  --font-scale: 1.25; /* Modular Scale: Major Third or Perfect Fourth */
+  
+  /* Type Scale System - Inversely proportional line-height */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+  --text-7xl: 4.5rem;     /* 72px */
+  
+  /* Letter spacing for readability */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+  
+  /* Line height (inversely proportional to font size) */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Font weights for hierarchy */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Opacity levels for hierarchy */
+  --opacity-high: 1;        /* Headings */
+  --opacity-medium: 0.85;   /* Subheadings */
+  --opacity-low: 0.7;       /* Body text */
+  --opacity-muted: 0.5;     /* Captions */
+  
+  /* 8-Point Grid System (multiples of 8/4) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  
+  /* 60-30-10 Rule - Warm Orange Theme */
+  --60-neutral-bg: #010309;    /* Darkest depth */
+  --60-neutral-text: #F5F5F0;  /* High contrast */
+  --30-secondary: #8B7355;     /* Warm earth brown for cards/headers */
+  --10-accent: #FF6B35;        /* Energetic orange for CTAs/Highlights */
+  
+  /* Semantic Mappings */
+  --background: var(--60-neutral-bg);
+  --foreground: var(--60-neutral-text);
+  --primary: var(--10-accent);
+  --secondary: var(--30-secondary);
+  --muted: rgba(245, 245, 240, 0.6);
+  --border: rgba(255, 107, 53, 0.15);
+  
+  /* Shapes - Consistent "Star of the Show" */
+  --radius-minimal: 1rem;      /* 16px consistent rounding */
 }
 
+* {
+  border-color: var(--border);
+}
 
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-white font-sans antialiased selection:bg-orange-theme/30;
+    line-height: var(--leading-normal);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-white/100;
+  }
+}
+
+/* Typography utilities */
+.text-hierarchy-primary {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  opacity: var(--opacity-high);
+}
+
+.text-hierarchy-secondary {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  opacity: var(--opacity-medium);
+}
+
+.text-hierarchy-body {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  opacity: var(--opacity-low);
+}
+
+.text-hierarchy-caption {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-light);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  opacity: var(--opacity-muted);
+}
+
+/* Shape system - rounded corners as "star of the show" */
+.shape-consistent {
+  border-radius: 0.75rem; /* Consistent rounded corners */
+}
+
+.shape-card {
+  border-radius: 1rem; /* Cards */
+}
+
+.shape-button {
+  border-radius: 0.5rem; /* Buttons */
+}
+
+.shape-large {
+  border-radius: 1.5rem; /* Large elements */
+}
+
+/* Grid utilities */
+.grid-8-point {
+  gap: var(--space-4); /* 16px base grid */
+}
+
+.grid-tight {
+  gap: var(--space-2); /* 8px */
+}
+
+.grid-loose {
+  gap: var(--space-6); /* 24px */
+}
+
+/* Visual hierarchy utilities */
+.hierarchy-primary {
+  order: 1;
+  z-index: 10;
+}
+
+.hierarchy-secondary {
+  order: 2;
+  z-index: 5;
+}
+
+.hierarchy-tertiary {
+  order: 3;
+  z-index: 1;
+}
+
+/* Refined Vintage Color Blur Effects */
 .color-blur {
-    background-image: radial-gradient(closest-side, rgba(99, 102, 241, 0.15), #0000);
+    background-image: radial-gradient(closest-side, rgba(139, 115, 85, 0.08), #0000);
     pointer-events: none;
   }
 
-  .color-blur-spotify {
-    background-image: radial-gradient(closest-side, rgba(30, 215, 96, 0.15), #0000);
+  .color-blur-accent {
+    background-image: radial-gradient(closest-side, rgba(255, 107, 53, 0.08), #0000);
     pointer-events: none;
 }
 
 .color-blur-uh {
-  background-image: radial-gradient(closest-side, rgba(200, 16, 46, 0.15), #0000);
+  background-image: radial-gradient(closest-side, rgba(139, 115, 85, 0.08), #0000);
   pointer-events: none;
 }
 
+/* Vintage Background Colors */
 .bg-colors {
   background: linear-gradient(
     to bottom,
-    rgba(99, 102, 241, 0) 0%,      /* Start with full transparency at the top */
-    rgba(99, 102, 241, 0.3) 20%,   /* Gradually introduce #6366F1 */
-    rgba(99, 102, 241, 0.6) 50%,   /* Darker shade of #6366F1 */
-    #6366F1 80%                    /* Full color at the bottom */
+    rgba(245, 242, 237, 0) 0%,      /* Start with full transparency at the top */
+    rgba(245, 242, 237, 0.3) 20%,   /* Gradually introduce vintage cream */
+    rgba(245, 242, 237, 0.6) 50%,   /* Darker shade of vintage cream */
+    #F5F2ED 80%                    /* Full vintage cream at the bottom */
   );
   position: relative;
   overflow: hidden;
@@ -40,32 +207,32 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+  background: linear-gradient(to bottom, rgba(245, 242, 237, 0) 60%, rgba(245, 242, 237, 1));
   pointer-events: none;
   z-index: 1;
 }
 
 .page-transition {
   opacity: 0;
-  background-color: black;
+  background-color: #F5F2ED;
   transform: translateY(40px);
   filter: blur(12px)
 }
 
-/* Clean Minimalistic Background Styles */
+/* Vintage Minimalistic Background Styles */
 .orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.15;
-  mix-blend-mode: screen;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
   animation: subtle-float 60s infinite ease-in-out;
 }
 
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(99, 102, 241, 0) 70%);
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.15) 0%, rgba(139, 69, 19, 0) 70%);
   top: -200px;
   left: -200px;
   animation: subtle-float-1 80s infinite ease-in-out;
@@ -74,7 +241,7 @@ body {
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(168, 85, 247, 0) 70%);
+  background: radial-gradient(circle, rgba(160, 82, 45, 0.12) 0%, rgba(160, 82, 45, 0) 70%);
   top: 50%;
   right: -150px;
   animation: subtle-float-2 90s infinite ease-in-out;
@@ -83,7 +250,7 @@ body {
 .orb-3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.2) 0%, rgba(34, 211, 238, 0) 70%);
+  background: radial-gradient(circle, rgba(128, 128, 128, 0.1) 0%, rgba(128, 128, 128, 0) 70%);
   bottom: -150px;
   left: 30%;
   animation: subtle-float-3 100s infinite ease-in-out;
@@ -92,7 +259,7 @@ body {
 .orb-4 {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0) 70%);
+  background: radial-gradient(circle, rgba(105, 105, 105, 0.08) 0%, rgba(105, 105, 105, 0) 70%);
   top: 30%;
   left: 60%;
   animation: subtle-float-4 70s infinite ease-in-out;
@@ -102,13 +269,14 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at top right, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(34, 211, 238, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(236, 72, 153, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at top left, rgba(139, 69, 19, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at top right, rgba(160, 82, 45, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(128, 128, 128, 0.025) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(105, 105, 105, 0.02) 0%, transparent 50%);
   animation: subtle-mesh 40s infinite ease-in-out;
 }
 
+/* Vintage Animation Keyframes */
 @keyframes subtle-float-1 {
   0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
   25% { transform: translate(50px, -30px) rotate(45deg) scale(1.05); }

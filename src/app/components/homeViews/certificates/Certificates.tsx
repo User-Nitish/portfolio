@@ -5,14 +5,17 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 import { AcademicCapIcon, StarIcon, CheckCircleIcon, TrophyIcon } from '@heroicons/react/24/solid'
-
 import AnimatedBtn from '../project/AnimatedBtn'
+import { SplitText } from '../../ui/SplitText'
+import MagneticWrapper from '../../ui/MagneticWrapper'
 
 
 
 const Certificates = () => {
 
     const [hoveredCert, setHoveredCert] = useState(null);
+    const [selectedCert, setSelectedCert] = useState(null);
+    const [showViewer, setShowViewer] = useState(false);
 
 
 
@@ -24,7 +27,7 @@ const Certificates = () => {
             link: "https://theangaarbatch.in/verify-my-certificate/",
             date: "Jul'25",
             icon: <AcademicCapIcon className="w-6 h-6" />,
-            color: "from-cyan-500 to-blue-500",
+            color: "from-orange-theme to-brown-theme",
             image: "/mern.jpg"
         },
         {
@@ -33,7 +36,7 @@ const Certificates = () => {
             link: "https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs11/Course/NPTEL25CS11S133730022504244079.pdf",
             date: "Apr'25",
             icon: <StarIcon className="w-6 h-6" />,
-            color: "from-purple-500 to-pink-500",
+            color: "from-brown-theme to-orange-theme",
             image: "/nptel.png"
         }
     ];
@@ -45,7 +48,7 @@ const Certificates = () => {
             link: "https://www.credly.com/users/nitish-kumar-singh.64ee3ba5/badges#credly",
             date: "Jun'25",
             icon: <TrophyIcon className="w-6 h-6" />,
-            color: "from-green-500 to-emerald-500",
+            color: "from-orange-theme to-brown-theme",
             image: "/skillathon.png"
         },
         {
@@ -55,7 +58,7 @@ const Certificates = () => {
             link: "https://www.cipherschools.com/",
             date: "Nov'24",
             icon: <CheckCircleIcon className="w-6 h-6" />,
-            color: "from-orange-500 to-red-500",
+            color: "from-brown-theme to-orange-theme",
             image: "/dsa.jpeg"
         },
         {
@@ -64,7 +67,7 @@ const Certificates = () => {
             link: "https://www.freecodecamp.org/certification/Nitish111/responsive-web-design",
             date: "",
             icon: <TrophyIcon className="w-6 h-6" />,
-            color: "from-blue-500 to-indigo-500",
+            color: "from-orange-theme to-brown-theme",
             image: "/responsive.png"
         }
     ];
@@ -75,116 +78,49 @@ const Certificates = () => {
 
         <section className='w-full py-24 md:py-32 relative overflow-hidden'>
 
-            {/* Enhanced Background */}
 
+            {/* Balanced Background */}
             <div className="absolute inset-0">
-
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-cyan-600/10"></div>
-
-                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-
-                {/* Floating orbs */}
-
-                <div className="absolute top-10 left-20 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl animate-pulse"></div>
-
-                <div className="absolute bottom-20 right-20 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-
+                <div className="absolute inset-0 bg-gradient-to-br from-brown-theme/5 via-transparent to-orange-theme/5"></div>
+                <div className="absolute inset-0 bg-[url('/bg-pattern-1.png')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
+                {/* Subtle themed floating orbs */}
+                <div className="absolute top-10 left-20 w-32 h-32 bg-brown-theme/5 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-theme/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
             </div>
 
-            
-
             <div className="relative z-10 max-w-7xl mx-auto px-4">
-
-                {/* Enhanced Header */}
-
+                {/* Vintage Header */}
                 <motion.div 
-
                     initial={{ opacity: 0, y: 50 }}
-
                     animate={{ opacity: 1, y: 0 }}
-
                     transition={{ duration: 0.8, ease: "easeOut" }}
-
-                    className="text-center mb-16"
-
+                    className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12"
                 >
-
-                    <motion.div 
-
-                        initial={{ opacity: 0, scale: 0.8 }}
-
-                        animate={{ opacity: 1, scale: 1 }}
-
-                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-
-                        className="inline-flex items-center space-x-3 mb-6"
-
-                    >
-
-                        <motion.div
-
-                            animate={{ rotate: 360 }}
-
-                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-
+                    <div className="text-left">
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                            className="inline-flex items-center space-x-4 mb-6"
                         >
-
-                            <AcademicCapIcon className="text-cyan-400 w-8 h-8" />
-
+                            <AcademicCapIcon className="text-brown-theme w-10 h-10" />
+                            <div className="h-0.5 w-16 bg-brown-theme/20"></div>
+                            <span className="text-brown-theme text-[10px] font-sans font-bold tracking-[0.4em] uppercase">Curated Credentials</span>
                         </motion.div>
-
-                        <div className="h-px w-24 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
-
-                        <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Achievements</span>
-
-                        <div className="h-px w-24 bg-gradient-to-r from-cyan-400 via-transparent to-transparent"></div>
-
-                        <motion.div
-
-                            animate={{ rotate: -360 }}
-
-                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-
-                        >
-
-                            <AcademicCapIcon className="text-cyan-400 w-8 h-8" />
-
-                        </motion.div>
-
-                    </motion.div>
-
-                    <motion.h2 
-
-                        initial={{ opacity: 0, y: 30 }}
-
-                        animate={{ opacity: 1, y: 0 }}
-
-                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-
-                        className="text-4xl md:text-6xl text-white mb-8 font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
-
-                    >
-
-                        CERTIFICATES
-
-                    </motion.h2>
-
+                        <SplitText 
+                            text="Validating Excellence" 
+                            className="text-4xl md:text-7xl text-white font-serif font-bold bg-gradient-to-r from-orange-theme via-orange-accent to-brown-theme bg-clip-text text-transparent"
+                        />
+                    </div>
                     <motion.p 
-
                         initial={{ opacity: 0, y: 20 }}
-
                         animate={{ opacity: 1, y: 0 }}
-
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-
-                        className="text-white/70 text-lg max-w-3xl mx-auto"
-
+                        className="text-white/40 text-lg max-w-sm lg:text-right font-sans font-medium border-r lg:border-r border-brown-theme/30 pr-8 hidden md:block"
                     >
-
-                        Professional certifications and achievements that showcase my expertise and commitment to continuous learning
-
+                        Strategic certifications that bridge the gap between academic theory and industrial application.
                     </motion.p>
-
                 </motion.div>
 
 
@@ -200,7 +136,7 @@ const Certificates = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-                        className="text-3xl md:text-4xl text-white mb-6 font-bold bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent"
+                        className="text-2xl md:text-3xl text-white/90 mb-6 font-serif font-bold border-l-4 border-orange-theme pl-6"
                     >
                         Certification
                     </motion.h2>
@@ -208,67 +144,60 @@ const Certificates = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-                        className="text-white/60 text-base max-w-3xl mx-auto mb-8"
+                        className="text-white/40 text-sm max-w-2xl mb-12 text-left font-sans"
                     >
-                        Professional training programs and specialized courses that enhance technical expertise and career development
+                        Intensive professional training cycles focusing on specialized tech stacks and advanced engineering workflows.
                     </motion.p>
                     
                     {/* Certification Cards */}
-                    <div className='space-y-6 max-w-6xl mx-auto'>
+                    <div className='flex flex-col space-y-8 max-w-4xl mx-auto'>
                         {certification.map((item, index) => (
                             <motion.div 
                                 key={index} 
-                                initial={{ opacity: 0, x: -50 }}
+                                initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 + index * 0.1, ease: "easeOut" }}
+                                transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
                                 viewport={{ once: true }}
-                                whileHover={{ y: -5 }}
-                                className='group relative'
+                                className="group"
                             >
-                                <div className={`absolute inset-0 bg-gradient-to-r ${item.color}/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100`}></div>
-                                
-                                <div className='relative bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-1'>
-                                    <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-6'>
-                                        <div className='flex items-start space-x-6'>
-                                            {/* Image */}
-                                            <div className="relative">
-                                                <img 
-                                                    src={item.image} 
-                                                    alt={item.title} 
-                                                    width={220} 
-                                                    height={220} 
-                                                    className="rounded-xl border-2 border-gray-600 shadow-lg"
-                                                />
-                                                <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-brand rounded-full flex items-center justify-center">
-                                                    <CheckCircleIcon className="w-4 h-4 text-white" />
-                                                </div>
+                                <div className='relative pl-10 border-l-2 border-white/5 hover:border-orange-theme/50 transition-all duration-700'>
+                                    <div className="absolute -left-[9px] top-0 w-4 h-4 bg-bgColor border-2 border-brown-theme rounded-full group-hover:scale-125 group-hover:bg-orange-theme transition-all duration-500"></div>
+                                    
+                                    <div className='space-y-4'>
+                                        <div className='flex items-center space-x-6'>
+                                            <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center text-white shadow-2xl transition-transform duration-500 group-hover:rotate-6`}>
+                                                {item.icon}
                                             </div>
-                                            
-                                            {/* Certification info */}
-                                            <div className='space-y-3'>
-                                                <h3 className='text-2xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300'>
+                                            <div>
+                                                <h3 className='text-2xl font-bold text-white group-hover:text-orange-theme transition-colors duration-500 font-serif'>
                                                     {item.title}
                                                 </h3>
-                                                <div className='flex flex-wrap items-center gap-4 text-sm'>
-                                                    <span className='text-white/70 font-medium'>
-                                                        <span className="text-gray-400">by</span> {item.issuer}
-                                                    </span>
-                                                    {item.id && (
-                                                        <span className='text-orange-400 bg-orange-400/20 px-3 py-1 rounded-full font-medium'>
-                                                            ID: {item.id}
-                                                        </span>
-                                                    )}
-                                                    {item.date && (
-                                                        <span className='text-orange-400 bg-orange-400/20 px-3 py-1 rounded-full font-medium'>
-                                                            {item.date}
-                                                        </span>
-                                                    )}
-                                                </div>
+                                                <p className='text-white/40 font-sans text-sm font-bold uppercase tracking-widest'>{item.issuer}</p>
                                             </div>
                                         </div>
-
-                                        <div className='mt-6 md:mt-0'>
-                                            <AnimatedBtn href={item.link} innerTxt="View Certificate" />
+                                        
+                                        <div className='flex flex-wrap items-center gap-4 text-xs font-bold'>
+                                            {item.id && (
+                                                <span className='px-4 py-1.5 bg-brown-theme/10 text-brown-theme rounded-xl border border-brown-theme/10'>
+                                                    ID: {item.id}
+                                                </span>
+                                            )}
+                                            {item.date && (
+                                                <span className='px-4 py-1.5 bg-orange-theme/10 text-orange-theme rounded-xl border border-orange-theme/10'>
+                                                    {item.date}
+                                                </span>
+                                            )}
+                                            <MagneticWrapper>
+                                                <button 
+                                                    onClick={() => {
+                                                        setSelectedCert(item);
+                                                        setShowViewer(true);
+                                                    }}
+                                                    className="px-6 py-2 bg-gradient-to-r from-orange-theme to-brown-theme text-white rounded-xl font-bold uppercase tracking-wider text-[10px] hover:translate-x-2 transition-all duration-500"
+                                                >
+                                                    Unveil View
+                                                </button>
+                                            </MagneticWrapper>
                                         </div>
                                     </div>
                                 </div>
@@ -283,84 +212,67 @@ const Certificates = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
                 >
-                    <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
-                        className="text-3xl md:text-4xl text-white mb-6 font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
-                    >
-                        Certificate
-                    </motion.h2>
+                        <h2 className="text-2xl md:text-3xl text-white/90 mb-6 font-serif font-bold border-l-4 border-orange-theme pl-6">
+                            Certificates
+                        </h2>
                     <motion.p 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
-                        className="text-white/60 text-base max-w-3xl mx-auto mb-8"
+                        className="text-white/40 text-sm max-w-2xl mb-12 text-left font-sans"
                     >
-                        Industry-recognized certificates that validate my expertise and professional capabilities
+                        Industry-recognized certificates that serve as immutable proofs of technical proficiency and professional grit.
                     </motion.p>
                     
                     {/* Enhanced Certificate Cards */}
-                    <div className='space-y-6 max-w-6xl mx-auto'>
+                    <div className='flex flex-col space-y-8 max-w-4xl mx-auto'>
                         {certificates.map((cert, index) => (
                             <motion.div 
                                 key={index} 
-                                initial={{ opacity: 0, x: -50 }}
+                                initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 + index * 0.1, ease: "easeOut" }}
+                                transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
                                 viewport={{ once: true }}
-                                whileHover={{ y: -5 }}
-                                className='group relative'
-                                onMouseEnter={() => setHoveredCert(index)}
-                                onMouseLeave={() => setHoveredCert(null)}
+                                className="group"
                             >
-                                {/* Background glow effect */}
-                                <div className={`absolute inset-0 bg-gradient-to-r ${cert.color}/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100`}></div>
-                                
-                                <div className='relative bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-1'>
-                                    <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-6'>
-                                        {/* Left side - Image and content */}
-                                        <div className='flex items-start space-x-6'>
-                                            {/* Image */}
-                                            <div className="relative">
-                                                <img 
-                                                    src={cert.image} 
-                                                    alt={cert.title} 
-                                                    width={220} 
-                                                    height={220} 
-                                                    className="rounded-xl border-2 border-gray-600 shadow-lg"
-                                                />
-                                                <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-brand rounded-full flex items-center justify-center">
-                                                    <CheckCircleIcon className="w-4 h-4 text-white" />
-                                                </div>
+                                <div className='relative pl-10 border-l-2 border-white/5 hover:border-olive-theme/50 transition-all duration-700'>
+                                    <div className="absolute -left-[9px] top-0 w-4 h-4 bg-bgColor border-2 border-brown-theme rounded-full group-hover:scale-125 group-hover:bg-orange-theme transition-all duration-500"></div>
+                                    
+                                    <div className='space-y-4'>
+                                        <div className='flex items-center space-x-6'>
+                                            <div className={`w-14 h-14 bg-gradient-to-br ${cert.color} rounded-2xl flex items-center justify-center text-white shadow-2xl transition-transform duration-500 group-hover:-rotate-6`}>
+                                                {cert.icon}
                                             </div>
-                                            
-                                            {/* Certificate info */}
-                                            <div className='space-y-3'>
-                                                <h3 className='text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300'>
+                                            <div>
+                                                <h3 className='text-2xl font-bold text-white group-hover:text-orange-theme transition-colors duration-500 font-serif'>
                                                     {cert.title}
                                                 </h3>
-                                                <div className='flex flex-wrap items-center gap-4 text-sm'>
-                                                    <span className='text-white/70 font-medium'>
-                                                        <span className="text-gray-400">by</span> {cert.issuer}
-                                                    </span>
-                                                    {cert.id && (
-                                                        <span className='text-cyan-400 bg-cyan-400/20 px-3 py-1 rounded-full font-medium'>
-                                                            ID: {cert.id}
-                                                        </span>
-                                                    )}
-                                                    {cert.date && (
-                                                        <span className='text-purple-400 bg-purple-400/20 px-3 py-1 rounded-full font-medium'>
-                                                            {cert.date}
-                                                        </span>
-                                                    )}
-                                                </div>
+                                                <p className='text-white/40 font-sans text-sm font-bold uppercase tracking-widest'>{cert.issuer}</p>
                                             </div>
                                         </div>
-
-                                        {/* Right side - Button */}
-                                        <div className='mt-6 md:mt-0'>
-                                            <AnimatedBtn href={cert.link} innerTxt="View Certificate" />
+                                        
+                                        <div className='flex flex-wrap items-center gap-4 text-xs font-bold'>
+                                            {cert.id && (
+                                                <span className='px-4 py-1.5 bg-brown-theme/10 text-brown-theme rounded-xl border border-brown-theme/10'>
+                                                    ID: {cert.id}
+                                                </span>
+                                            )}
+                                            {cert.date && (
+                                                <span className='px-4 py-1.5 bg-orange-theme/10 text-orange-theme rounded-xl border border-orange-theme/10'>
+                                                    {cert.date}
+                                                </span>
+                                            )}
+                                            <MagneticWrapper>
+                                                <button 
+                                                    onClick={() => {
+                                                        setSelectedCert(cert);
+                                                        setShowViewer(true);
+                                                    }}
+                                                    className="px-6 py-2 bg-gradient-to-r from-orange-theme to-brown-theme text-white rounded-xl font-bold uppercase tracking-wider text-[10px] hover:translate-x-2 transition-all duration-500"
+                                                >
+                                                    Inspect View
+                                                </button>
+                                            </MagneticWrapper>
                                         </div>
                                     </div>
                                 </div>
@@ -368,6 +280,62 @@ const Certificates = () => {
                         ))}
                     </div>
                 </motion.div>
+
+                {/* Certificate Viewer */}
+                {showViewer && selectedCert && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                        onClick={() => setShowViewer(false)}
+                    >
+                        <motion.div 
+                            initial={{ x: -100, scale: 0.8, opacity: 0 }}
+                            animate={{ x: 0, scale: 1, opacity: 1 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            exit={{ x: 100, scale: 0.8, opacity: 0 }}
+                            className="relative max-w-4xl w-full bg-bgColor rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="relative">
+                                {/* Certificate Image */}
+                                <motion.img 
+                                    src={selectedCert.image}
+                                    alt={selectedCert.title}
+                                    className="w-full h-auto object-contain"
+                                    initial={{ scale: 0.5, x: -200 }}
+                                    animate={{ scale: 1, x: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                                />
+                                
+                                {/* Certificate Info Overlay */}
+                                <motion.div 
+                                    initial={{ y: 50, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bgColor to-transparent p-10"
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <h3 className="text-3xl font-bold text-white mb-2 font-serif">{selectedCert.title}</h3>
+                                            <p className="text-white/40 font-bold uppercase tracking-widest text-xs">{selectedCert.issuer}</p>
+                                        </div>
+                                        <div className="flex space-x-4">
+                                            <AnimatedBtn href={selectedCert.link} innerTxt="Verify Credential" />
+                                            <button 
+                                                onClick={() => setShowViewer(false)}
+                                                className="px-6 py-2 bg-white/5 text-white/70 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-white/10 transition-all duration-500"
+                                            >
+                                                Dismiss
+                                            </button>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
 
                 {/* Bottom CTA */}
 
@@ -386,19 +354,12 @@ const Certificates = () => {
                 >
 
                     <motion.div
-
                         whileHover={{ scale: 1.05 }}
-
                         whileTap={{ scale: 0.95 }}
-
-                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 px-6 py-3 rounded-full border border-cyan-500/30"
-
+                        className="inline-flex items-center space-x-3 bg-white/5 px-8 py-4 rounded-2xl border border-white/10 transition-all duration-500 hover:border-orange-theme/30"
                     >
-
-                        <CheckCircleIcon className="text-cyan-400 w-5 h-5" />
-
-                        <span className="text-cyan-400 font-medium">All certificates are verifiable</span>
-
+                        <CheckCircleIcon className="text-orange-theme w-6 h-6" />
+                        <span className="text-white/60 font-bold uppercase tracking-widest text-[10px]">Verifiable Professional Integrity</span>
                     </motion.div>
 
                 </motion.div>

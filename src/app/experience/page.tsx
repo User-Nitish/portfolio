@@ -4,262 +4,212 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
+import { SplitText } from '../components/ui/SplitText'
+import MagneticWrapper from '../components/ui/MagneticWrapper'
 import "../globals.css";
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 const Page = () => {
     const [selected, updateSelected] = useState('w3grads');
 
     return (
-        <div className="w-full relative py-20 px-4">
-            <div
-                className={clsx(
-                    "absolute top-[-350px] left-[10%] h-[1000px] w-[1000px]",
-                    { "color-blur-spotify": selected === 'w3grads' },
-                    { "color-blur": selected === 'fitlife' },
-                    { "color-blur-uh": selected === 'lpu' }
-                )}
-            ></div>
-            
-            {/* Education Section */}
-            <div className="max-w-7xl mx-auto mb-48">
-                <motion.div 
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-center mb-20"
-                >
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">Education</h1>
-                    <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto rounded-full"></div>
-                </motion.div>
-                
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="relative"
-                >
-                    {/* Timeline Above Cards */}
-                    <div className="relative mb-20">
-                        {/* Main Timeline Line */}
-                        <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-green-500/30 transform -translate-y-1/2">
-                            <div className="absolute inset-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 blur-sm"></div>
-                        </div>
-                        
-                        {/* Timeline Progress Animation */}
-                        <motion.div 
-                            initial={{ scaleX: 0 }}
-                            animate={{ scaleX: 1 }}
-                            transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
-                            className="absolute top-1/2 left-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 transform -translate-y-1/2 origin-left"
-                        ></motion.div>
-                        
-                        {/* Timeline Dots */}
-                        <div className="relative flex justify-between items-center px-8">
-                            {/* LPU Timeline Dot */}
-                            <motion.div 
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                                whileHover={{ scale: 1.2 }}
-                                className="relative w-1/3 flex justify-center"
-                            >
-                                <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full shadow-lg shadow-blue-400/50 relative z-10">
-                                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30"></div>
-                                    <div className="absolute inset-1 bg-white rounded-full opacity-90"></div>
-                                    <div className="absolute inset-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
-                                </div>
-                            </motion.div>
-
-                            {/* DAV Timeline Dot */}
-                            <motion.div 
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                                whileHover={{ scale: 1.2 }}
-                                className="relative w-1/3 flex justify-center"
-                            >
-                                <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full shadow-lg shadow-purple-400/50 relative z-10">
-                                    <div className="absolute inset-0 w-6 h-6 bg-purple-400 rounded-full animate-ping opacity-30"></div>
-                                    <div className="absolute inset-1 bg-white rounded-full opacity-90"></div>
-                                    <div className="absolute inset-2 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full"></div>
-                                </div>
-                            </motion.div>
-
-                            {/* U.P. Timeline Dot */}
-                            <motion.div 
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                                whileHover={{ scale: 1.2 }}
-                                className="relative w-1/3 flex justify-center"
-                            >
-                                <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full shadow-lg shadow-green-400/50 relative z-10">
-                                    <div className="absolute inset-0 w-6 h-6 bg-green-400 rounded-full animate-ping opacity-30"></div>
-                                    <div className="absolute inset-1 bg-white rounded-full opacity-90"></div>
-                                    <div className="absolute inset-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full"></div>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                    
-                    <div className="flex flex-col md:flex-row gap-8 px-8">
-                        {/* LPU */}
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                            whileHover={{ scale: 1.05, y: -5 }}
-                            className="flex-[1.2] relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-blue-900/20 to-cyan-900/10 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 h-80"
-                        >
-                            <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mb-4 relative z-10 shadow-lg shadow-blue-400/50"></div>
-                            <div className="text-blue-300 text-sm font-semibold mb-2">2023 – Present</div>
-                            <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent shadow-lg shadow-blue-400/30"></div>
-                            <div className="flex items-center mb-4">
-                                <Image
-                                    src="/lpu.png"
-                                    alt="LPU Logo"
-                                    width={100}
-                                    height={100}
-                                    className="rounded-lg object-cover mr-4"
-                                />
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">LOVELY PROFESSIONAL UNIVERSITY</h3>
-                                    <div className="text-sm md:text-lg text-blue-100 mb-3">BTech - Computer Science and Engineering</div>
-                                </div>
-                            </div>
-                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-auto">
-                                <span className="text-yellow-400 font-semibold bg-yellow-400/20 px-3 py-1 rounded-full text-sm">CGPA: 8.17</span>
-                                <span className="text-blue-200/80">📍 Phagwara, Punjab</span>
-                            </div>
-                        </motion.div>
-
-                        {/* DAV Public School */}
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                            whileHover={{ scale: 1.05, y: -5 }}
-                            className="flex-1 relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-purple-900/20 to-indigo-900/10 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 h-80"
-                        >
-                            <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full mb-4 relative z-10 shadow-lg shadow-purple-400/50"></div>
-                            <div className="text-purple-300 text-sm font-semibold mb-2">2021 – 2023</div>
-                            <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400/60 to-transparent shadow-lg shadow-purple-400/30"></div>
-                            <div className="flex items-center mb-4">
-                                <Image
-                                    src="/dav.png"
-                                    alt="DAV Logo"
-                                    width={90}
-                                    height={90}
-                                    className="rounded-lg object-cover mr-4"
-                                />
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">D.A.V. PUBLIC SCHOOL</h3>
-                                    <div className="text-sm md:text-lg text-purple-100 mb-3">Senior Secondary - 12th Grade</div>
-                                </div>
-                            </div>
-                            <div className="flex-1"></div>
-                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-auto">
-                                <span className="text-purple-300 font-semibold bg-purple-400/20 px-3 py-1 rounded-full text-sm">12th Grade: 64.2%</span>
-                                <span className="text-purple-200/80">📍 Patna, Bihar</span>
-                            </div>
-                        </motion.div>
-
-                        {/* U.P. Public School */}
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                            whileHover={{ scale: 1.05, y: -5 }}
-                            className="flex-1 relative flex flex-col items-center md:items-start text-center md:text-left bg-gradient-to-br from-green-900/20 to-emerald-900/10 backdrop-blur-sm border border-green-500/20 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 h-80"
-                        >
-                            <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full mb-4 relative z-10 shadow-lg shadow-green-400/50"></div>
-                            <div className="text-green-300 text-sm font-semibold mb-2">2020 – 2021</div>
-                            <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-green-400/60 to-transparent shadow-lg shadow-green-400/30"></div>
-                            <div className="flex items-center mb-4">
-                                <Image
-                                    src="/up.png"
-                                    alt="U.P. Board Logo"
-                                    width={100}
-                                    height={100}
-                                    className="rounded-lg object-cover mr-4"
-                                />
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">U.P. PUBLIC SCHOOL</h3>
-                                    <div className="text-sm md:text-lg text-green-100 mb-3">Primary & Secondary Education</div>
-                                </div>
-                            </div>
-                            <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-auto">
-                                <span className="text-green-300 font-semibold bg-green-400/20 px-3 py-1 rounded-full text-sm">10th Grade: 94%</span>
-                                <span className="text-green-200/80">📍 Suri, West Bengal</span>
-                            </div>
-                        </motion.div>
-                    </div>
-                </motion.div>
+        <div className="bg-bgColor min-h-screen relative overflow-hidden">
+            {/* Dynamic Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-theme/5 rounded-full blur-[120px] animate-pulse"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-brown-theme/5 rounded-full blur-[100px] animate-pulse delay-700"></div>
+                <div className="absolute top-[40%] right-[10%] w-[25%] h-[25%] bg-olive-theme/5 rounded-full blur-[80px] animate-pulse delay-1000"></div>
             </div>
 
-            {/* Experience Section */}
-            <motion.div 
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.2 }}
-                className="max-w-7xl mx-auto mb-32"
-            >
-                <motion.div 
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">Experience</h1>
-                    <div className="w-32 h-1 bg-gradient-to-r from-orange-400 to-red-400 mx-auto rounded-full"></div>
-                </motion.div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-                    <div className="space-y-10 flex items-center justify-center min-h-[400px]">
-                        <div className="space-y-10 w-full">
-                            {["w3grads", "fitlife", "lpu", "club"].map((job, index) => (
+            <div className='relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32'>
+                <section className='mb-24 px-4'>
+                    <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
+                        <div className="text-left">
                             <motion.div
-                                key={job}
-                                onClick={() => updateSelected(job)}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ 
-                                    duration: 0.5, 
-                                    delay: 0.3 + index * 0.1, 
-                                    ease: "easeOut",
-                                    scale: selected === job ? { duration: 1.5, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" } : {}
-                                }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                whileHover={{ scale: 1.02, x: 10 }}
-                                animate={{
-                                    scale: selected === job ? [1, 1.05, 1] : 1,
-                                }}
-                                className="cursor-pointer flex items-center space-x-3 group"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                className="inline-flex items-center gap-4 mb-8"
                             >
-                                <h2 className={clsx(
-                                    "text-3xl md:text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent hover:transition-all duration-300",
-                                    job === "w3grads" && "from-indigo-400 via-blue-400 to-cyan-400 hover:from-indigo-300 hover:via-blue-300 hover:to-cyan-300",
-                                    job === "fitlife" && "from-teal-400 via-green-400 to-emerald-400 hover:from-teal-300 hover:via-green-300 hover:to-emerald-300",
-                                    job === "lpu" && "from-purple-400 via-pink-400 to-rose-400 hover:from-purple-300 hover:via-pink-300 hover:to-rose-300",
-                                    job === "club" && "from-yellow-400 via-orange-400 to-red-400 hover:from-yellow-300 hover:via-orange-300 hover:to-red-300"
-                                )}>
-                                    {job === "w3grads" ? "Summer Training with W3Grads" : job === "fitlife" ? "FitLife Project" : job === "lpu" ? "Lovely Professional University" : "Student Club & Organizations"}
-                                </h2>
-                                <svg className="w-5 h-5 text-white/50 group-hover:text-white transition-colors duration-200 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
+                                <div className="h-px w-12 bg-orange-theme/30"></div>
+                                <span className="text-brown-theme text-[10px] font-bold tracking-[0.4em] uppercase">Chronicle</span>
                             </motion.div>
-                        ))}
+                            <SplitText
+                                text="Academic Journey"
+                                className="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-tight"
+                            />
+                        </div>
+                        <p className="text-white/30 text-sm max-w-xs font-sans tracking-wide leading-relaxed border-l border-orange-theme/20 pl-8">
+                            Tracing the educational foundations that power my technical expertise and creative approach.
+                        </p>
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="relative"
+                    >
+                        {/* Timeline Feature */}
+                        <div className="relative mb-24 max-w-4xl mx-auto px-4">
+                            <div className="absolute top-1/2 left-0 right-0 h-px bg-white/5 -translate-y-1/2"></div>
+                            <motion.div
+                                initial={{ scaleX: 0 }}
+                                whileInView={{ scaleX: 1 }}
+                                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+                                className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-theme/20 via-orange-theme to-brown-theme/20 -translate-y-1/2 origin-left shadow-[0_0_20px_rgba(255,107,53,0.3)]"
+                            ></motion.div>
+
+                            <div className="relative flex justify-between items-center">
+                                {['2023 – Present', '2021 – 2023', '2020 – 2021'].map((year, i) => (
+                                    <motion.div
+                                        key={year}
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.8, delay: 0.5 + i * 0.3, ease: [0.22, 1, 0.36, 1] }}
+                                        className="flex flex-col items-center gap-4 group"
+                                    >
+                                        <div className="w-5 h-5 rounded-full bg-bgColor border-2 border-orange-theme/50 relative z-10 transition-all duration-500 group-hover:border-orange-theme group-hover:shadow-[0_0_20px_rgba(255,107,53,0.5)]">
+                                            <div className="absolute inset-1 rounded-full bg-orange-theme opacity-20 group-hover:opacity-100 transition-opacity"></div>
+                                            <div className="absolute inset-0 rounded-full bg-orange-theme animate-ping opacity-0 group-hover:opacity-20"></div>
+                                        </div>
+                                        <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest bg-bgColor px-4 py-1.5 rounded-full border border-white/5 group-hover:text-orange-theme/70 group-hover:border-orange-theme/20 transition-all duration-500">{year}</span>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {/* LPU Card */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.8 }}
+                                whileHover={{ y: -10 }}
+                                className="p-8 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-6 group hover:border-orange-theme/30 transition-colors"
+                            >
+                                <div className="flex items-center gap-4">
+                                    <div className="w-20 h-20 bg-white/10 rounded-2xl p-3 flex items-center justify-center shrink-0 border border-white/5 shadow-xl">
+                                        <Image src="/lpu.png" alt="LPU" width={64} height={64} className="object-contain" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-white font-serif font-bold text-sm">LOVELY PROFESSIONAL UNIVERSITY</h3>
+                                        <p className="text-white/40 text-[10px] uppercase tracking-wider">BTech - Computer Science and Engineering</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <p className="text-white/60 text-xs leading-relaxed">📍 Phagwara, Punjab</p>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-orange-theme font-bold text-[10px] uppercase tracking-widest bg-orange-theme/10 px-3 py-1 rounded-full">CGPA: 8.17</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* DAV Card */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 1.1 }}
+                                whileHover={{ y: -10 }}
+                                className="p-8 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-6 group hover:border-orange-theme/30 transition-colors"
+                            >
+                                <div className="flex items-center gap-4">
+                                    <div className="w-20 h-20 bg-white/10 rounded-2xl p-3 flex items-center justify-center shrink-0 border border-white/5 shadow-xl">
+                                        <Image src="/dav.png" alt="DAV" width={64} height={64} className="object-contain" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-white font-serif font-bold text-sm">D.A.V. PUBLIC SCHOOL</h3>
+                                        <p className="text-white/40 text-[10px] uppercase tracking-wider">Senior Secondary - 12th Grade</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <p className="text-white/60 text-xs leading-relaxed">📍 Patna, Bihar</p>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-brown-theme font-bold text-[10px] uppercase tracking-widest bg-brown-theme/10 px-3 py-1 rounded-full">12th Grade: 64.2%</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* UP Card */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 1.4 }}
+                                whileHover={{ y: -10 }}
+                                className="p-8 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-6 group hover:border-orange-theme/30 transition-colors"
+                            >
+                                <div className="flex items-center gap-4">
+                                    <div className="w-20 h-20 bg-white/10 rounded-2xl p-3 flex items-center justify-center shrink-0 border border-white/5 shadow-xl">
+                                        <Image src="/up.png" alt="UP Board" width={64} height={64} className="object-contain" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-white font-serif font-bold text-sm">U.P. PUBLIC SCHOOL</h3>
+                                        <p className="text-white/40 text-[10px] uppercase tracking-wider">Primary & Secondary Education</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <p className="text-white/60 text-xs leading-relaxed">📍 Suri, West Bengal</p>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-olive-theme font-bold text-[10px] uppercase tracking-widest bg-olive-theme/10 px-3 py-1 rounded-full">10th Grade: 94%</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                </section>
+
+                <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8 pt-16 border-t border-white/5">
+                    <div className="text-left">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            className="inline-flex items-center gap-4 mb-8"
+                        >
+                            <div className="h-px w-12 bg-brown-theme/30"></div>
+                            <span className="text-orange-theme text-[10px] font-bold tracking-[0.4em] uppercase">Professional</span>
+                        </motion.div>
+                        <SplitText
+                            text="Work Experience"
+                            className="text-5xl md:text-7xl font-serif font-bold text-white mb-8"
+                        />
+                    </div>
+                    <p className="text-white/30 text-sm max-w-xs font-sans tracking-wide leading-relaxed border-l border-brown-theme/30 pl-8 text-left hidden md:block">
+                        Transforming technical skills into impactful contributions within diverse professional environments.
+                    </p>
+                </div>
+
+                <article className="max-w-5xl mx-auto py-12">
+                    <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
+                        <div className="space-y-4 sticky top-32">
+                            {["w3grads", "fitlife", "lpu", "club"].map((job) => (
+                                <MagneticWrapper key={job}>
+                                    <button
+                                        onClick={() => updateSelected(job)}
+                                        className={clsx(
+                                            "w-full text-left p-6 rounded-2xl transition-all duration-500 border",
+                                            selected === job
+                                                ? "bg-white/5 border-orange-theme/50 shadow-2xl shadow-orange-theme/10"
+                                                : "border-transparent opacity-40 hover:opacity-100"
+                                        )}
+                                    >
+                                        <h3 className={clsx(
+                                            "text-xl font-serif font-bold mb-1",
+                                            selected === job ? "text-orange-theme" : "text-white"
+                                        )}>
+                                            {job === "w3grads" ? "Summer Training" : job === "fitlife" ? "FitLife Project" : job === "lpu" ? "University" : "Leadership"}
+                                        </h3>
+                                        <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">
+                                            {job === "w3grads" ? "W3Grads" : job === "fitlife" ? "Development" : job === "lpu" ? "LPU" : "Student Organizations"}
+                                        </p>
+                                    </button>
+                                </MagneticWrapper>
+                            ))}
+                        </div>
+
+                        <div className="min-h-[600px]">
+                            <JobInformation key={selected} selected={selected} />
                         </div>
                     </div>
-                    <div className="py-12 pr-4 md:pr-16">
-                        <JobInformation key={selected} selected={selected} />
-                    </div>
-                </div>
-            </motion.div>
-
+                </article>
+            </div>
         </div>
     );
 };
@@ -267,75 +217,52 @@ const Page = () => {
 const JobInformation = ({ selected }) => {
     const jobData = {
         w3grads: {
+            title: "Full Stack Training",
+            company: "W3Grads",
             resp: [
-                "Dived deep into the MERN universe with Generative AI superpowers, mastering the art of full-stack web wizardry.",
-                "Crafted interactive React masterpieces including dynamic to-do apps and data-driven wonders that actually work!",
-                "Became an API whisperer, making REST APIs dance and sing across pages for seamless data magic.",
-                "Rocked daily Scrum ceremonies like a coding ninja, squashing bugs and sharing wisdom with fellow developers.",
-                "Wove AI magic with Google Gemini API, turning ordinary apps into intelligent digital companions.",
-                "Scored shiny certifications: Full Stack MERN with Gen AI badge and MongoDB Skill-a-thon champion trophy!"
+                "Mastered the MERN stack with a focus on AI integration.",
+                "Built production-ready React applications using modern best practices.",
+                "Developed scalable REST APIs and managed NoSQL databases.",
+                "Collaborated in Agile sprints to deliver high-quality code Features.",
+                "Integrated Google Gemini AI for intelligent application behavior."
             ],
-            tools: [
-                { name: "React", img: "/REACT.svg" },
-                { name: "Node.js", img: "/NODE.svg" },
-                { name: "Express", img: "/EXPRESS.svg" },
-                { name: "MongoDB", img: "/MONGO.svg" },
-                { name: "Tailwind", img: "/TAILWIND.svg" },
-                { name: "JavaScript", img: "/JS.svg" },
-            ]
+            tools: ["React", "Node.js", "Express", "MongoDB", "Tailwind", "Gemini AI"]
         },
         fitlife: {
+            title: "FitLife Platform",
+            company: "Personal Project",
             resp: [
-                "Engineered a fitness revolution with FitLife - a MERN stack powerhouse that makes workouts smart and nutrition fun!",
-                "Created AI-powered workout and meal plans that adapt to users' bodies, boosting engagement by a whopping 35%!",
-                "Integrated YouTube fitness gurus and food tracking magic, making healthy living actually enjoyable.",
-                "Built an AI chat buddy using Google Gemini that's like having a personal trainer in your pocket.",
-                "Designed a stunningly responsive interface that looks gorgeous on phones, tablets, and giant screens.",
-                "Launched a production-ready app that runs smoother than a freshly oiled machine!"
+                "Architected a comprehensive fitness and nutrition dashboard.",
+                "Implemented AI-driven workout plans and meal suggestions.",
+                "Built real-time tracking features for user progress.",
+                "Designed a mobile-first, responsive user interface.",
+                "Optimized application performance for smooth user experience."
             ],
-            tools: [
-                { name: "React", img: "/REACT.svg" },
-                { name: "Node.js", img: "/NODE.svg" },
-                { name: "Express", img: "/EXPRESS.svg" },
-                { name: "MongoDB", img: "/MONGO.svg" },
-                { name: "Tailwind", img: "/TAILWIND.svg" },
-                { name: "Google Gemini API", img: "/JS.svg" },
-            ]
+            tools: ["React", "Express", "Node.js", "Framer Motion", "Tailwind"]
         },
         lpu: {
+            title: "Computer Science Degree",
+            company: "Lovely Professional University",
             resp: [
-                "On an epic quest for B.Tech glory in Computer Science, currently rocking a solid 8.17 CGPA!",
-                "Mastering the digital arts of full-stack development, AI wizardry, and algorithmic problem-solving.",
-                "Collecting shiny certifications like a boss: Cloud Computing (NPTEL), Responsive Web Design (freeCodeCamp), and more!",
-                "Becoming fluent in multiple programming languages - JavaScript, Python, PHP, C++, and Java - like a coding polyglot!",
-                "Building real-world skills in REST APIs, responsive design, and database management while staying caffeinated.",
-                "On a never-ending adventure to stay ahead of the tech curve and learn all the cool new things!"
+                "Maintaining high academic standards with an 8.17 CGPA.",
+                "Focusing on data structures, algorithms, and system design.",
+                "Participating in university-level technical competitions.",
+                "Contributing to open-source student projects.",
+                "Earning multiple certifications in cloud and web technologies."
             ],
-            tools: [
-                { name: "JavaScript", img: "/JS.svg" },
-                { name: "Python", img: "/PYTHON.svg" },
-                { name: "C++", img: "/CPP.svg" },
-                { name: "React", img: "/REACT.svg" },
-                { name: "HTML", img: "/HTML.svg" },
-                { name: "CSS", img: "/CSS.svg" },
-            ]
+            tools: ["C++", "Python", "JavaScript", "System Design", "Cloud"]
         },
         club: {
+            title: "COO & President",
+            company: "Student Organizations",
             resp: [
-                "Commanding the ship as COO at Arambh Organization, steering student organizations to greatness (Mar'25 - Present)",
-                "Led an awesome squad of 27 members, turning campus life into an adventure with movie nights, brain-teasing quizzes, and cultural celebrations!",
-                "Reigned as Club President at Zillion: Team L&T, transforming tech education into an exciting journey (Feb'24 - May'25)",
-                "Orchestrated epic coding battles, tech webinars, and knowledge-sharing sessions, leading a dream team of 30 future tech leaders!",
-                "Became a coding sensei, guiding junior devs through the mystical realms of web development, DSA, and AI wisdom.",
-                "Connected students with industry wizards and tech gurus, creating a bridge between classroom learning and real-world magic!"
+                "Leading large teams to execute high-impact campus events.",
+                "Managing organizational budgets and strategic planning.",
+                "Mentoring junior members in leadership and technical skills.",
+                "Bridging the gap between students and industry experts.",
+                "Organizing coding bootcamps and tech webinars."
             ],
-            tools: [
-                { name: "Leadership", img: "/leadership.jpg" },
-                { name: "Mentoring", img: "/mentoring.jpg" },
-                { name: "Teamwork", img: "/teamwork.jpg" },
-                { name: "Events", img: "/events.jpg" },
-                { name: "Community", img: "/community.jpg" },
-            ]
+            tools: ["Leadership", "Management", "Public Speaking", "Strategy"]
         }
     };
 
@@ -343,52 +270,39 @@ const JobInformation = ({ selected }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-            className={clsx(
-                "space-y-4 rounded-lg max-w-6xl p-4",
-                selected === "w3grads" && "bg-gradient-to-br from-red-900/30 to-red-800/20 border border-red-500/30",
-                selected === "fitlife" && "bg-gradient-to-br from-green-900/30 to-green-800/20 border border-green-500/30",
-                selected === "lpu" && "bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-500/30",
-                selected === "club" && "bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-500/30"
-            )}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="space-y-12"
         >
-            <h2 className="text-white text-xl font-bold">Job Responsibilities:</h2>
-            <ul className="list-disc text-white/90 pl-4 text-sm">
-                {jobInfo.resp.map((resp, index) => (
-                    <li key={index} className="mt-1 text-sm">{resp}</li>
-                ))}
-            </ul>
-            
-            {/* Organization Image for w3grads - positioned after responsibilities */}
-            {selected === "w3grads" && (
-                <div className="flex justify-center my-8">
-                    <Image 
-                        src="/w3grad.png" 
-                        alt="W3Grads Certificate" 
-                        width={280} 
-                        height={180} 
-                        className="rounded-lg border-2 border-red-500/30 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                    />
-                </div>
-            )}
-            
-            <div className="p-3">
-                <h2 className="text-white text-xl font-bold">Skills & Tools</h2>
-                <div className="flex flex-wrap justify-center gap-3 mt-3">
-                    {jobInfo.tools.map((tool, index) => (
-                        <div key={index} className="flex gap-2 py-1 px-3 items-center justify-center border border-white border-opacity-30 rounded-md whitespace-nowrap bg-white/5 backdrop-blur-sm">
-                            <Image 
-    src={tool.img || "/placeholder.svg"} 
-    alt={tool.name} 
-    width={30} 
-    height={30} 
-    className="rounded-full object-contain"
-/>
-                            <p className="text-white text-xs">{tool.name}</p>
-                        </div>
+            <div className="space-y-4">
+                <h2 className="text-4xl text-white font-serif font-bold">{jobInfo.title}</h2>
+                <p className="text-orange-theme font-bold uppercase tracking-[0.3em] text-xs pb-4 border-b border-white/5">{jobInfo.company}</p>
+            </div>
+
+            <div className="space-y-8">
+                <h3 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">Achievements</h3>
+                <ul className="space-y-6">
+                    {jobInfo.resp.map((resp, i) => (
+                        <motion.li
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: i * 0.1 }}
+                            key={i}
+                            className="flex gap-4 text-white/60 leading-relaxed text-lg font-sans border-l border-orange-theme/20 pl-6"
+                        >
+                            {resp}
+                        </motion.li>
+                    ))}
+                </ul>
+            </div>
+
+            <div className="space-y-6">
+                <h3 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">Technologies Wrapped</h3>
+                <div className="flex flex-wrap gap-3">
+                    {jobInfo.tools.map((tool, i) => (
+                        <span key={i} className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-bold tracking-widest hover:border-orange-theme/50 transition-colors">
+                            {tool}
+                        </span>
                     ))}
                 </div>
             </div>

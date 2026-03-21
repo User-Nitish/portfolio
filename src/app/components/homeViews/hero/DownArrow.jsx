@@ -23,12 +23,19 @@ const DownArrow = () => {
       }}
       onClick={scrollToSection}
     >
-      <Image 
-      src="/down-arrow.svg" 
-      alt="Pulsating SVG" 
-      width={90} 
-      height={90}
-      className="cursor-pointer" />
+      <svg 
+        width="60" 
+        height="60" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        className="text-orange-theme cursor-pointer drop-shadow-lg"
+      >
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+      </svg>
     </motion.div>
   );
 };

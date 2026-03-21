@@ -6,46 +6,36 @@ import { XMarkIcon } from '@heroicons/react/16/solid'
 const MobileNav = ({ isMobileOpen, handleToggle }) => {
   return (
     <div
-      className={`md:hidden bg-gradient-to-br from-[#0E101A] to-[#1a1f3a] min-h-screen w-4/5 fixed top-0 right-0 flex justify-center items-center 
-      ${isMobileOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out z-50 px-8 shadow-2xl`}
+      className={`md:hidden bg-bgColor/95 backdrop-blur-2xl min-h-screen w-4/5 fixed top-0 right-0 flex justify-center items-center 
+      ${isMobileOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-700 ease-[premium] z-50 px-8 border-l border-white/10 shadow-[-20px_0_50px_rgba(0,0,0,0.5)]`}
     >
       <div className='flex flex-col space-y-12 w-full max-w-sm'>
         {/* Title */}
         <div className="relative">
-          <p className='text-white text-xs tracking-widest border-b pb-3 border-white/30'>NAVIGATION</p>
-          <div className="absolute bottom-0 left-0 w-20 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400"></div>
+          <p className='text-white/40 text-[10px] tracking-[0.3em] font-sans font-bold uppercase border-b pb-4 border-white/10'>NAVIGATION</p>
+          <div className="absolute bottom-0 left-0 w-16 h-0.5 bg-orange-theme"></div>
         </div>
 
         {/* Navigation Links */}
-        <ul className='gap-6 flex flex-col text-2xl md:text-3xl'>
+        <ul className='gap-8 flex flex-col text-3xl font-serif'>
           <li>
-            <Link href="/about" className='mobile-nav-link text-white/80 font-light hover:text-white transition-all duration-300 relative group py-2 block' onClick={handleToggle}>
-              <span className="relative z-10">About</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+            <Link href="/about" className='mobile-nav-link text-white/70 hover:text-orange-theme transition-all duration-500 relative group py-2 block' onClick={handleToggle}>
+              About
             </Link>
           </li>
           <li>
-            <Link href="/experience" className='mobile-nav-link text-white/80 font-light hover:text-white transition-all duration-300 relative group py-2 block' onClick={handleToggle}>
-              <span className="relative z-10">Education & Experience</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+            <Link href="/experience" className='mobile-nav-link text-white/70 hover:text-orange-theme transition-all duration-500 relative group py-2 block' onClick={handleToggle}>
+              Education & Experience
             </Link>
           </li>
           <li>
-            <Link href="/achievements" className='mobile-nav-link text-white/80 font-light hover:text-white transition-all duration-300 relative group py-2 block' onClick={handleToggle}>
-              <span className="relative z-10">Achievements</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+            <Link href="/achievements" className='mobile-nav-link text-white/70 hover:text-orange-theme transition-all duration-500 relative group py-2 block' onClick={handleToggle}>
+              Achievements
             </Link>
           </li>
           <li>
-            <Link href="/blog" className='mobile-nav-link text-white/80 font-light hover:text-white transition-all duration-300 relative group py-2 block' onClick={handleToggle}>
-              <span className="relative z-10">Blog</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-            </Link>
-          </li>
-          <li>
-            <Link href="/#contact" className='mobile-nav-link text-white/80 font-light hover:text-white transition-all duration-300 relative group py-2 block' onClick={handleToggle}>
-              <span className="relative z-10">Contact</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+            <Link href="/#contact" className='mobile-nav-link text-white/70 hover:text-orange-theme transition-all duration-500 relative group py-2 block' onClick={handleToggle}>
+              Contact
             </Link>
           </li>
         </ul>
@@ -69,15 +59,14 @@ const MobileNav = ({ isMobileOpen, handleToggle }) => {
               </a>
             </li>
           </ul>
-          <div className="pt-2">
+          <div className="pt-4">
             <a
               href="https://drive.google.com/file/d/1qFJdOxP63v8w81va7JuAXvh7dh8rKfZe/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className='group relative px-6 py-3 text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 font-light shadow-lg hover:shadow-cyan-500/30 transform hover:scale-105 inline-block'
+              className='w-full text-center py-4 px-8 bg-orange-theme text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-orange-accent transition-all duration-300 block'
             >
-              <span className="relative z-10">Resume</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              Resume
             </a>
           </div>
         </div>

@@ -8,10 +8,10 @@ const AnimatedBtn = ({href, innerTxt, variant = "primary"}) => {
   return (
     <motion.a
         href={href}
-        className={`relative rounded-full text-white px-6 py-3 text-sm font-semibold overflow-hidden transition-all duration-300 ${
+        className={`relative rounded-xl text-white px-8 py-3 text-xs font-sans font-bold uppercase tracking-widest overflow-hidden transition-all duration-500 ${
           isPrimary 
-            ? 'bg-gradient-to-r from-brand to-purple-600 border-2 border-brand/50 shadow-lg shadow-brand/25' 
-            : 'bg-white/10 backdrop-blur-sm border-2 border-white/20 hover:bg-white/20'
+            ? 'bg-gradient-to-r from-orange-theme to-brown-theme border border-white/10 shadow-2xl shadow-orange-theme/20' 
+            : 'bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all duration-500'
         }`}
         target="_blank"
         rel="noopener noreferrer"
@@ -20,12 +20,12 @@ const AnimatedBtn = ({href, innerTxt, variant = "primary"}) => {
         whileTap="tap"
         animate="rest"
     >
-        {/* Animated background gradient */}
+        {/* Themed background active state */}
         <motion.div
             className={`absolute inset-0 ${
               isPrimary 
-                ? 'bg-gradient-to-r from-cyan-500 to-purple-600' 
-                : 'bg-gradient-to-r from-white/20 to-white/10'
+                ? 'bg-gradient-to-r from-brown-theme to-orange-theme' 
+                : 'bg-gradient-to-r from-white/10 to-transparent'
             }`}
             style={{ transformOrigin: 'center' }}
             variants={{
@@ -35,12 +35,12 @@ const AnimatedBtn = ({href, innerTxt, variant = "primary"}) => {
             transition={{ duration: 0.4, ease: "easeOut" }}
         />
         
-        {/* Glow effect on hover */}
+        {/* Subtle glow effect */}
         <motion.div
             className={`absolute inset-0 ${
               isPrimary 
-                ? 'bg-brand/20 blur-xl' 
-                : 'bg-white/10 blur-xl'
+                ? 'bg-orange-theme/20 blur-xl' 
+                : 'bg-white/5 blur-xl'
             }`}
             variants={{
               rest: { opacity: 0, scale: 0.8 },
@@ -49,7 +49,7 @@ const AnimatedBtn = ({href, innerTxt, variant = "primary"}) => {
             transition={{ duration: 0.4, ease: "easeOut" }}
         />
         
-        {/* Icon */}
+        {/* Vintage icon */}
         <motion.div
             className="absolute left-3 flex items-center justify-center"
             variants={{
@@ -73,7 +73,7 @@ const AnimatedBtn = ({href, innerTxt, variant = "primary"}) => {
         {/* Button text */}
         <span className="relative z-10 pl-6 pr-2">{innerTxt}</span>
         
-        {/* Arrow indicator */}
+        {/* Vintage arrow indicator */}
         <motion.div
             className="absolute right-3"
             variants={{
