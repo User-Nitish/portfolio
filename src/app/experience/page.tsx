@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import { SplitText } from '../components/ui/SplitText'
@@ -226,6 +227,32 @@ const Page = () => {
                         </div>
                     </div>
                 </article>
+
+                <section className="mt-12 md:mt-24 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <Link href="/#technical-prowess">
+                            <MagneticWrapper>
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-10 md:px-16 py-5 md:py-6 rounded-full bg-gradient-to-r from-orange-theme to-brown-theme text-white font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs shadow-[0_20px_40px_rgba(255,107,53,0.2)] hover:shadow-[0_25px_50px_rgba(255,107,53,0.4)] transition-all duration-500 group relative overflow-hidden border border-white/10"
+                                >
+                                    <span className="relative z-10 flex items-center gap-3">
+                                        Explore Technical Prowess
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                        </svg>
+                                    </span>
+                                    <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </motion.button>
+                            </MagneticWrapper>
+                        </Link>
+                    </motion.div>
+                </section>
             </div>
         </div>
     );

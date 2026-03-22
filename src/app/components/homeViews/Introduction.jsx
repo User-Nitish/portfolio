@@ -133,7 +133,7 @@ const Introduction = () => {
           </div>
 
           {/* Technical Skills Section */}
-          <div ref={skillsRef} className={`space-y-16 transition-all duration-1000 ease-out ${
+          <div id="technical-prowess" ref={skillsRef} className={`space-y-16 transition-all duration-1000 ease-out ${
             skillsVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
             <div className="text-center">
