@@ -29,7 +29,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/nitish-kr-singh1/" target="_blank" className="text-white/50 hover:text-orange-theme transition-colors font-bold uppercase tracking-widest text-xs">LinkedIn</a>
           </div>
           <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-sans">
-            © {new Date().getFullYear()} Nitish Kumar • Built with Next.js
+            © {new Date().getFullYear()} Nitish Kumar Singh
           </p>
         </div>
       </div>

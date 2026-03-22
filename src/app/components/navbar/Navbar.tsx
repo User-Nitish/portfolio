@@ -78,7 +78,7 @@ const Navbar = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer transition-transform duration-1000"></div>
                 <span className="relative z-10 flex items-center gap-2 tracking-[0.2em] uppercase">
-                  Resume
+                  CV
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
